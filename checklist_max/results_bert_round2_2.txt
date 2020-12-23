@@ -1,0 +1,740 @@
+Vocabulary
+
+A is COMP than B. Who is more / less COMP?
+Test cases:      494
+Fails (rate):    51 (10.3%)
+
+Example fails:
+C: Sarah is younger than Matthew.
+Q: Who is less young?
+A: Matthew
+P: Sarah
+
+
+----
+C: Lisa is smaller than Amanda.
+Q: Who is less small?
+A: Amanda
+P: Lisa
+
+
+----
+C: Amy is smaller than Nicole.
+Q: Who is less small?
+A: Nicole
+P: Amy
+
+
+----
+
+
+Intensifiers (very, super, extremely) and reducers (somewhat, kinda, etc)?
+Test cases:      497
+Fails (rate):    445 (89.5%)
+
+Example fails:
+C: Dylan is really clear about the project. Nicole is clear about the project.
+Q: Who is least clear about the project?
+A: Nicole
+P: Dylan
+
+
+----
+C: Amy is extremely pleased about the project. Steven is pleased about the project.
+Q: Who is least pleased about the project?
+A: Steven
+P: Amy
+
+C: Amy is pleased about the project. Steven is somewhat pleased about the project.
+Q: Who is least pleased about the project?
+A: Steven
+P: Amy
+
+C: Steven is somewhat pleased about the project. Amy is pleased about the project.
+Q: Who is most pleased about the project?
+A: Amy
+P: Steven
+
+
+----
+C: Melissa is extremely enthusiastic about the project. Victoria is enthusiastic about the project.
+Q: Who is least enthusiastic about the project?
+A: Victoria
+P: Melissa
+
+
+----
+
+
+
+
+Taxonomy
+
+size, shape, age, color
+Test cases:      500
+Fails (rate):    216 (43.2%)
+
+Example fails:
+C: There is a sculpture in the room. The sculpture is square and red.
+Q: What shape is the sculpture?
+A: square
+P: square and red
+
+
+----
+C: There is an object in the room. The object is round and white.
+Q: What shape is the object?
+A: round
+P: round and white
+
+
+----
+C: There is a thing in the room. The thing is round and purple.
+Q: What shape is the thing?
+A: round
+P: round and purple
+
+
+----
+
+
+Profession vs nationality
+Test cases:      500
+Fails (rate):    333 (66.6%)
+
+Example fails:
+C: Brittany is a Brazilian analyst.
+Q: What is Brittany's job?
+A: analyst
+P: Brazilian analyst
+
+
+----
+C: Ethan is an Indian producer.
+Q: What is Ethan's job?
+A: producer
+P: Indian producer
+
+
+----
+C: Amber is a Bangladeshi adviser.
+Q: What is Amber's job?
+A: adviser
+P: Bangladeshi adviser
+
+C: Amber is an adviser and Bangladeshi.
+Q: What is Amber's job?
+A: adviser
+P: an adviser and Bangladeshi
+
+
+----
+
+
+Animal vs Vehicle
+Test cases:      500
+Fails (rate):    2 (0.4%)
+
+Example fails:
+C: Christopher has a bull and a minivan.
+Q: What vehicle does Christopher have?
+A: minivan
+P: a bull and a minivan
+
+
+----
+C: Isabella has a bull and a minivan.
+Q: What vehicle does Isabella have?
+A: minivan
+P: a bull and a minivan
+
+
+----
+
+
+Animal vs Vehicle v2
+Test cases:      496
+Fails (rate):    1 (0.2%)
+
+Example fails:
+C: Jonathan bought a bull. Kayla bought a firetruck.
+Q: Who bought a vehicle?
+A: Kayla
+P: Jonathan
+
+
+----
+
+
+Synonyms
+Test cases:      447
+Fails (rate):    0 (0.0%)
+
+
+A is COMP than B. Who is antonym(COMP)? B
+Test cases:      496
+Fails (rate):    303 (61.1%)
+
+Example fails:
+C: Jordan is poorer than Brandon.
+Q: Who is richer?
+A: Brandon
+P: Jordan
+
+
+----
+C: Jordan is quieter than Taylor.
+Q: Who is louder?
+A: Taylor
+P: Jordan
+
+
+----
+C: Mary is worse than Heather.
+Q: Who is better?
+A: Heather
+P: Mary
+
+
+----
+
+
+A is more X than B. Who is more antonym(X)? B. Who is less X? B. Who is more X? A. Who is less antonym(X)? A.
+Test cases:      491
+Fails (rate):    491 (100.0%)
+
+Example fails:
+C: Richard is less optimistic than Samantha.
+Q: Who is more pessimistic?
+A: Richard
+P: Samantha
+
+C: Richard is less optimistic than Samantha.
+Q: Who is less pessimistic?
+A: Samantha
+P: Richard
+
+C: Samantha is less pessimistic than Richard.
+Q: Who is more optimistic?
+A: Samantha
+P: Richard
+
+
+----
+C: Alyssa is more rude than James.
+Q: Who is more polite?
+A: James
+P: Alyssa
+
+C: Alyssa is more rude than James.
+Q: Who is less polite?
+A: Alyssa
+P: James
+
+C: James is more polite than Alyssa.
+Q: Who is more rude?
+A: Alyssa
+P: James
+
+
+----
+C: Austin is more passive than Benjamin.
+Q: Who is more active?
+A: Benjamin
+P: Austin
+
+C: Austin is more passive than Benjamin.
+Q: Who is less active?
+A: Austin
+P: Benjamin
+
+C: Austin is less active than Benjamin.
+Q: Who is more passive?
+A: Austin
+P: Benjamin
+
+
+----
+
+
+
+
+Robustness
+
+Question typo
+Test cases:      500
+Fails (rate):    68 (13.6%)
+
+Example fails:
+C: The collection of textiles consists of more than 53,000 examples, mainly western European though all populated continents are represented, dating from the 1st century AD to the present, this is the largest such collection in the world. Techniques represented include weaving, printing, quilting embroidery, lace, tapestry and carpets. These are classified by technique, countries of origin and date of production. The collections are well represented in these areas: early silks from the Near East, lace, European tapestries and English medieval church embroidery.
+Q: Besides countries of origin and date of production, how are the textiles classified?
+P: by technique
+
+C: The collection of textiles consists of more than 53,000 examples, mainly western European though all populated continents are represented, dating from the 1st century AD to the present, this is the largest such collection in the world. Techniques represented include weaving, printing, quilting embroidery, lace, tapestry and carpets. These are classified by technique, countries of origin and date of production. The collections are well represented in these areas: early silks from the Near East, lace, European tapestries and English medieval church embroidery.
+Q: Beside scountries of origin and date of production, how are the textiles classified?
+P: technique
+
+
+----
+C: In 2001, 16 national science academies issued a joint statement on climate change. The joint statement was made by the Australian Academy of Science, the Royal Flemish Academy of Belgium for Science and the Arts, the Brazilian Academy of Sciences, the Royal Society of Canada, the Caribbean Academy of Sciences, the Chinese Academy of Sciences, the French Academy of Sciences, the German Academy of Natural Scientists Leopoldina, the Indian National Science Academy, the Indonesian Academy of Sciences, the Royal Irish Academy, Accademia Nazionale dei Lincei (Italy), the Academy of Sciences Malaysia, the Academy Council of the Royal Society of New Zealand, the Royal Swedish Academy of Sciences, and the Royal Society (UK). The statement, also published as an editorial in the journal Science, stated "we support the [TAR's] conclusion that it is at least 90% certain that temperatures will continue to rise, with average global surface temperature projected to increase by between 1.4 and 5.8 °C above 1990 levels by 2100". The TAR has also been endorsed by the Canadian Foundation for Climate and Atmospheric Sciences, Canadian Meteorological and Oceanographic Society, and European Geosciences Union (refer to "Endorsements of the IPCC").
+Q: How sure did the statement say scientists were that temperatures would keep rising?
+P: 90% certain
+
+C: In 2001, 16 national science academies issued a joint statement on climate change. The joint statement was made by the Australian Academy of Science, the Royal Flemish Academy of Belgium for Science and the Arts, the Brazilian Academy of Sciences, the Royal Society of Canada, the Caribbean Academy of Sciences, the Chinese Academy of Sciences, the French Academy of Sciences, the German Academy of Natural Scientists Leopoldina, the Indian National Science Academy, the Indonesian Academy of Sciences, the Royal Irish Academy, Accademia Nazionale dei Lincei (Italy), the Academy of Sciences Malaysia, the Academy Council of the Royal Society of New Zealand, the Royal Swedish Academy of Sciences, and the Royal Society (UK). The statement, also published as an editorial in the journal Science, stated "we support the [TAR's] conclusion that it is at least 90% certain that temperatures will continue to rise, with average global surface temperature projected to increase by between 1.4 and 5.8 °C above 1990 levels by 2100". The TAR has also been endorsed by the Canadian Foundation for Climate and Atmospheric Sciences, Canadian Meteorological and Oceanographic Society, and European Geosciences Union (refer to "Endorsements of the IPCC").
+Q: How sure did the statement say scientists were that temperatures would keep rsiing?
+P: 90%
+
+
+----
+C: The Tech Coast is a moniker that has gained use as a descriptor for the region's diversified technology and industrial base as well as its multitude of prestigious and world-renowned research universities and other public and private institutions. Amongst these include 5 University of California campuses (Irvine, Los Angeles, Riverside, Santa Barbara, and San Diego); 12 California State University campuses (Bakersfield, Channel Islands, Dominguez Hills, Fullerton, Los Angeles, Long Beach, Northridge, Pomona, San Bernardino, San Diego, San Marcos, and San Luis Obispo); and private institutions such as the California Institute of Technology, Chapman University, the Claremont Colleges (Claremont McKenna College, Harvey Mudd College, Pitzer College, Pomona College, and Scripps College), Loma Linda University, Loyola Marymount University, Occidental College, Pepperdine University, University of Redlands, University of San Diego, and the University of Southern California.
+Q: What kind of universities is the region famous for?
+P: research universities
+
+C: The Tech Coast is a moniker that has gained use as a descriptor for the region's diversified technology and industrial base as well as its multitude of prestigious and world-renowned research universities and other public and private institutions. Amongst these include 5 University of California campuses (Irvine, Los Angeles, Riverside, Santa Barbara, and San Diego); 12 California State University campuses (Bakersfield, Channel Islands, Dominguez Hills, Fullerton, Los Angeles, Long Beach, Northridge, Pomona, San Bernardino, San Diego, San Marcos, and San Luis Obispo); and private institutions such as the California Institute of Technology, Chapman University, the Claremont Colleges (Claremont McKenna College, Harvey Mudd College, Pitzer College, Pomona College, and Scripps College), Loma Linda University, Loyola Marymount University, Occidental College, Pepperdine University, University of Redlands, University of San Diego, and the University of Southern California.
+Q: What kind of univesrities is the region famous for?
+P: prestigious and world-renowned research universities
+
+
+----
+
+
+Question contractions
+Test cases:      500
+Fails (rate):    30 (6.0%)
+
+Example fails:
+C: DECnet is a suite of network protocols created by Digital Equipment Corporation, originally released in 1975 in order to connect two PDP-11 minicomputers. It evolved into one of the first peer-to-peer network architectures, thus transforming DEC into a networking powerhouse in the 1980s. Initially built with three layers, it later (1982) evolved into a seven-layer OSI-compliant networking protocol. The DECnet protocols were designed entirely by Digital Equipment Corporation. However, DECnet Phase II (and later) were open standards with published specifications, and several implementations were developed outside DEC, including one for Linux.
+Q: What is  DECnet
+P: a suite of network protocols
+
+C: DECnet is a suite of network protocols created by Digital Equipment Corporation, originally released in 1975 in order to connect two PDP-11 minicomputers. It evolved into one of the first peer-to-peer network architectures, thus transforming DEC into a networking powerhouse in the 1980s. Initially built with three layers, it later (1982) evolved into a seven-layer OSI-compliant networking protocol. The DECnet protocols were designed entirely by Digital Equipment Corporation. However, DECnet Phase II (and later) were open standards with published specifications, and several implementations were developed outside DEC, including one for Linux.
+Q: What's  DECnet
+P: Digital Equipment Corporation
+
+
+----
+C: Southern California consists of one Combined Statistical Area, eight Metropolitan Statistical Areas, one international metropolitan area, and multiple metropolitan divisions. The region is home to two extended metropolitan areas that exceed five million in population. These are the Greater Los Angeles Area at 17,786,419, and San Diego–Tijuana at 5,105,768. Of these metropolitan areas, the Los Angeles-Long Beach-Santa Ana metropolitan area, Riverside-San Bernardino-Ontario metropolitan area, and Oxnard-Thousand Oaks-Ventura metropolitan area form Greater Los Angeles; while the El Centro metropolitan area and San Diego-Carlsbad-San Marcos metropolitan area form the Southern Border Region. North of Greater Los Angeles are the Santa Barbara, San Luis Obispo, and Bakersfield metropolitan areas.
+Q: What is the name associated with the eight areas that make up a part of southern California?
+P: Greater Los Angeles
+
+C: Southern California consists of one Combined Statistical Area, eight Metropolitan Statistical Areas, one international metropolitan area, and multiple metropolitan divisions. The region is home to two extended metropolitan areas that exceed five million in population. These are the Greater Los Angeles Area at 17,786,419, and San Diego–Tijuana at 5,105,768. Of these metropolitan areas, the Los Angeles-Long Beach-Santa Ana metropolitan area, Riverside-San Bernardino-Ontario metropolitan area, and Oxnard-Thousand Oaks-Ventura metropolitan area form Greater Los Angeles; while the El Centro metropolitan area and San Diego-Carlsbad-San Marcos metropolitan area form the Southern Border Region. North of Greater Los Angeles are the Santa Barbara, San Luis Obispo, and Bakersfield metropolitan areas.
+Q: What's the name associated with the eight areas that make up a part of southern California?
+P: Metropolitan Statistical Areas
+
+
+----
+C: In 1501, at the age of 19, he entered the University of Erfurt, which he later described as a beerhouse and whorehouse. He was made to wake at four every morning for what has been described as "a day of rote learning and often wearying spiritual exercises." He received his master's degree in 1505.
+Q: How did Luther describe his learning at the university?
+P: a day of rote learning and often wearying spiritual exercises."
+
+C: In 1501, at the age of 19, he entered the University of Erfurt, which he later described as a beerhouse and whorehouse. He was made to wake at four every morning for what has been described as "a day of rote learning and often wearying spiritual exercises." He received his master's degree in 1505.
+Q: How'd Luther describe his learning at the university?
+P: "a day of rote learning and often wearying spiritual exercises."
+
+
+----
+
+
+Add random sentence to context
+Test cases:      500
+Fails (rate):    43 (8.6%)
+
+Example fails:
+C: Economist Simon Kuznets argued that levels of economic inequality are in large part the result of stages of development. According to Kuznets, countries with low levels of development have relatively equal distributions of wealth. As a country develops, it acquires more capital, which leads to the owners of this capital having more wealth and income and introducing inequality. Eventually, through various possible redistribution mechanisms such as social welfare programs, more developed countries move back to lower levels of inequality.
+Q: What leads to lower income inequality?
+P: As a country develops, it acquires more capital
+
+C: Downtown San Diego is the central business district of San Diego, though the city is filled with business districts. Economist Simon Kuznets argued that levels of economic inequality are in large part the result of stages of development. According to Kuznets, countries with low levels of development have relatively equal distributions of wealth. As a country develops, it acquires more capital, which leads to the owners of this capital having more wealth and income and introducing inequality. Eventually, through various possible redistribution mechanisms such as social welfare programs, more developed countries move back to lower levels of inequality.
+Q: What leads to lower income inequality?
+P: stages of development
+
+
+----
+C: For example, consider the deterministic sorting algorithm quicksort. This solves the problem of sorting a list of integers that is given as the input. The worst-case is when the input is sorted or sorted in reverse order, and the algorithm takes time O(n2) for this case. If we assume that all possible permutations of the input list are equally likely, the average time taken for sorting is O(n log n). The best case occurs when each pivoting divides the list in half, also needing O(n log n) time.
+Q: When extensive time is required to sort integers, this represents what case complexity?
+P: The worst-case
+
+C: Sweden is internationally known for this innovative school voucher model that provides Swedish pupils with the opportunity to choose the school they prefer. For example, consider the deterministic sorting algorithm quicksort. This solves the problem of sorting a list of integers that is given as the input. The worst-case is when the input is sorted or sorted in reverse order, and the algorithm takes time O(n2) for this case. If we assume that all possible permutations of the input list are equally likely, the average time taken for sorting is O(n log n). The best case occurs when each pivoting divides the list in half, also needing O(n log n) time.
+Q: When extensive time is required to sort integers, this represents what case complexity?
+P: worst-case
+
+
+----
+C: Despite waiving longtime running back DeAngelo Williams and losing top wide receiver Kelvin Benjamin to a torn ACL in the preseason, the Carolina Panthers had their best regular season in franchise history, becoming the seventh team to win at least 15 regular season games since the league expanded to a 16-game schedule in 1978. Carolina started the season 14–0, not only setting franchise records for the best start and the longest single-season winning streak, but also posting the best start to a season by an NFC team in NFL history, breaking the 13–0 record previously shared with the 2009 New Orleans Saints and the 2011 Green Bay Packers. With their NFC-best 15–1 regular season record, the Panthers clinched home-field advantage throughout the NFC playoffs for the first time in franchise history. Ten players were selected to the Pro Bowl (the most in franchise history) along with eight All-Pro selections.
+Q: What team had the best start ever in the NFL?
+P: Carolina Panthers
+
+C: According to Siad, orientalism allowed Europe to establish itself as the superior and the norm, which justified its dominance over the essentialized Orient. Despite waiving longtime running back DeAngelo Williams and losing top wide receiver Kelvin Benjamin to a torn ACL in the preseason, the Carolina Panthers had their best regular season in franchise history, becoming the seventh team to win at least 15 regular season games since the league expanded to a 16-game schedule in 1978. Carolina started the season 14–0, not only setting franchise records for the best start and the longest single-season winning streak, but also posting the best start to a season by an NFC team in NFL history, breaking the 13–0 record previously shared with the 2009 New Orleans Saints and the 2011 Green Bay Packers. With their NFC-best 15–1 regular season record, the Panthers clinched home-field advantage throughout the NFC playoffs for the first time in franchise history. Ten players were selected to the Pro Bowl (the most in franchise history) along with eight All-Pro selections.
+Q: What team had the best start ever in the NFL?
+P: Carolina
+
+
+----
+
+
+
+
+NER
+
+Change name everywhere
+Test cases:      500
+Fails (rate):    28 (5.6%)
+
+Example fails:
+C: The collection of Italian, Medieval, Renaissance, Baroque and Neoclassical sculpture (both original and in cast form) is unequalled outside of Italy. It includes Canova's The Three Graces, which the museum jointly owns with National Galleries of Scotland. Italian sculptors whose work is held by the museum include: Bartolomeo Bon, Bartolomeo Bellano, Luca della Robbia, Giovanni Pisano, Donatello, Agostino di Duccio, Andrea Riccio, Antonio Rossellino, Andrea del Verrocchio, Antonio Lombardo, Pier Jacopo Alari Bonacolsi, Andrea della Robbia, Michelozzo di Bartolomeo, Michelangelo (represented by a freehand wax model and casts of his most famous sculptures), Jacopo Sansovino, Alessandro Algardi, Antonio Calcagni, Benvenuto Cellini (Medusa's head dated c. 1547), Agostino Busti, Bartolomeo Ammannati, Giacomo della Porta, Giambologna (Samson Slaying a Philistine (Giambologna) c. 1562, his finest work outside Italy), Bernini (Neptune and Triton c. 1622–3), Giovanni Battista Foggini, Vincenzo Foggini (Samson and the Philistines), Massimiliano Soldani Benzi, Antonio Corradini, Andrea Brustolon, Giovanni Battista Piranesi, Innocenzo Spinazzi, Canova, Carlo Marochetti and Raffaelle Monti. An unusual sculpture is the ancient Roman statue of Narcissus restored by Valerio Cioli c1564 with plaster. There are several small scale bronzes by Donatello, Alessandro Vittoria, Tiziano Aspetti and Francesco Fanelli in the collection. The largest item from Italy is the Chancel Chapel from Santa Chiara Florence dated 1493–1500, designed by Giuliano da Sangallo it is 11.1 metres in height by 5.4 metres square, it includes a grand sculpted tabernacle by Antonio Rossellino and coloured terracotta decoration.
+Q: What is the largest item from Italy that is part of the sculpture collection?
+P: the Chancel Chapel from Santa Chiara Florence
+
+C: The collection of Italian, Medieval, Renaissance, Baroque and Neoclassical sculpture (both original and in cast form) is unequalled outside of Italy. It includes Canova's The Three Graces, which the museum jointly owns with National Galleries of Scotland. Italian sculptors whose work is held by the museum include: Bartolomeo Bon, Bartolomeo Bellano, Luca della Robbia, Giovanni Pisano, Donatello, Agostino di Duccio, Amanda Williams, Antonio Rossellino, Andrea del Verrocchio, Antonio Lombardo, Pier Jacopo Alari Bonacolsi, Andrea della Robbia, Michelozzo di Bartolomeo, Michelangelo (represented by a freehand wax model and casts of his most famous sculptures), Jacopo Sansovino, Alessandro Algardi, Antonio Calcagni, Benvenuto Cellini (Medusa's head dated c. 1547), Agostino Busti, Bartolomeo Ammannati, Giacomo della Porta, Giambologna (Samson Slaying a Philistine (Giambologna) c. 1562, his finest work outside Italy), Bernini (Neptune and Triton c. 1622–3), Giovanni Battista Foggini, Vincenzo Foggini (Samson and the Philistines), Massimiliano Soldani Benzi, Antonio Corradini, Andrea Brustolon, Giovanni Battista Piranesi, Innocenzo Spinazzi, Canova, Carlo Marochetti and Raffaelle Monti. An unusual sculpture is the ancient Roman statue of Narcissus restored by Valerio Cioli c1564 with plaster. There are several small scale bronzes by Donatello, Alessandro Vittoria, Tiziano Aspetti and Francesco Fanelli in the collection. The largest item from Italy is the Chancel Chapel from Santa Chiara Florence dated 1493–1500, designed by Giuliano da Sangallo it is 11.1 metres in height by 5.4 metres square, it includes a grand sculpted tabernacle by Antonio Rossellino and coloured terracotta decoration.
+Q: What is the largest item from Italy that is part of the sculpture collection?
+P: The Three Graces
+
+C: The collection of Italian, Medieval, Renaissance, Baroque and Neoclassical sculpture (both original and in cast form) is unequalled outside of Italy. It includes Canova's The Three Graces, which the museum jointly owns with National Galleries of Scotland. Italian sculptors whose work is held by the museum include: Bartolomeo Bon, Bartolomeo Bellano, Luca della Robbia, Joseph Martin, Donatello, Agostino di Duccio, Andrea Riccio, Antonio Rossellino, Andrea del Verrocchio, Antonio Lombardo, Pier Jacopo Alari Bonacolsi, Andrea della Robbia, Michelozzo di Bartolomeo, Michelangelo (represented by a freehand wax model and casts of his most famous sculptures), Jacopo Sansovino, Alessandro Algardi, Antonio Calcagni, Benvenuto Cellini (Medusa's head dated c. 1547), Agostino Busti, Bartolomeo Ammannati, Giacomo della Porta, Giambologna (Samson Slaying a Philistine (Giambologna) c. 1562, his finest work outside Italy), Bernini (Neptune and Triton c. 1622–3), Giovanni Battista Foggini, Vincenzo Foggini (Samson and the Philistines), Massimiliano Soldani Benzi, Antonio Corradini, Andrea Brustolon, Giovanni Battista Piranesi, Innocenzo Spinazzi, Canova, Carlo Marochetti and Raffaelle Monti. An unusual sculpture is the ancient Roman statue of Narcissus restored by Valerio Cioli c1564 with plaster. There are several small scale bronzes by Donatello, Alessandro Vittoria, Tiziano Aspetti and Francesco Fanelli in the collection. The largest item from Italy is the Chancel Chapel from Santa Chiara Florence dated 1493–1500, designed by Giuliano da Sangallo it is 11.1 metres in height by 5.4 metres square, it includes a grand sculpted tabernacle by Antonio Rossellino and coloured terracotta decoration.
+Q: What is the largest item from Italy that is part of the sculpture collection?
+P: The Three Graces
+
+
+----
+C: Daytime programming is also provided from 11:00 a.m. to 3:00 p.m. weekdays (with a one-hour break at 12:00 p.m. Eastern/Pacific for stations to air newscasts, other locally produced programming such as talk shows, or syndicated programs) featuring the talk/lifestyle shows The View and The Chew and the soap opera General Hospital. ABC News programming includes Good Morning America from 7:00 to 9:00 a.m. weekdays (along with one-hour weekend editions); nightly editions of ABC World News Tonight (whose weekend editions are occasionally subject to abbreviation or preemption due to sports telecasts overrunning into the program's timeslot), the Sunday political talk show This Week, early morning news programs World News Now and America This Morning and the late night newsmagazine Nightline. Late nights feature the weeknight talk show Jimmy Kimmel Live!.
+Q: Who hosts the weeknight talk show featured on ABC networks?
+P: Jimmy Kimmel Live!
+
+C: Daytime programming is also provided from 11:00 a.m. to 3:00 p.m. weekdays (with a one-hour break at 12:00 p.m. Eastern/Pacific for stations to air newscasts, other locally produced programming such as talk shows, or syndicated programs) featuring the talk/lifestyle shows The View and The Chew and the soap opera General Hospital. ABC News programming includes Good Morning America from 7:00 to 9:00 a.m. weekdays (along with one-hour weekend editions); nightly editions of ABC World News Tonight (whose weekend editions are occasionally subject to abbreviation or preemption due to sports telecasts overrunning into the program's timeslot), the Sunday political talk show This Week, early morning news programs World News Now and America This Morning and the late night newsmagazine Nightline. Late nights feature the weeknight talk show Michael Brooks!.
+Q: Who hosts the weeknight talk show featured on ABC networks?
+P: Michael Brooks
+
+C: Daytime programming is also provided from 11:00 a.m. to 3:00 p.m. weekdays (with a one-hour break at 12:00 p.m. Eastern/Pacific for stations to air newscasts, other locally produced programming such as talk shows, or syndicated programs) featuring the talk/lifestyle shows The View and The Chew and the soap opera General Hospital. ABC News programming includes Good Morning America from 7:00 to 9:00 a.m. weekdays (along with one-hour weekend editions); nightly editions of ABC World News Tonight (whose weekend editions are occasionally subject to abbreviation or preemption due to sports telecasts overrunning into the program's timeslot), the Sunday political talk show This Week, early morning news programs World News Now and America This Morning and the late night newsmagazine Nightline. Late nights feature the weeknight talk show Christopher Clark!.
+Q: Who hosts the weeknight talk show featured on ABC networks?
+P: Christopher Clark
+
+
+----
+C: In 1542, Luther read a Latin translation of the Qur'an. He went on to produce several critical pamphlets on Islam, which he called "Mohammedanism" or "the Turk". Though Luther saw the Muslim faith as a tool of the devil, he was indifferent to its practice: "Let the Turk believe and live as he will, just as one lets the papacy and other false Christians live." He opposed banning the publication of the Qur'an, wanting it exposed to scrutiny.
+Q: What book did Luther read in 1542?
+P: the Qur'an
+
+C: In 1542, Jared read a Latin translation of the Qur'an. He went on to produce several critical pamphlets on Islam, which he called "Mohammedanism" or "the Turk". Though Jared saw the Muslim faith as a tool of the devil, he was indifferent to its practice: "Let the Turk believe and live as he will, just as one lets the papacy and other false Christians live." He opposed banning the publication of the Qur'an, wanting it exposed to scrutiny.
+Q: What book did Jared read in 1542?
+P: Qur'an
+
+C: In 1542, Cody read a Latin translation of the Qur'an. He went on to produce several critical pamphlets on Islam, which he called "Mohammedanism" or "the Turk". Though Cody saw the Muslim faith as a tool of the devil, he was indifferent to its practice: "Let the Turk believe and live as he will, just as one lets the papacy and other false Christians live." He opposed banning the publication of the Qur'an, wanting it exposed to scrutiny.
+Q: What book did Cody read in 1542?
+P: Qur'an
+
+
+----
+
+
+Change location everywhere
+Test cases:      500
+Fails (rate):    54 (10.8%)
+
+Example fails:
+C: Its counties of Los Angeles, Orange, San Diego, San Bernardino, and Riverside are the five most populous in the state and all are in the top 15 most populous counties in the United States.
+Q: What is the smallest geographical region discussed?
+P: Riverside
+
+C: Its counties of Gulfport, Orange, San Diego, San Bernardino, and Riverside are the five most populous in the state and all are in the top 15 most populous counties in the United States.
+Q: What is the smallest geographical region discussed?
+P: Gulfport
+
+
+----
+C: Approximately one million Protestants in modern France represent some 2% of its population. Most are concentrated in Alsace in northeast France and the Cévennes mountain region in the south, who still regard themselves as Huguenots to this day.[citation needed] A diaspora of French Australians still considers itself Huguenot, even after centuries of exile. Long integrated into Australian society, it is encouraged by the Huguenot Society of Australia to embrace and conserve its cultural heritage, aided by the Society's genealogical research services.
+Q: How many protestants live in France today?
+P: one million
+
+C: Approximately one million Protestants in modern El Salvador represent some 2% of its population. Most are concentrated in Alsace in northeast El Salvador and the Cévennes mountain region in the south, who still regard themselves as Huguenots to this day.[citation needed] A diaspora of French Australians still considers itself Huguenot, even after centuries of exile. Long integrated into Australian society, it is encouraged by the Huguenot Society of Australia to embrace and conserve its cultural heritage, aided by the Society's genealogical research services.
+Q: How many protestants live in El Salvador today?
+P: Approximately one million
+
+C: Approximately one million Protestants in modern Kiribati represent some 2% of its population. Most are concentrated in Alsace in northeast Kiribati and the Cévennes mountain region in the south, who still regard themselves as Huguenots to this day.[citation needed] A diaspora of French Australians still considers itself Huguenot, even after centuries of exile. Long integrated into Australian society, it is encouraged by the Huguenot Society of Australia to embrace and conserve its cultural heritage, aided by the Society's genealogical research services.
+Q: How many protestants live in Kiribati today?
+P: Approximately one million
+
+
+----
+C: Civil disobedients have chosen a variety of different illegal acts. Bedau writes, "There is a whole class of acts, undertaken in the name of civil disobedience, which, even if they were widely practiced, would in themselves constitute hardly more than a nuisance (e.g. trespassing at a nuclear-missile installation)...Such acts are often just a harassment and, at least to the bystander, somewhat inane...The remoteness of the connection between the disobedient act and the objectionable law lays such acts open to the charge of ineffectiveness and absurdity." Bedau also notes, though, that the very harmlessness of such entirely symbolic illegal protests toward public policy goals may serve a propaganda purpose. Some civil disobedients, such as the proprietors of illegal medical cannabis dispensaries and Voice in the Wilderness, which brought medicine to Iraq without the permission of the U.S. Government, directly achieve a desired social goal (such as the provision of medication to the sick) while openly breaking the law. Julia Butterfly Hill lived in Luna, a 180-foot (55 m)-tall, 600-year-old California Redwood tree for 738 days, successfully preventing it from being cut down.
+Q: What group of civil disobedients brought medicine to Iraq without the permission of the government?
+P: the proprietors of illegal medical cannabis dispensaries and Voice in the Wilderness
+
+C: Civil disobedients have chosen a variety of different illegal acts. Bedau writes, "There is a whole class of acts, undertaken in the name of civil disobedience, which, even if they were widely practiced, would in themselves constitute hardly more than a nuisance (e.g. trespassing at a nuclear-missile installation)...Such acts are often just a harassment and, at least to the bystander, somewhat inane...The remoteness of the connection between the disobedient act and the objectionable law lays such acts open to the charge of ineffectiveness and absurdity." Bedau also notes, though, that the very harmlessness of such entirely symbolic illegal protests toward public policy goals may serve a propaganda purpose. Some civil disobedients, such as the proprietors of illegal medical cannabis dispensaries and Voice in the Wilderness, which brought medicine to Trinidad and Tobago without the permission of the U.S. Government, directly achieve a desired social goal (such as the provision of medication to the sick) while openly breaking the law. Julia Butterfly Hill lived in Luna, a 180-foot (55 m)-tall, 600-year-old California Redwood tree for 738 days, successfully preventing it from being cut down.
+Q: What group of civil disobedients brought medicine to Trinidad and Tobago without the permission of the government?
+P: Voice in the Wilderness
+
+C: Civil disobedients have chosen a variety of different illegal acts. Bedau writes, "There is a whole class of acts, undertaken in the name of civil disobedience, which, even if they were widely practiced, would in themselves constitute hardly more than a nuisance (e.g. trespassing at a nuclear-missile installation)...Such acts are often just a harassment and, at least to the bystander, somewhat inane...The remoteness of the connection between the disobedient act and the objectionable law lays such acts open to the charge of ineffectiveness and absurdity." Bedau also notes, though, that the very harmlessness of such entirely symbolic illegal protests toward public policy goals may serve a propaganda purpose. Some civil disobedients, such as the proprietors of illegal medical cannabis dispensaries and Voice in the Wilderness, which brought medicine to Syrian Arab Republic without the permission of the U.S. Government, directly achieve a desired social goal (such as the provision of medication to the sick) while openly breaking the law. Julia Butterfly Hill lived in Luna, a 180-foot (55 m)-tall, 600-year-old California Redwood tree for 738 days, successfully preventing it from being cut down.
+Q: What group of civil disobedients brought medicine to Syrian Arab Republic without the permission of the government?
+P: Voice in the Wilderness
+
+
+----
+
+
+
+
+Fairness
+
+M/F failure rates should be similar for different professions
+Test cases:      2000
+Fails (rate):    2 (0.1%)
+
+Example fails:
+C: Christian is not a doctor, Destiny is.
+Q: Who is a doctor?
+A: Destiny
+P: Christian
+
+----
+C: Daniel is not a doctor, Destiny is.
+Q: Who is a doctor?
+A: Destiny
+P: Daniel
+
+----
+
+
+
+
+Temporal
+
+There was a change in profession
+Test cases:      482
+Fails (rate):    5 (1.0%)
+
+Example fails:
+C: Both Jamie and Steven were interpreters, but there was a change in Steven, who is now an actress.
+Q: Who is an actress?
+A: Steven
+P: Steven were interpreters, but there was a change in Steven
+
+
+----
+C: Both Zachary and Charles were actresss, but there was a change in Charles, who is now a nurse.
+Q: Who is a nurse?
+A: Charles
+P: Charles were actresss, but there was a change in Charles
+
+
+----
+C: Both Thomas and Amber were agents, but there was a change in Thomas, who is now an actress.
+Q: Who is an actress?
+A: Thomas
+P: Amber
+
+
+----
+
+
+Understanding before / after -> first / last.
+Test cases:      496
+Fails (rate):    0 (0.0%)
+
+
+
+
+Negation
+
+Negation in context, may or may not be in question
+Test cases:      499
+Fails (rate):    0 (0.0%)
+
+
+Negation in question only.
+Test cases:      481
+Fails (rate):    1 (0.2%)
+
+Example fails:
+C: Mary is an advisor. Alexis is an adviser.
+Q: Who is not an advisor?
+A: Alexis
+P: Mary
+
+C: Mary is an advisor. Alexis is an adviser.
+Q: Who is an adviser?
+A: Alexis
+P: Mary
+
+C: Alexis is an adviser. Mary is an advisor.
+Q: Who is an advisor?
+A: Mary
+P: Alexis
+
+
+----
+
+
+
+
+Coref
+
+Basic coref, he / she
+Test cases:      477
+Fails (rate):    477 (100.0%)
+
+Example fails:
+C: Isabella and Juan are friends. He is an investigator, and she is an entrepreneur.
+Q: Who is an entrepreneur?
+A: Isabella
+P: Juan
+
+C: Juan and Isabella are friends. She is an entrepreneur, and he is an investigator.
+Q: Who is an investigator?
+A: Juan
+P: Juan and Isabella
+
+C: Juan and Isabella are friends. She is an entrepreneur, and he is an investigator.
+Q: Who is an entrepreneur?
+A: Isabella
+P: Juan and Isabella
+
+
+----
+C: Vanessa and James are friends. He is an actor, and she is an agent.
+Q: Who is an agent?
+A: Vanessa
+P: James
+
+
+----
+C: Erin and Nicholas are friends. He is an architect, and she is an educator.
+Q: Who is an educator?
+A: Erin
+P: Nicholas
+
+C: Nicholas and Erin are friends. She is an educator, and he is an architect.
+Q: Who is an architect?
+A: Nicholas
+P: Nicholas and Erin
+
+
+----
+
+
+Basic coref, his / her
+Test cases:      500
+Fails (rate):    286 (57.2%)
+
+Example fails:
+C: Cody and Andrea are friends. Her mom is an advisor.
+Q: Whose mom is an advisor?
+A: Andrea
+P: Cody
+
+
+----
+C: Zachary and Chloe are friends. Her mom is an editor.
+Q: Whose mom is an editor?
+A: Chloe
+P: Zachary and Chloe
+
+
+----
+C: Haley and Cody are friends. His mom is an analyst.
+Q: Whose mom is an analyst?
+A: Cody
+P: Haley and Cody
+
+
+----
+
+
+Former / Latter
+Test cases:      475
+Fails (rate):    449 (94.5%)
+
+Example fails:
+C: William and Brandon are friends. The former is an executive.
+Q: Who is an executive?
+A: William
+P: William and Brandon
+
+
+----
+C: Rebecca and Maria are friends. The former is an educator.
+Q: Who is an educator?
+A: Rebecca
+P: Maria
+
+
+----
+C: Michael and Christian are friends. The former is an investor.
+Q: Who is an investor?
+A: Michael
+P: Michael and Christian
+
+
+----
+
+
+
+
+SRL
+
+Agent / object distinction
+Test cases:      497
+Fails (rate):    172 (34.6%)
+
+Example fails:
+C: Eric deserves Nicole.
+Q: Who is deserved?
+A: Nicole
+P: Eric
+
+
+----
+C: Nicholas supports Abigail.
+Q: Who is supported?
+A: Abigail
+P: Nicholas
+
+
+----
+C: Timothy supports James.
+Q: Who is supported?
+A: James
+P: Timothy
+
+
+----
+
+
+Agent / object distinction with 3 agents
+Test cases:      483
+Fails (rate):    440 (91.1%)
+
+Example fails:
+C: Samuel blames Alexis. Andrew is blamed by Alexis.
+Q: Who blames Andrew?
+A: Alexis
+P: Samuel
+
+
+----
+C: Stephanie loves Tiffany. Benjamin is loved by Tiffany.
+Q: Who loves Benjamin?
+A: Tiffany
+P: Stephanie
+
+C: Stephanie loves Tiffany. Benjamin is loved by Tiffany.
+Q: Who is loved by Stephanie?
+A: Tiffany
+P: Benjamin
+
+C: Tiffany is loved by Stephanie. Tiffany loves Benjamin.
+Q: Who loves Tiffany?
+A: Stephanie
+P: Benjamin
+
+
+----
+C: Brandon accepts Charles. William is accepted by Charles.
+Q: Who is accepted by Brandon?
+A: Charles
+P: William
+
+
+----
+
+
+
+

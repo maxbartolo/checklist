@@ -1,0 +1,818 @@
+Vocabulary
+
+A is COMP than B. Who is more / less COMP?
+Test cases:      494
+Fails (rate):    89 (18.0%)
+
+Example fails:
+C: Sean is weaker than Ryan.
+Q: Who is weaker?
+A: Sean
+P: Ryan
+
+
+----
+C: Sarah is smaller than Noah.
+Q: Who is smaller?
+A: Sarah
+P: Sarah is smaller than Noah
+
+
+----
+C: Kimberly is older than Jonathan.
+Q: Who is older?
+A: Kimberly
+P: Jonathan
+
+
+----
+
+
+Intensifiers (very, super, extremely) and reducers (somewhat, kinda, etc)?
+Test cases:      497
+Fails (rate):    399 (80.3%)
+
+Example fails:
+C: Jordan is incredibly happy about the project. Sean is happy about the project.
+Q: Who is least happy about the project?
+A: Sean
+P: Jordan
+
+C: Sean is happy about the project. Jordan is incredibly happy about the project.
+Q: Who is least happy about the project?
+A: Sean
+P: Jordan
+
+
+----
+C: Justin is extremely enthusiastic about the project. Anthony is enthusiastic about the project.
+Q: Who is least enthusiastic about the project?
+A: Anthony
+P: Justin
+
+C: Anthony is enthusiastic about the project. Justin is extremely enthusiastic about the project.
+Q: Who is least enthusiastic about the project?
+A: Anthony
+P: Justin
+
+
+----
+C: Dylan is particular about the project. Patrick is super particular about the project.
+Q: Who is most particular about the project?
+A: Patrick
+P: Dylan
+
+
+----
+
+
+
+
+Taxonomy
+
+size, shape, age, color
+Test cases:      500
+Fails (rate):    210 (42.0%)
+
+Example fails:
+C: There is a new orange painting in the room.
+Q: What age is the painting?
+A: new
+P: orange
+
+C: There is a painting in the room. The painting is new and orange.
+Q: What color is the painting?
+A: orange
+P: new and orange
+
+
+----
+C: There is a big brown figure in the room.
+Q: What size is the figure?
+A: big
+P: big brown
+
+C: There is a figure in the room. The figure is big and brown.
+Q: What size is the figure?
+A: big
+P: big and brown
+
+
+----
+C: There is a table in the room. The table is small and grey.
+Q: What size is the table?
+A: small
+P: small and grey
+
+
+----
+
+
+Profession vs nationality
+Test cases:      500
+Fails (rate):    135 (27.0%)
+
+Example fails:
+C: Laura is a Bangladeshi interpreter.
+Q: What is Laura's job?
+A: interpreter
+P: Bangladeshi interpreter
+
+
+----
+C: Melissa is an Indian advisor.
+Q: What is Melissa's job?
+A: advisor
+P: Indian advisor
+
+
+----
+C: Kayla is a Chinese interpreter.
+Q: What is Kayla's job?
+A: interpreter
+P: Chinese interpreter
+
+
+----
+
+
+Animal vs Vehicle
+Test cases:      500
+Fails (rate):    6 (1.2%)
+
+Example fails:
+C: Alexander has a lizard and a train.
+Q: What animal does Alexander have?
+A: lizard
+P: a lizard and a train
+
+
+----
+C: John has a lizard and a train.
+Q: What animal does John have?
+A: lizard
+P: a lizard and a train
+
+
+----
+C: Noah has a lizard and a train.
+Q: What animal does Noah have?
+A: lizard
+P: a lizard and a train
+
+
+----
+
+
+Animal vs Vehicle v2
+Test cases:      496
+Fails (rate):    15 (3.0%)
+
+Example fails:
+C: Jacob bought an iguana. Michelle bought a train.
+Q: Who bought a vehicle?
+A: Michelle
+P: Jacob
+
+C: Michelle bought a train. Jacob bought an iguana.
+Q: Who bought a vehicle?
+A: Michelle
+P: Jacob
+
+
+----
+C: Brandon bought an iguana. Christopher bought a train.
+Q: Who bought a vehicle?
+A: Christopher
+P: Brandon
+
+C: Christopher bought a train. Brandon bought an iguana.
+Q: Who bought a vehicle?
+A: Christopher
+P: Brandon
+
+
+----
+C: Patrick bought an iguana. Katherine bought a train.
+Q: Who bought a vehicle?
+A: Katherine
+P: Patrick
+
+C: Katherine bought a train. Patrick bought an iguana.
+Q: Who bought a vehicle?
+A: Katherine
+P: Patrick
+
+
+----
+
+
+Synonyms
+Test cases:      447
+Fails (rate):    0 (0.0%)
+
+
+A is COMP than B. Who is antonym(COMP)? B
+Test cases:      496
+Fails (rate):    331 (66.7%)
+
+Example fails:
+C: Anthony is quieter than Stephanie.
+Q: Who is louder?
+A: Stephanie
+P: Anthony
+
+
+----
+C: Kayla is worse than David.
+Q: Who is worse?
+A: Kayla
+P: David
+
+
+----
+C: Ryan is weaker than Tyler.
+Q: Who is weaker?
+A: Ryan
+P: Tyler
+
+
+----
+
+
+A is more X than B. Who is more antonym(X)? B. Who is less X? B. Who is more X? A. Who is less antonym(X)? A.
+Test cases:      491
+Fails (rate):    483 (98.4%)
+
+Example fails:
+C: Jeremy is more unhappy than Christopher.
+Q: Who is more happy?
+A: Christopher
+P: Jeremy
+
+C: Jeremy is more unhappy than Christopher.
+Q: Who is less happy?
+A: Jeremy
+P: Christopher
+
+C: Christopher is more happy than Jeremy.
+Q: Who is less unhappy?
+A: Christopher
+P: Jeremy
+
+
+----
+C: Dylan is more powerless than Jennifer.
+Q: Who is less powerful?
+A: Dylan
+P: Jennifer
+
+C: Dylan is less powerful than Jennifer.
+Q: Who is more powerless?
+A: Dylan
+P: Jennifer
+
+C: Jennifer is less powerless than Dylan.
+Q: Who is more powerful?
+A: Jennifer
+P: Dylan
+
+
+----
+C: Benjamin is more humble than Lauren.
+Q: Who is more proud?
+A: Lauren
+P: Benjamin
+
+C: Benjamin is more humble than Lauren.
+Q: Who is less proud?
+A: Benjamin
+P: Lauren
+
+C: Lauren is more proud than Benjamin.
+Q: Who is more humble?
+A: Benjamin
+P: Lauren
+
+
+----
+
+
+
+
+Robustness
+
+Question typo
+Test cases:      500
+Fails (rate):    55 (11.0%)
+
+Example fails:
+C: Other scholars argue that, even if his views were merely anti-Judaic—that is, opposed to Judaism and its adherence rather than the Jews as an ethnic group—their violence lent a new element to the standard Christian suspicion of Judaism. Ronald Berger writes that Luther is credited with "Germanizing the Christian critique of Judaism and establishing anti-Semitism as a key element of German culture and national identity." Paul Rose argues that he caused a "hysterical and demonizing mentality" about Jews to enter German thought and discourse, a mentality that might otherwise have been absent. Christopher J. Probst in his book Demonizing the Jews: Luther and the Protestant Church in Nazi Germany (2012), shows that a large number of German Lutheran clergy and theologians during the Nazi Third Reich used Luther's hostile publications towards the Jews and their Jewish religion to justify at least in part the anti-Semitic policies of the National Socialists.
+Q: Who aide the Reich in Germany in antisemitism?
+P: National Socialists
+
+C: Other scholars argue that, even if his views were merely anti-Judaic—that is, opposed to Judaism and its adherence rather than the Jews as an ethnic group—their violence lent a new element to the standard Christian suspicion of Judaism. Ronald Berger writes that Luther is credited with "Germanizing the Christian critique of Judaism and establishing anti-Semitism as a key element of German culture and national identity." Paul Rose argues that he caused a "hysterical and demonizing mentality" about Jews to enter German thought and discourse, a mentality that might otherwise have been absent. Christopher J. Probst in his book Demonizing the Jews: Luther and the Protestant Church in Nazi Germany (2012), shows that a large number of German Lutheran clergy and theologians during the Nazi Third Reich used Luther's hostile publications towards the Jews and their Jewish religion to justify at least in part the anti-Semitic policies of the National Socialists.
+Q: Who aide the Reich in Germany in antsiemitism?
+P: German Lutheran clergy and theologians
+
+
+----
+C: Connection-oriented transmission requires a setup phase in each involved node before any packet is transferred to establish the parameters of communication. The packets include a connection identifier rather than address information and are negotiated between endpoints so that they are delivered in order and with error checking. Address information is only transferred to each node during the connection set-up phase, when the route to the destination is discovered and an entry is added to the switching table in each network node through which the connection passes. The signaling protocols used allow the application to specify its requirements and discover link parameters. Acceptable values for service parameters may be negotiated. Routing a packet requires the node to look up the connection id in a table. The packet header can be small, as it only needs to contain this code and any information, such as length, timestamp, or sequence number, which is different for different packets.
+Q: What is a connection identifier 
+P: packets include a connection identifier rather than address information
+
+C: Connection-oriented transmission requires a setup phase in each involved node before any packet is transferred to establish the parameters of communication. The packets include a connection identifier rather than address information and are negotiated between endpoints so that they are delivered in order and with error checking. Address information is only transferred to each node during the connection set-up phase, when the route to the destination is discovered and an entry is added to the switching table in each network node through which the connection passes. The signaling protocols used allow the application to specify its requirements and discover link parameters. Acceptable values for service parameters may be negotiated. Routing a packet requires the node to look up the connection id in a table. The packet header can be small, as it only needs to contain this code and any information, such as length, timestamp, or sequence number, which is different for different packets.
+Q: What is a conneciton identifier 
+P: connection identifier
+
+
+----
+C: The earliest known movie featuring some exterior scenes filmed in the city is On the Night of the Fire (1939), though by and large the action is studio-bound. Later came The Clouded Yellow (1951) and Payroll (1961), both of which feature more extensive scenes filmed in the city. The 1971 film Get Carter was shot on location in and around Newcastle and offers an opportunity to see what Newcastle looked like in the 1960s and early 1970s. The city was also backdrop to another gangster film, the 1988 film noir thriller Stormy Monday, directed by Mike Figgis and starring Tommy Lee Jones, Melanie Griffith, Sting and Sean Bean.
+Q: What famous musician starred in Stormy Monday?
+P: Tommy Lee Jones
+
+C: The earliest known movie featuring some exterior scenes filmed in the city is On the Night of the Fire (1939), though by and large the action is studio-bound. Later came The Clouded Yellow (1951) and Payroll (1961), both of which feature more extensive scenes filmed in the city. The 1971 film Get Carter was shot on location in and around Newcastle and offers an opportunity to see what Newcastle looked like in the 1960s and early 1970s. The city was also backdrop to another gangster film, the 1988 film noir thriller Stormy Monday, directed by Mike Figgis and starring Tommy Lee Jones, Melanie Griffith, Sting and Sean Bean.
+Q: hWat famous musician starred in Stormy Monday?
+P: Tommy Lee Jones, Melanie Griffith, Sting
+
+
+----
+
+
+Question contractions
+Test cases:      500
+Fails (rate):    25 (5.0%)
+
+Example fails:
+C: In October 2010, the open-access scientific journal PLoS Pathogens published a paper by a multinational team who undertook a new investigation into the role of Yersinia pestis in the Black Death following the disputed identification by Drancourt and Raoult in 1998. They assessed the presence of DNA/RNA with Polymerase Chain Reaction (PCR) techniques for Y. pestis from the tooth sockets in human skeletons from mass graves in northern, central and southern Europe that were associated archaeologically with the Black Death and subsequent resurgences. The authors concluded that this new research, together with prior analyses from the south of France and Germany, ". . . ends the debate about the etiology of the Black Death, and unambiguously demonstrates that Y. pestis was the causative agent of the epidemic plague that devastated Europe during the Middle Ages".
+Q: How did scientists assess the DNA/RNA of yersinia pestis? 
+P: Polymerase Chain Reaction (PCR) techniques
+
+C: In October 2010, the open-access scientific journal PLoS Pathogens published a paper by a multinational team who undertook a new investigation into the role of Yersinia pestis in the Black Death following the disputed identification by Drancourt and Raoult in 1998. They assessed the presence of DNA/RNA with Polymerase Chain Reaction (PCR) techniques for Y. pestis from the tooth sockets in human skeletons from mass graves in northern, central and southern Europe that were associated archaeologically with the Black Death and subsequent resurgences. The authors concluded that this new research, together with prior analyses from the south of France and Germany, ". . . ends the debate about the etiology of the Black Death, and unambiguously demonstrates that Y. pestis was the causative agent of the epidemic plague that devastated Europe during the Middle Ages".
+Q: How'd scientists assess the DNA/RNA of yersinia pestis? 
+P: PCR) techniques
+
+
+----
+C: In accordance with his father's wishes, Luther enrolled in law school at the same university that year but dropped out almost immediately, believing that law represented uncertainty. Luther sought assurances about life and was drawn to theology and philosophy, expressing particular interest in Aristotle, William of Ockham, and Gabriel Biel. He was deeply influenced by two tutors, Bartholomaeus Arnoldi von Usingen and Jodocus Trutfetter, who taught him to be suspicious of even the greatest thinkers and to test everything himself by experience. Philosophy proved to be unsatisfying, offering assurance about the use of reason but none about loving God, which to Luther was more important. Reason could not lead men to God, he felt, and he thereafter developed a love-hate relationship with Aristotle over the latter's emphasis on reason. For Luther, reason could be used to question men and institutions, but not God. Human beings could learn about God only through divine revelation, he believed, and Scripture therefore became increasingly important to him.
+Q: What did Luther think reason could not be used to test?
+P: men and institutions, but not God
+
+C: In accordance with his father's wishes, Luther enrolled in law school at the same university that year but dropped out almost immediately, believing that law represented uncertainty. Luther sought assurances about life and was drawn to theology and philosophy, expressing particular interest in Aristotle, William of Ockham, and Gabriel Biel. He was deeply influenced by two tutors, Bartholomaeus Arnoldi von Usingen and Jodocus Trutfetter, who taught him to be suspicious of even the greatest thinkers and to test everything himself by experience. Philosophy proved to be unsatisfying, offering assurance about the use of reason but none about loving God, which to Luther was more important. Reason could not lead men to God, he felt, and he thereafter developed a love-hate relationship with Aristotle over the latter's emphasis on reason. For Luther, reason could be used to question men and institutions, but not God. Human beings could learn about God only through divine revelation, he believed, and Scripture therefore became increasingly important to him.
+Q: What did Luther think reason couldn't be used to test?
+P: men and institutions
+
+
+----
+C: In the early 1990s the memory of Genghis Khan with the Mongolian national identity has had a powerful revival partly because of his perception during the Mongolian People's Republic period. Genghis Khan became one of the central figures of the national identity. He is looked upon positively by Mongolians for his role in uniting warring tribes. For example, it is not uncommon for Mongolians to refer to their country as "Genghis Khan's Mongolia", to themselves as "Genghis Khan's children", and to Genghis Khan as the "father of the Mongols" especially among the younger generation. However, there is a chasm in the perception of his brutality. Mongolians maintain that the historical records written by non-Mongolians are unfairly biased against Genghis Khan and that his butchery is exaggerated, while his positive role is underrated.
+Q: What is the general perception of non-Mongolian histories of Genghis Khan by Mongolians themselves?
+P: unfairly biased
+
+C: In the early 1990s the memory of Genghis Khan with the Mongolian national identity has had a powerful revival partly because of his perception during the Mongolian People's Republic period. Genghis Khan became one of the central figures of the national identity. He is looked upon positively by Mongolians for his role in uniting warring tribes. For example, it is not uncommon for Mongolians to refer to their country as "Genghis Khan's Mongolia", to themselves as "Genghis Khan's children", and to Genghis Khan as the "father of the Mongols" especially among the younger generation. However, there is a chasm in the perception of his brutality. Mongolians maintain that the historical records written by non-Mongolians are unfairly biased against Genghis Khan and that his butchery is exaggerated, while his positive role is underrated.
+Q: What's the general perception of non-Mongolian histories of Genghis Khan by Mongolians themselves?
+P: unfairly biased against Genghis Khan
+
+
+----
+
+
+Add random sentence to context
+Test cases:      500
+Fails (rate):    47 (9.4%)
+
+Example fails:
+C: What we now call gravity was not identified as a universal force until the work of Isaac Newton. Before Newton, the tendency for objects to fall towards the Earth was not understood to be related to the motions of celestial objects. Galileo was instrumental in describing the characteristics of falling objects by determining that the acceleration of every object in free-fall was constant and independent of the mass of the object. Today, this acceleration due to gravity towards the surface of the Earth is usually designated as  and has a magnitude of about 9.81 meters per second squared (this measurement is taken from sea level and may vary depending on location), and points toward the center of the Earth. This observation means that the force of gravity on an object at the Earth's surface is directly proportional to the object's mass. Thus an object that has a mass of  will experience a force:
+Q: How fast do objects fall on Earth?
+P: 9.81 meters per second
+
+C: Despite a significant increase in viewership (with its audience share having increased to 33% from the 15% share it had in 1953), ABC remained in third place; the company had a total revenue of $15.5 million, a third of the revenue pulled in by CBS at the same period. What we now call gravity was not identified as a universal force until the work of Isaac Newton. Before Newton, the tendency for objects to fall towards the Earth was not understood to be related to the motions of celestial objects. Galileo was instrumental in describing the characteristics of falling objects by determining that the acceleration of every object in free-fall was constant and independent of the mass of the object. Today, this acceleration due to gravity towards the surface of the Earth is usually designated as  and has a magnitude of about 9.81 meters per second squared (this measurement is taken from sea level and may vary depending on location), and points toward the center of the Earth. This observation means that the force of gravity on an object at the Earth's surface is directly proportional to the object's mass. Thus an object that has a mass of  will experience a force:
+Q: How fast do objects fall on Earth?
+P: 9.81 meters per second squared
+
+
+----
+C: Sociologist Jake Rosenfield of the University of Washington asserts that the decline of organized labor in the United States has played a more significant role in expanding the income gap than technological changes and globalization, which were also experienced by other industrialized nations that didn't experience steep surges in inequality. He points out that nations with high rates of unionization, particularly in Scandinavia, have very low levels of inequality, and concludes "the historical pattern is clear; the cross-national pattern is clear: high inequality goes hand-in-hand with weak labor movements and vice-versa."
+Q: What does Rosenfield feel plays the most significant role in expanding the income gap?
+P: the decline of organized labor
+
+C: Sociologist Jake Rosenfield of the University of Washington asserts that the decline of organized labor in the United States has played a more significant role in expanding the income gap than technological changes and globalization, which were also experienced by other industrialized nations that didn't experience steep surges in inequality. He points out that nations with high rates of unionization, particularly in Scandinavia, have very low levels of inequality, and concludes "the historical pattern is clear; the cross-national pattern is clear: high inequality goes hand-in-hand with weak labor movements and vice-versa."meaning "comb" and the Greek suffix -φορος meaning "carrying". 
+Q: What does Rosenfield feel plays the most significant role in expanding the income gap?
+P: decline of organized labor
+
+
+----
+C: Justifying Grace or Accepting Grace is that grace, offered by God to all people, that we receive by faith and trust in Christ, through which God pardons the believer of sin. It is in justifying grace we are received by God, in spite of our sin. In this reception, we are forgiven through the atoning work of Jesus Christ on the cross. The justifying grace cancels our guilt and empowers us to resist the power of sin and to fully love God and neighbor. Today, justifying grace is also known as conversion, "accepting Jesus as your personal Lord and Savior," or being "born again". John Wesley originally called this experience the New Birth. This experience can occur in different ways; it can be one transforming moment, such as an altar call experience, or it may involve a series of decisions across a period of time.
+Q: What is another name for being born again?
+P: justifying grace
+
+C: After each election to the Scottish Parliament, at the beginning of each parliamentary session, Parliament elects one MSP to serve as Presiding Officer, the equivalent of the speaker (currently Tricia Marwick), and two MSPs to serve as deputies (currently Elaine Smith and John Scott). Justifying Grace or Accepting Grace is that grace, offered by God to all people, that we receive by faith and trust in Christ, through which God pardons the believer of sin. It is in justifying grace we are received by God, in spite of our sin. In this reception, we are forgiven through the atoning work of Jesus Christ on the cross. The justifying grace cancels our guilt and empowers us to resist the power of sin and to fully love God and neighbor. Today, justifying grace is also known as conversion, "accepting Jesus as your personal Lord and Savior," or being "born again". John Wesley originally called this experience the New Birth. This experience can occur in different ways; it can be one transforming moment, such as an altar call experience, or it may involve a series of decisions across a period of time.
+Q: What is another name for being born again?
+P: justifying grace is also known as conversion
+
+
+----
+
+
+
+
+NER
+
+Change name everywhere
+Test cases:      500
+Fails (rate):    32 (6.4%)
+
+Example fails:
+C: The term "imperialism" is often conflated with "colonialism", however many scholars have argued that each have their own distinct definition. Imperialism and colonialism have been used in order to describe one's superiority, domination and influence upon a person or group of people. Robert Young writes that while imperialism operates from the center, is a state policy and is developed for ideological as well as financial reasons, colonialism is simply the development for settlement or commercial intentions. Colonialism in modern usage also tends to imply a degree of geographic separation between the colony and the imperial power. Particularly, Edward Said distinguishes the difference between imperialism and colonialism by stating; "imperialism involved 'the practice, the theory and the attitudes of a dominating metropolitan center ruling a distant territory', while colonialism refers to the 'implanting of settlements on a distant territory.' Contiguous land empires such as the Russian or Ottoman are generally excluded from discussions of colonialism.:116 Thus it can be said that imperialism includes some form of colonialism, but colonialism itself does not automatically imply imperialism, as it lacks a political focus.[further explanation needed]
+Q: Imperialism and colonialism both assert a states dominance over what?
+P: a person or group of people
+
+C: The term "imperialism" is often conflated with "colonialism", however many scholars have argued that each have their own distinct definition. Imperialism and colonialism have been used in order to describe one's superiority, domination and influence upon a person or group of people. Robert Young writes that while imperialism operates from the center, is a state policy and is developed for ideological as well as financial reasons, colonialism is simply the development for settlement or commercial intentions. Colonialism in modern usage also tends to imply a degree of geographic separation between the colony and the imperial power. Particularly, David Foster distinguishes the difference between imperialism and colonialism by stating; "imperialism involved 'the practice, the theory and the attitudes of a dominating metropolitan center ruling a distant territory', while colonialism refers to the 'implanting of settlements on a distant territory.' Contiguous land empires such as the Russian or Ottoman are generally excluded from discussions of colonialism.:116 Thus it can be said that imperialism includes some form of colonialism, but colonialism itself does not automatically imply imperialism, as it lacks a political focus.[further explanation needed]
+Q: Imperialism and colonialism both assert a states dominance over what?
+P: a distant territory
+
+
+----
+C: It became clear that managing the Apollo program would exceed the capabilities of Robert R. Gilruth's Space Task Group, which had been directing the nation's manned space program from NASA's Langley Research Center. So Gilruth was given authority to grow his organization into a new NASA center, the Manned Spacecraft Center (MSC). A site was chosen in Houston, Texas, on land donated by Rice University, and Administrator Webb announced the conversion on September 19, 1961. It was also clear NASA would soon outgrow its practice of controlling missions from its Cape Canaveral Air Force Station launch facilities in Florida, so a new Mission Control Center would be included in the MSC.
+Q: Who originally led the Space Task Group?
+P: Robert R. Gilruth
+
+C: It became clear that managing the Apollo program would exceed the capabilities of Michael Hall Space Task Group, which had been directing the nation's manned space program from NASA's Langley Research Center. So Gilruth was given authority to grow his organization into a new NASA center, the Manned Spacecraft Center (MSC). A site was chosen in Houston, Texas, on land donated by Rice University, and Administrator Webb announced the conversion on September 19, 1961. It was also clear NASA would soon outgrow its practice of controlling missions from its Cape Canaveral Air Force Station launch facilities in Florida, so a new Mission Control Center would be included in the MSC.
+Q: Who originally led the Space Task Group?
+P: Michael Hall
+
+C: It became clear that managing the Apollo program would exceed the capabilities of Christopher Clark Space Task Group, which had been directing the nation's manned space program from NASA's Langley Research Center. So Gilruth was given authority to grow his organization into a new NASA center, the Manned Spacecraft Center (MSC). A site was chosen in Houston, Texas, on land donated by Rice University, and Administrator Webb announced the conversion on September 19, 1961. It was also clear NASA would soon outgrow its practice of controlling missions from its Cape Canaveral Air Force Station launch facilities in Florida, so a new Mission Control Center would be included in the MSC.
+Q: Who originally led the Space Task Group?
+P: Christopher Clark
+
+
+----
+C: Iqbal expressed fears that not only would secularism and secular nationalism weaken the spiritual foundations of Islam and Muslim society, but that India's Hindu-majority population would crowd out Muslim heritage, culture and political influence. In his travels to Egypt, Afghanistan, Palestine and Syria, he promoted ideas of greater Islamic political co-operation and unity, calling for the shedding of nationalist differences. Sir Muhammad Iqbal was elected president of the Muslim League in 1930 at its session in Allahabad as well as for the session in Lahore in 1932. In his Allahabad Address on 29 December 1930, Iqbal outlined a vision of an independent state for Muslim-majority provinces in northwestern India. This address later inspired the Pakistan movement.
+Q: What did Iqbal's Allahabad address inspire?
+P: Pakistan movement
+
+C: Iqbal expressed fears that not only would secularism and secular nationalism weaken the spiritual foundations of Islam and Muslim society, but that India's Hindu-majority population would crowd out Muslim heritage, culture and political influence. In his travels to Egypt, Afghanistan, Palestine and Syria, he promoted ideas of greater Islamic political co-operation and unity, calling for the shedding of nationalist differences. Sir Christopher Bailey was elected president of the Muslim League in 1930 at its session in Allahabad as well as for the session in Lahore in 1932. In his Allahabad Address on 29 December 1930, Iqbal outlined a vision of an independent state for Muslim-majority provinces in northwestern India. This address later inspired the Pakistan movement.
+Q: What did Iqbal's Allahabad address inspire?
+P: the Pakistan movement
+
+C: Iqbal expressed fears that not only would secularism and secular nationalism weaken the spiritual foundations of Islam and Muslim society, but that India's Hindu-majority population would crowd out Muslim heritage, culture and political influence. In his travels to Egypt, Afghanistan, Palestine and Syria, he promoted ideas of greater Islamic political co-operation and unity, calling for the shedding of nationalist differences. Sir David Bailey was elected president of the Muslim League in 1930 at its session in Allahabad as well as for the session in Lahore in 1932. In his Allahabad Address on 29 December 1930, Iqbal outlined a vision of an independent state for Muslim-majority provinces in northwestern India. This address later inspired the Pakistan movement.
+Q: What did Iqbal's Allahabad address inspire?
+P: the Pakistan movement
+
+
+----
+
+
+Change location everywhere
+Test cases:      500
+Fails (rate):    57 (11.4%)
+
+Example fails:
+C: Immigrants arrived from all over the world to search for gold, especially from Ireland and China. Many Chinese miners worked in Victoria, and their legacy is particularly strong in Bendigo and its environs. Although there was some racism directed at them, there was not the level of anti-Chinese violence that was seen at the Lambing Flat riots in New South Wales. However, there was a riot at Buckland Valley near Bright in 1857. Conditions on the gold fields were cramped and unsanitary; an outbreak of typhoid at Buckland Valley in 1854 killed over 1,000 miners.
+Q: Where is the Asian influence strongest in Victoria?
+P: Bendigo and its environs
+
+C: Immigrants arrived from all over the world to search for gold, especially from Ireland and China. Many Chinese miners worked in Palm Springs, and their legacy is particularly strong in Bendigo and its environs. Although there was some racism directed at them, there was not the level of anti-Chinese violence that was seen at the Lambing Flat riots in New South Wales. However, there was a riot at Buckland Valley near Bright in 1857. Conditions on the gold fields were cramped and unsanitary; an outbreak of typhoid at Buckland Valley in 1854 killed over 1,000 miners.
+Q: Where is the Asian influence strongest in Palm Springs?
+P: Bendigo
+
+C: Immigrants arrived from all over the world to search for gold, especially from Ireland and China. Many Chinese miners worked in Bowling Green, and their legacy is particularly strong in Bendigo and its environs. Although there was some racism directed at them, there was not the level of anti-Chinese violence that was seen at the Lambing Flat riots in New South Wales. However, there was a riot at Buckland Valley near Bright in 1857. Conditions on the gold fields were cramped and unsanitary; an outbreak of typhoid at Buckland Valley in 1854 killed over 1,000 miners.
+Q: Where is the Asian influence strongest in Bowling Green?
+P: Bendigo
+
+
+----
+C: For some decades prior to the First Palestine Intifada in 1987, the Muslim Brotherhood in Palestine took a "quiescent" stance towards Israel, focusing on preaching, education and social services, and benefiting from Israel's "indulgence" to build up a network of mosques and charitable organizations. As the First Intifada gathered momentum and Palestinian shopkeepers closed their shops in support of the uprising, the Brotherhood announced the formation of HAMAS ("zeal"), devoted to Jihad against Israel. Rather than being more moderate than the PLO, the 1988 Hamas charter took a more uncompromising stand, calling for the destruction of Israel and the establishment of an Islamic state in Palestine. It was soon competing with and then overtaking the PLO for control of the intifada. The Brotherhood's base of devout middle class found common cause with the impoverished youth of the intifada in their cultural conservatism and antipathy for activities of the secular middle class such as drinking alcohol and going about without hijab.
+Q: What did the Hamas charter uncompromisingly encourage?
+P: the destruction of Israel and the establishment of an Islamic state in Palestine
+
+C: For some decades prior to the First Palestine Intifada in 1987, the Muslim Brotherhood in Palestine took a "quiescent" stance towards Finland, focusing on preaching, education and social services, and benefiting from Finland's "indulgence" to build up a network of mosques and charitable organizations. As the First Intifada gathered momentum and Palestinian shopkeepers closed their shops in support of the uprising, the Brotherhood announced the formation of HAMAS ("zeal"), devoted to Jihad against Finland. Rather than being more moderate than the PLO, the 1988 Hamas charter took a more uncompromising stand, calling for the destruction of Finland and the establishment of an Islamic state in Palestine. It was soon competing with and then overtaking the PLO for control of the intifada. The Brotherhood's base of devout middle class found common cause with the impoverished youth of the intifada in their cultural conservatism and antipathy for activities of the secular middle class such as drinking alcohol and going about without hijab.
+Q: What did the Hamas charter uncompromisingly encourage?
+P: an Islamic state in Palestine
+
+C: For some decades prior to the First Palestine Intifada in 1987, the Muslim Brotherhood in Palestine took a "quiescent" stance towards Paraguay, focusing on preaching, education and social services, and benefiting from Paraguay's "indulgence" to build up a network of mosques and charitable organizations. As the First Intifada gathered momentum and Palestinian shopkeepers closed their shops in support of the uprising, the Brotherhood announced the formation of HAMAS ("zeal"), devoted to Jihad against Paraguay. Rather than being more moderate than the PLO, the 1988 Hamas charter took a more uncompromising stand, calling for the destruction of Paraguay and the establishment of an Islamic state in Palestine. It was soon competing with and then overtaking the PLO for control of the intifada. The Brotherhood's base of devout middle class found common cause with the impoverished youth of the intifada in their cultural conservatism and antipathy for activities of the secular middle class such as drinking alcohol and going about without hijab.
+Q: What did the Hamas charter uncompromisingly encourage?
+P: an Islamic state in Palestine
+
+
+----
+C: At this time, none of the tribal confederations of Mongolia were united politically, and arranged marriages were often used to solidify temporary alliances. Temüjin grew up observing the tough political climate of Mongolia, which included tribal warfare, thievery, raids, corruption, and continual acts of revenge carried out between the various confederations, all compounded by interference from foreign forces such as the Chinese dynasties to the south. Temüjin's mother Hoelun taught him many lessons about the unstable political climate of Mongolia, especially the need for alliances.
+Q: Which foreign forces often meddled in the Mongolian political scene?
+P: Chinese dynasties
+
+C: At this time, none of the tribal confederations of Slovenia were united politically, and arranged marriages were often used to solidify temporary alliances. Temüjin grew up observing the tough political climate of Slovenia, which included tribal warfare, thievery, raids, corruption, and continual acts of revenge carried out between the various confederations, all compounded by interference from foreign forces such as the Chinese dynasties to the south. Temüjin's mother Hoelun taught him many lessons about the unstable political climate of Slovenia, especially the need for alliances.
+Q: Which foreign forces often meddled in the Mongolian political scene?
+P: Chinese
+
+C: At this time, none of the tribal confederations of Serbia were united politically, and arranged marriages were often used to solidify temporary alliances. Temüjin grew up observing the tough political climate of Serbia, which included tribal warfare, thievery, raids, corruption, and continual acts of revenge carried out between the various confederations, all compounded by interference from foreign forces such as the Chinese dynasties to the south. Temüjin's mother Hoelun taught him many lessons about the unstable political climate of Serbia, especially the need for alliances.
+Q: Which foreign forces often meddled in the Mongolian political scene?
+P: Chinese
+
+
+----
+
+
+
+
+Fairness
+
+M/F failure rates should be similar for different professions
+Test cases:      2000
+Fails (rate):    0 (0.0%)
+
+
+
+
+Temporal
+
+There was a change in profession
+Test cases:      482
+Fails (rate):    1 (0.2%)
+
+Example fails:
+C: Both Thomas and Amber were agents, but there was a change in Thomas, who is now an actress.
+Q: Who is an actress?
+A: Thomas
+P: Amber
+
+
+----
+
+
+Understanding before / after -> first / last.
+Test cases:      496
+Fails (rate):    69 (13.9%)
+
+Example fails:
+C: Erin became a agent before Kevin did.
+Q: Who became a agent first?
+A: Erin
+P: Kevin
+
+
+----
+C: Lisa became a producer before Daniel did.
+Q: Who became a producer first?
+A: Lisa
+P: Daniel
+
+
+----
+C: Kimberly became a attorney before Jamie did.
+Q: Who became a attorney first?
+A: Kimberly
+P: Jamie
+
+
+----
+
+
+
+
+Negation
+
+Negation in context, may or may not be in question
+Test cases:      499
+Fails (rate):    0 (0.0%)
+
+
+Negation in question only.
+Test cases:      481
+Fails (rate):    2 (0.4%)
+
+Example fails:
+C: Mary is an advisor. Alexis is an adviser.
+Q: Who is an adviser?
+A: Alexis
+P: Mary
+
+C: Mary is an advisor. Alexis is an adviser.
+Q: Who is not an adviser?
+A: Mary
+P: Alexis
+
+C: Alexis is an adviser. Mary is an advisor.
+Q: Who is an advisor?
+A: Mary
+P: Alexis
+
+
+----
+C: Jordan is an actress. Lauren is an actor.
+Q: Who is an actor?
+A: Lauren
+P: Jordan
+
+
+----
+
+
+
+
+Coref
+
+Basic coref, he / she
+Test cases:      477
+Fails (rate):    465 (97.5%)
+
+Example fails:
+C: Hannah and Nathaniel are friends. He is an entrepreneur, and she is an actor.
+Q: Who is an actor?
+A: Hannah
+P: Nathaniel
+
+C: Nathaniel and Hannah are friends. She is an actor, and he is an entrepreneur.
+Q: Who is an entrepreneur?
+A: Nathaniel
+P: Nathaniel and Hannah
+
+C: Nathaniel and Hannah are friends. She is an actor, and he is an entrepreneur.
+Q: Who is an actor?
+A: Hannah
+P: Nathaniel
+
+
+----
+C: Mary and Zachary are friends. He is a historian, and she is an author.
+Q: Who is an author?
+A: Mary
+P: Mary and Zachary
+
+C: Zachary and Mary are friends. She is an author, and he is a historian.
+Q: Who is an author?
+A: Mary
+P: Zachary and Mary
+
+
+----
+C: Julia and Derek are friends. He is an escort, and she is an artist.
+Q: Who is an artist?
+A: Julia
+P: Derek
+
+C: Derek and Julia are friends. She is an artist, and he is an escort.
+Q: Who is an escort?
+A: Derek
+P: Derek and Julia
+
+C: Derek and Julia are friends. She is an artist, and he is an escort.
+Q: Who is an artist?
+A: Julia
+P: Derek
+
+
+----
+
+
+Basic coref, his / her
+Test cases:      500
+Fails (rate):    178 (35.6%)
+
+Example fails:
+C: Diana and Noah are friends. Her mom is an escort.
+Q: Whose mom is an escort?
+A: Diana
+P: Diana and Noah
+
+
+----
+C: Jackson and Morgan are friends. Her mom is an actor.
+Q: Whose mom is an actor?
+A: Morgan
+P: Jackson and Morgan
+
+C: Morgan and Jackson are friends. Her mom is an actor.
+Q: Whose mom is an actor?
+A: Morgan
+P: Morgan and Jackson
+
+
+----
+C: Lindsey and Hunter are friends. Her mom is an executive.
+Q: Whose mom is an executive?
+A: Lindsey
+P: Lindsey and Hunter
+
+
+----
+
+
+Former / Latter
+Test cases:      475
+Fails (rate):    474 (99.8%)
+
+Example fails:
+C: Rachel and Daniel are friends. The former is an advisor.
+Q: Who is an advisor?
+A: Rachel
+P: Rachel and Daniel
+
+C: Rachel and Daniel are friends. The former is an advisor and the latter is an administrator.
+Q: Who is an advisor?
+A: Rachel
+P: Rachel and Daniel
+
+
+----
+C: Madison and Katherine are friends. The former is an editor.
+Q: Who is an editor?
+A: Madison
+P: Madison and Katherine
+
+
+----
+C: Emily and Rachel are friends. The former is a historian.
+Q: Who is a historian?
+A: Emily
+P: Emily and Rachel
+
+
+----
+
+
+
+
+SRL
+
+Agent / object distinction
+Test cases:      497
+Fails (rate):    158 (31.8%)
+
+Example fails:
+C: Amber is bothered by Emma.
+Q: Who bothers?
+A: Emma
+P: Amber
+
+
+----
+C: Elizabeth is hated by Aaron.
+Q: Who hates?
+A: Aaron
+P: Elizabeth is hated by Aaron
+
+
+----
+C: Alexis is blamed by Aaron.
+Q: Who blames?
+A: Aaron
+P: Alexis is blamed by Aaron
+
+
+----
+
+
+Agent / object distinction with 3 agents
+Test cases:      483
+Fails (rate):    473 (97.9%)
+
+Example fails:
+C: Taylor believes David. Amber is believed by David.
+Q: Who believes Amber?
+A: David
+P: Taylor
+
+C: David is believed by Taylor. David believes Amber.
+Q: Who is believed by David?
+A: Amber
+P: Taylor
+
+
+----
+C: Jessica follows Alexis. Alexis follows Jamie.
+Q: Who follows Jamie?
+A: Alexis
+P: Jessica
+
+C: Jessica follows Alexis. Jamie is followed by Alexis.
+Q: Who follows Jamie?
+A: Alexis
+P: Jessica
+
+C: Alexis is followed by Jessica. Alexis follows Jamie.
+Q: Who follows Jamie?
+A: Alexis
+P: Jessica
+
+
+----
+C: Zachary recognizes Eric. Christian is recognized by Eric.
+Q: Who recognizes Christian?
+A: Eric
+P: Zachary
+
+C: Eric is recognized by Zachary. Eric recognizes Christian.
+Q: Who recognizes Christian?
+A: Eric
+P: Zachary
+
+C: Eric is recognized by Zachary. Eric recognizes Christian.
+Q: Who is recognized by Eric?
+A: Christian
+P: Zachary
+
+
+----
+
+
+
+

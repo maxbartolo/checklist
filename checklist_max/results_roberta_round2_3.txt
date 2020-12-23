@@ -1,0 +1,836 @@
+Vocabulary
+
+A is COMP than B. Who is more / less COMP?
+Test cases:      494
+Fails (rate):    0 (0.0%)
+
+
+Intensifiers (very, super, extremely) and reducers (somewhat, kinda, etc)?
+Test cases:      497
+Fails (rate):    305 (61.4%)
+
+Example fails:
+C: Kelly is super serious about the project. Michelle is serious about the project.
+Q: Who is most serious about the project?
+A: Kelly
+P: Michelle
+
+
+----
+C: Ashley is super cautious about the project. Tyler is cautious about the project.
+Q: Who is most cautious about the project?
+A: Ashley
+P: Tyler
+
+C: Ashley is super cautious about the project. Tyler is cautious about the project.
+Q: Who is least cautious about the project?
+A: Tyler
+P: Ashley
+
+C: Tyler is cautious about the project. Ashley is super cautious about the project.
+Q: Who is most cautious about the project?
+A: Ashley
+P: Tyler
+
+
+----
+C: Patrick is incredibly vocal about the project. Brandon is vocal about the project.
+Q: Who is least vocal about the project?
+A: Brandon
+P: Patrick
+
+
+----
+
+
+
+
+Taxonomy
+
+size, shape, age, color
+Test cases:      500
+Fails (rate):    64 (12.8%)
+
+Example fails:
+C: There is a square red thing in the room.
+Q: What shape is the thing?
+A: square
+P: square red
+
+
+----
+C: There is an object in the room. The object is big and oval.
+Q: What shape is the object?
+A: oval
+P: big and oval.
+
+
+----
+C: There is a thing in the room. The thing is big and oval.
+Q: What shape is the thing?
+A: oval
+P: oval.
+
+
+----
+
+
+Profession vs nationality
+Test cases:      500
+Fails (rate):    75 (15.0%)
+
+Example fails:
+C: Dylan is a Pakistani intern.
+Q: What is Dylan's job?
+A: intern
+P: Pakistani intern.
+
+
+----
+C: Mary is a Pakistani agent.
+Q: What is Mary's job?
+A: agent
+P: a Pakistani agent.
+
+
+----
+C: Brittany is a Japanese assistant.
+Q: What is Brittany's job?
+A: assistant
+P: Japanese assistant.
+
+
+----
+
+
+Animal vs Vehicle
+Test cases:      500
+Fails (rate):    256 (51.2%)
+
+Example fails:
+C: Madison has a van and a lizard.
+Q: What animal does Madison have?
+A: lizard
+P: a van
+
+
+----
+C: Danielle has a cow and a bike.
+Q: What vehicle does Danielle have?
+A: bike
+P: a cow
+
+
+----
+C: Rebecca has a duck and a SUV.
+Q: What vehicle does Rebecca have?
+A: SUV
+P: a duck
+
+
+----
+
+
+Animal vs Vehicle v2
+Test cases:      496
+Fails (rate):    66 (13.3%)
+
+Example fails:
+C: Christian bought a bull. Rebecca bought a train.
+Q: Who bought a vehicle?
+A: Rebecca
+P: Christian bought a bull. Rebecca
+
+C: Rebecca bought a train. Christian bought a bull.
+Q: Who bought a vehicle?
+A: Rebecca
+P: Christian
+
+
+----
+C: Victoria bought a serpent. Lauren bought a bike.
+Q: Who bought a vehicle?
+A: Lauren
+P: Victoria
+
+
+----
+C: Madison bought a cow. Daniel bought a bike.
+Q: Who bought a vehicle?
+A: Daniel
+P: Madison
+
+C: Daniel bought a bike. Madison bought a cow.
+Q: Who bought a vehicle?
+A: Daniel
+P: Madison
+
+
+----
+
+
+Synonyms
+Test cases:      447
+Fails (rate):    1 (0.2%)
+
+Example fails:
+C: Rebecca is very spiritual. Justin is very organized.
+Q: Who is religious?
+A: Rebecca
+P: Justin
+
+
+----
+
+
+A is COMP than B. Who is antonym(COMP)? B
+Test cases:      496
+Fails (rate):    41 (8.3%)
+
+Example fails:
+C: Taylor is darker than Mary.
+Q: Who is lighter?
+A: Mary
+P: Taylor
+
+C: Mary is lighter than Taylor.
+Q: Who is darker?
+A: Taylor
+P: Mary
+
+
+----
+C: Tyler is darker than Christopher.
+Q: Who is lighter?
+A: Christopher
+P: Tyler
+
+C: Christopher is lighter than Tyler.
+Q: Who is darker?
+A: Tyler
+P: Christopher
+
+
+----
+C: Richard is darker than Lauren.
+Q: Who is lighter?
+A: Lauren
+P: Richard is darker than Lauren.
+
+C: Lauren is lighter than Richard.
+Q: Who is darker?
+A: Richard
+P: Lauren
+
+
+----
+
+
+A is more X than B. Who is more antonym(X)? B. Who is less X? B. Who is more X? A. Who is less antonym(X)? A.
+Test cases:      491
+Fails (rate):    415 (84.5%)
+
+Example fails:
+C: Joseph is more pessimistic than Andrea.
+Q: Who is less optimistic?
+A: Joseph
+P: Andrea
+
+C: Andrea is more optimistic than Joseph.
+Q: Who is less pessimistic?
+A: Andrea
+P: Joseph
+
+C: Joseph is less optimistic than Andrea.
+Q: Who is more pessimistic?
+A: Joseph
+P: Andrea
+
+
+----
+C: Lauren is more progressive than Stephanie.
+Q: Who is less conservative?
+A: Lauren
+P: Stephanie
+
+C: Stephanie is more conservative than Lauren.
+Q: Who is less progressive?
+A: Stephanie
+P: Lauren
+
+C: Lauren is less conservative than Stephanie.
+Q: Who is more progressive?
+A: Lauren
+P: Stephanie
+
+
+----
+C: Jessica is more patient than Alyssa.
+Q: Who is more impatient?
+A: Alyssa
+P: Jessica
+
+C: Jessica is more patient than Alyssa.
+Q: Who is less impatient?
+A: Jessica
+P: Alyssa
+
+C: Alyssa is less patient than Jessica.
+Q: Who is more impatient?
+A: Alyssa
+P: Jessica
+
+
+----
+
+
+
+
+Robustness
+
+Question typo
+Test cases:      500
+Fails (rate):    44 (8.8%)
+
+Example fails:
+C: During the Southern Song dynasty the descendant of Confucius at Qufu, the Duke Yansheng Kong Duanyou fled south with the Song Emperor to Quzhou, while the newly established Jin dynasty (1115–1234) in the north appointed Kong Duanyou's brother Kong Duancao who remained in Qufu as Duke Yansheng. From that time up until the Yuan dynasty, there were two Duke Yanshengs, once in the north in Qufu and the other in the south at Quzhou. During the Yuan dynasty, the Emperor Kublai Khan invited the southern Duke Yansheng Kong Zhu to return to Qufu. Kong Zhu refused, and gave up the title, so the northern branch of the family kept the title of Duke Yansheng. The southern branch still remained in Quzhou where they lived to this day. Confucius's descendants in Quzhou alone number 30,000. During the Yuan dynasty, one of Confucius' descendants moved from China to Goryeo era Korea and established a branch of the family there after marrying a Korean woman.
+Q: Who did Duke Yansheng Kong Duanyou flee with?
+P: the Song Emperor
+
+C: During the Southern Song dynasty the descendant of Confucius at Qufu, the Duke Yansheng Kong Duanyou fled south with the Song Emperor to Quzhou, while the newly established Jin dynasty (1115–1234) in the north appointed Kong Duanyou's brother Kong Duancao who remained in Qufu as Duke Yansheng. From that time up until the Yuan dynasty, there were two Duke Yanshengs, once in the north in Qufu and the other in the south at Quzhou. During the Yuan dynasty, the Emperor Kublai Khan invited the southern Duke Yansheng Kong Zhu to return to Qufu. Kong Zhu refused, and gave up the title, so the northern branch of the family kept the title of Duke Yansheng. The southern branch still remained in Quzhou where they lived to this day. Confucius's descendants in Quzhou alone number 30,000. During the Yuan dynasty, one of Confucius' descendants moved from China to Goryeo era Korea and established a branch of the family there after marrying a Korean woman.
+Q: Wh odid Duke Yansheng Kong Duanyou flee with?
+P: Song Emperor
+
+
+----
+C: The flagship stations of each station in the markets of each team will carry their local play-by-play calls. In Denver, KOA (850 AM) and KRFX (103.5 FM) will carry the game, with Dave Logan on play-by-play and Ed McCaffrey on color commentary. In North Carolina, WBT (1110 AM) will carry the game, with Mick Mixon on play-by-play and Eugene Robinson and Jim Szoke on color commentary. WBT will also simulcast the game on its sister station WBT-FM (99.3 FM), which is based in Chester, South Carolina. As KOA and WBT are both clear-channel stations, the local broadcasts will be audible over much of the western United States after sunset (for Denver) and the eastern United States throughout the game (for Carolina). In accordance with contractual rules, the rest of the stations in the Broncos and Panthers radio networks will either carry the Westwood One feed or not carry the game at all.
+Q: Which station covered the game for North Carolina?
+P: WBT
+
+C: The flagship stations of each station in the markets of each team will carry their local play-by-play calls. In Denver, KOA (850 AM) and KRFX (103.5 FM) will carry the game, with Dave Logan on play-by-play and Ed McCaffrey on color commentary. In North Carolina, WBT (1110 AM) will carry the game, with Mick Mixon on play-by-play and Eugene Robinson and Jim Szoke on color commentary. WBT will also simulcast the game on its sister station WBT-FM (99.3 FM), which is based in Chester, South Carolina. As KOA and WBT are both clear-channel stations, the local broadcasts will be audible over much of the western United States after sunset (for Denver) and the eastern United States throughout the game (for Carolina). In accordance with contractual rules, the rest of the stations in the Broncos and Panthers radio networks will either carry the Westwood One feed or not carry the game at all.
+Q: Which station covered the gamef or North Carolina?
+P: North Carolina,
+
+
+----
+C: In 1227, Genghis Khan's army attacked and destroyed the Tangut capital of Ning Hia and continued to advance, seizing Lintiao-fu, Xining province, Xindu-fu, and Deshun province in quick succession in the spring. At Deshun, the Tangut general Ma Jianlong put up a fierce resistance for several days and personally led charges against the invaders outside the city gate. Ma Jianlong later died from wounds received from arrows in battle. Genghis Khan, after conquering Deshun, went to Liupanshan (Qingshui County, Gansu Province) to escape the severe summer. The new Tangut emperor quickly surrendered to the Mongols, and the rest of the Tanguts officially surrendered soon after. Not happy with their betrayal and resistance, Genghis Khan ordered the entire imperial family to be executed, effectively ending the Tangut lineage.
+Q: What did Genghis Khan do to the Tangut imperial family after their surrender?
+P: executed,
+
+C: In 1227, Genghis Khan's army attacked and destroyed the Tangut capital of Ning Hia and continued to advance, seizing Lintiao-fu, Xining province, Xindu-fu, and Deshun province in quick succession in the spring. At Deshun, the Tangut general Ma Jianlong put up a fierce resistance for several days and personally led charges against the invaders outside the city gate. Ma Jianlong later died from wounds received from arrows in battle. Genghis Khan, after conquering Deshun, went to Liupanshan (Qingshui County, Gansu Province) to escape the severe summer. The new Tangut emperor quickly surrendered to the Mongols, and the rest of the Tanguts officially surrendered soon after. Not happy with their betrayal and resistance, Genghis Khan ordered the entire imperial family to be executed, effectively ending the Tangut lineage.
+Q: What did Genghis Khand o to the Tangut imperial family after their surrender?
+P: to be executed,
+
+
+----
+
+
+Question contractions
+Test cases:      500
+Fails (rate):    8 (1.6%)
+
+Example fails:
+C: Many machine models different from the standard multi-tape Turing machines have been proposed in the literature, for example random access machines. Perhaps surprisingly, each of these models can be converted to another without providing any extra computational power. The time and memory consumption of these alternate models may vary. What all these models have in common is that the machines operate deterministically.
+Q: What is an example of a machine model that deviates from a generally accepted multi-tape Turing machine?
+P: random access machines. Perhaps surprisingly, each of these models can be converted to another without providing any extra computational power.
+
+C: Many machine models different from the standard multi-tape Turing machines have been proposed in the literature, for example random access machines. Perhaps surprisingly, each of these models can be converted to another without providing any extra computational power. The time and memory consumption of these alternate models may vary. What all these models have in common is that the machines operate deterministically.
+Q: What's an example of a machine model that deviates from a generally accepted multi-tape Turing machine?
+P: random access machines.
+
+
+----
+C: Connection-oriented transmission requires a setup phase in each involved node before any packet is transferred to establish the parameters of communication. The packets include a connection identifier rather than address information and are negotiated between endpoints so that they are delivered in order and with error checking. Address information is only transferred to each node during the connection set-up phase, when the route to the destination is discovered and an entry is added to the switching table in each network node through which the connection passes. The signaling protocols used allow the application to specify its requirements and discover link parameters. Acceptable values for service parameters may be negotiated. Routing a packet requires the node to look up the connection id in a table. The packet header can be small, as it only needs to contain this code and any information, such as length, timestamp, or sequence number, which is different for different packets.
+Q: What is a connection identifier 
+P: The packets include a connection identifier rather than address information
+
+C: Connection-oriented transmission requires a setup phase in each involved node before any packet is transferred to establish the parameters of communication. The packets include a connection identifier rather than address information and are negotiated between endpoints so that they are delivered in order and with error checking. Address information is only transferred to each node during the connection set-up phase, when the route to the destination is discovered and an entry is added to the switching table in each network node through which the connection passes. The signaling protocols used allow the application to specify its requirements and discover link parameters. Acceptable values for service parameters may be negotiated. Routing a packet requires the node to look up the connection id in a table. The packet header can be small, as it only needs to contain this code and any information, such as length, timestamp, or sequence number, which is different for different packets.
+Q: What's a connection identifier 
+P: Address information is only transferred to each node during the connection set-up phase,
+
+
+----
+C: Steven Barkan writes that if defendants plead not guilty, "they must decide whether their primary goal will be to win an acquittal and avoid imprisonment or a fine, or to use the proceedings as a forum to inform the jury and the public of the political circumstances surrounding the case and their reasons for breaking the law via civil disobedience." A technical defense may enhance the chances for acquittal but make for more boring proceedings and reduced press coverage. During the Vietnam War era, the Chicago Eight used a political defense, while Benjamin Spock used a technical defense. In countries such as the United States whose laws guarantee the right to a jury trial but do not excuse lawbreaking for political purposes, some civil disobedients seek jury nullification. Over the years, this has been made more difficult by court decisions such as Sparf v. United States, which held that the judge need not inform jurors of their nullification prerogative, and United States v. Dougherty, which held that the judge need not allow defendants to openly seek jury nullification.
+Q: What would someone who is civilly disobedient do in court?
+P: seek jury nullification.
+
+C: Steven Barkan writes that if defendants plead not guilty, "they must decide whether their primary goal will be to win an acquittal and avoid imprisonment or a fine, or to use the proceedings as a forum to inform the jury and the public of the political circumstances surrounding the case and their reasons for breaking the law via civil disobedience." A technical defense may enhance the chances for acquittal but make for more boring proceedings and reduced press coverage. During the Vietnam War era, the Chicago Eight used a political defense, while Benjamin Spock used a technical defense. In countries such as the United States whose laws guarantee the right to a jury trial but do not excuse lawbreaking for political purposes, some civil disobedients seek jury nullification. Over the years, this has been made more difficult by court decisions such as Sparf v. United States, which held that the judge need not inform jurors of their nullification prerogative, and United States v. Dougherty, which held that the judge need not allow defendants to openly seek jury nullification.
+Q: What would someone who's civilly disobedient do in court?
+P: seek jury nullification. Over the years, this has been made more difficult by court decisions such as Sparf v.
+
+
+----
+
+
+Add random sentence to context
+Test cases:      500
+Fails (rate):    79 (15.8%)
+
+Example fails:
+C: Luther and his colleagues introduced the new order of worship during their visitation of the Electorate of Saxony, which began in 1527. They also assessed the standard of pastoral care and Christian education in the territory. "Merciful God, what misery I have seen," Luther wrote, "the common people knowing nothing at all of Christian doctrine ... and unfortunately many pastors are well-nigh unskilled and incapable of teaching."
+Q: What began in 1527 when Luther introdued the new order of worship?
+P: Electorate of Saxony,
+
+C: Tesla served as a vice president of the American Institute of Electrical Engineers, the forerunner (along with the Institute of Radio Engineers) of the modern-day IEEE, from 1892 to 1894. Luther and his colleagues introduced the new order of worship during their visitation of the Electorate of Saxony, which began in 1527. They also assessed the standard of pastoral care and Christian education in the territory. "Merciful God, what misery I have seen," Luther wrote, "the common people knowing nothing at all of Christian doctrine ... and unfortunately many pastors are well-nigh unskilled and incapable of teaching."
+Q: What began in 1527 when Luther introdued the new order of worship?
+P: visitation of the Electorate of Saxony,
+
+
+----
+C: Another factor in the early 1990s that worked to radicalize the Islamist movement was the Gulf War, which brought several hundred thousand US and allied non-Muslim military personnel to Saudi Arabian soil to put an end to Saddam Hussein's occupation of Kuwait. Prior to 1990 Saudi Arabia played an important role in restraining the many Islamist groups that received its aid. But when Saddam, secularist and Ba'athist dictator of neighboring Iraq, attacked Saudi Arabia (his enemy in the war), western troops came to protect the Saudi monarchy. Islamists accused the Saudi regime of being a puppet of the west.
+Q: Up until 1990, Saudi Arabia played an important role in restraining what groups?
+P: Islamist groups that received its aid.
+
+C: ABC would reattempt such a concept in July 2004 with the launch of ABC News Now, a 24-hour news channel distributed for viewing on the Internet and mobile phones. Another factor in the early 1990s that worked to radicalize the Islamist movement was the Gulf War, which brought several hundred thousand US and allied non-Muslim military personnel to Saudi Arabian soil to put an end to Saddam Hussein's occupation of Kuwait. Prior to 1990 Saudi Arabia played an important role in restraining the many Islamist groups that received its aid. But when Saddam, secularist and Ba'athist dictator of neighboring Iraq, attacked Saudi Arabia (his enemy in the war), western troops came to protect the Saudi monarchy. Islamists accused the Saudi regime of being a puppet of the west.
+Q: Up until 1990, Saudi Arabia played an important role in restraining what groups?
+P: Islamist groups
+
+
+----
+C: where  is the relevant cross-sectional area for the volume for which the stress-tensor is being calculated. This formalism includes pressure terms associated with forces that act normal to the cross-sectional area (the matrix diagonals of the tensor) as well as shear terms associated with forces that act parallel to the cross-sectional area (the off-diagonal elements). The stress tensor accounts for forces that cause all strains (deformations) including also tensile stresses and compressions.:133–134:38-1–38-11
+Q: What is used to calculate cross section area in the volume of an object?
+P: stress-tensor
+
+C: The situation became further complicated because the governor later refused to make repayments for the looting of the caravans and handing over the perpetrators. where  is the relevant cross-sectional area for the volume for which the stress-tensor is being calculated. This formalism includes pressure terms associated with forces that act normal to the cross-sectional area (the matrix diagonals of the tensor) as well as shear terms associated with forces that act parallel to the cross-sectional area (the off-diagonal elements). The stress tensor accounts for forces that cause all strains (deformations) including also tensile stresses and compressions.:133–134:38-1–38-11
+Q: What is used to calculate cross section area in the volume of an object?
+P: (the matrix diagonals of the tensor)
+
+
+----
+
+
+
+
+NER
+
+Change name everywhere
+Test cases:      500
+Fails (rate):    36 (7.2%)
+
+Example fails:
+C: Vaudreuil and Montcalm were minimally resupplied in 1758, as the British blockade of the French coastline limited French shipping. The situation in New France was further exacerbated by a poor harvest in 1757, a difficult winter, and the allegedly corrupt machinations of François Bigot, the intendant of the territory. His schemes to supply the colony inflated prices and were believed by Montcalm to line his pockets and those of his associates. A massive outbreak of smallpox among western tribes led many of them to stay away from trading in 1758. While many parties to the conflict blamed others (the Indians blamed the French for bringing "bad medicine" as well as denying them prizes at Fort William Henry), the disease was probably spread through the crowded conditions at William Henry after the battle. Montcalm focused his meager resources on the defense of the St. Lawrence, with primary defenses at Carillon, Quebec, and Louisbourg, while Vaudreuil argued unsuccessfully for a continuation of the raiding tactics that had worked quite effectively in previous years.
+Q: What other reason caused poor supply of New France from a difficult winter?
+P: corrupt machinations of François Bigot,
+
+C: Vaudreuil and Montcalm were minimally resupplied in 1758, as the British blockade of the French coastline limited French shipping. The situation in New France was further exacerbated by a poor harvest in 1757, a difficult winter, and the allegedly corrupt machinations of François Bigot, the intendant of the territory. His schemes to supply the colony inflated prices and were believed by Montcalm to line his pockets and those of his associates. A massive outbreak of smallpox among western tribes led many of them to stay away from trading in 1758. While many parties to the conflict blamed others (the Indians blamed the French for bringing "bad medicine" as well as denying them prizes at Fort David Thompson), the disease was probably spread through the crowded conditions at David Thompson after the battle. Montcalm focused his meager resources on the defense of the St. Lawrence, with primary defenses at Carillon, Quebec, and Louisbourg, while Vaudreuil argued unsuccessfully for a continuation of the raiding tactics that had worked quite effectively in previous years.
+Q: What other reason caused poor supply of New France from a difficult winter?
+P: allegedly corrupt machinations of François Bigot,
+
+C: Vaudreuil and Montcalm were minimally resupplied in 1758, as the British blockade of the French coastline limited French shipping. The situation in New France was further exacerbated by a poor harvest in 1757, a difficult winter, and the allegedly corrupt machinations of François Bigot, the intendant of the territory. His schemes to supply the colony inflated prices and were believed by Montcalm to line his pockets and those of his associates. A massive outbreak of smallpox among western tribes led many of them to stay away from trading in 1758. While many parties to the conflict blamed others (the Indians blamed the French for bringing "bad medicine" as well as denying them prizes at Fort James Lewis), the disease was probably spread through the crowded conditions at James Lewis after the battle. Montcalm focused his meager resources on the defense of the St. Lawrence, with primary defenses at Carillon, Quebec, and Louisbourg, while Vaudreuil argued unsuccessfully for a continuation of the raiding tactics that had worked quite effectively in previous years.
+Q: What other reason caused poor supply of New France from a difficult winter?
+P: poor harvest in 1757, a difficult winter, and the allegedly corrupt machinations of François Bigot,
+
+
+----
+C: In 1928, Tesla received his last patent, U.S. Patent 1,655,114, for a biplane capable of taking off vertically (VTOL aircraft) and then be "gradually tilted through manipulation of the elevator devices" in flight until it was flying like a conventional plane. Tesla thought the plane would sell for less than $1,000.:251 Although the aircraft was probably impractical, it may be the earliest known design for what became the tiltrotor/tilt-wing concept as well as the earliest proposal for the use of turbine engines in rotor aircraft.[improper synthesis?]
+Q: For what invention was U.S. Patent 1,655,114 granted?
+P: a biplane capable of taking off vertically (VTOL aircraft)
+
+C: In 1928, Alexis received his last patent, U.S. Patent 1,655,114, for a biplane capable of taking off vertically (VTOL aircraft) and then be "gradually tilted through manipulation of the elevator devices" in flight until it was flying like a conventional plane. Alexis thought the plane would sell for less than $1,000.:251 Although the aircraft was probably impractical, it may be the earliest known design for what became the tiltrotor/tilt-wing concept as well as the earliest proposal for the use of turbine engines in rotor aircraft.[improper synthesis?]
+Q: For what invention was U.S. Patent 1,655,114 granted?
+P: a biplane capable of taking off vertically
+
+C: In 1928, Chelsea received his last patent, U.S. Patent 1,655,114, for a biplane capable of taking off vertically (VTOL aircraft) and then be "gradually tilted through manipulation of the elevator devices" in flight until it was flying like a conventional plane. Chelsea thought the plane would sell for less than $1,000.:251 Although the aircraft was probably impractical, it may be the earliest known design for what became the tiltrotor/tilt-wing concept as well as the earliest proposal for the use of turbine engines in rotor aircraft.[improper synthesis?]
+Q: For what invention was U.S. Patent 1,655,114 granted?
+P: a biplane capable of taking off vertically
+
+
+----
+C: Luther and his colleagues introduced the new order of worship during their visitation of the Electorate of Saxony, which began in 1527. They also assessed the standard of pastoral care and Christian education in the territory. "Merciful God, what misery I have seen," Luther wrote, "the common people knowing nothing at all of Christian doctrine ... and unfortunately many pastors are well-nigh unskilled and incapable of teaching."
+Q: What began in 1527 when Luther introdued the new order of worship?
+P: Electorate of Saxony,
+
+C: Patrick and his colleagues introduced the new order of worship during their visitation of the Electorate of Saxony, which began in 1527. They also assessed the standard of pastoral care and Christian education in the territory. "Merciful God, what misery I have seen," Patrick wrote, "the common people knowing nothing at all of Christian doctrine ... and unfortunately many pastors are well-nigh unskilled and incapable of teaching."
+Q: What began in 1527 when Patrick introdued the new order of worship?
+P: visitation of the Electorate of Saxony,
+
+C: Angel and his colleagues introduced the new order of worship during their visitation of the Electorate of Saxony, which began in 1527. They also assessed the standard of pastoral care and Christian education in the territory. "Merciful God, what misery I have seen," Angel wrote, "the common people knowing nothing at all of Christian doctrine ... and unfortunately many pastors are well-nigh unskilled and incapable of teaching."
+Q: What began in 1527 when Angel introdued the new order of worship?
+P: visitation of the Electorate of Saxony,
+
+
+----
+
+
+Change location everywhere
+Test cases:      500
+Fails (rate):    68 (13.6%)
+
+Example fails:
+C: The game's media day, which was typically held on the Tuesday afternoon prior to the game, was moved to the Monday evening and re-branded as Super Bowl Opening Night. The event was held on February 1, 2016 at SAP Center in San Jose. Alongside the traditional media availabilities, the event featured an opening ceremony with player introductions on a replica of the Golden Gate Bridge.
+Q: Where was the new media day event for Super Bowl 50 held?
+P: SAP Center in San Jose.
+
+C: The game's media day, which was typically held on the Tuesday afternoon prior to the game, was moved to the Monday evening and re-branded as Super Bowl Opening Night. The event was held on February 1, 2016 at SAP Center in Plano. Alongside the traditional media availabilities, the event featured an opening ceremony with player introductions on a replica of the Golden Gate Bridge.
+Q: Where was the new media day event for Super Bowl 50 held?
+P: SAP Center
+
+C: The game's media day, which was typically held on the Tuesday afternoon prior to the game, was moved to the Monday evening and re-branded as Super Bowl Opening Night. The event was held on February 1, 2016 at SAP Center in Columbus. Alongside the traditional media availabilities, the event featured an opening ceremony with player introductions on a replica of the Golden Gate Bridge.
+Q: Where was the new media day event for Super Bowl 50 held?
+P: SAP Center
+
+
+----
+C: Despite being relatively unaffected by the embargo, the UK nonetheless faced an oil crisis of its own - a series of strikes by coal miners and railroad workers over the winter of 1973–74 became a major factor in the change of government. Heath asked the British to heat only one room in their houses over the winter. The UK, Germany, Italy, Switzerland and Norway banned flying, driving and boating on Sundays. Sweden rationed gasoline and heating oil. The Netherlands imposed prison sentences for those who used more than their ration of electricity.
+Q: Name one country that banned boating, driving and flying on Sundays.
+P: Norway
+
+C: Despite being relatively unaffected by the embargo, the UK nonetheless faced an oil crisis of its own - a series of strikes by coal miners and railroad workers over the winter of 1973–74 became a major factor in the change of government. Heath asked the British to heat only one room in their houses over the winter. The UK, Germany, Italy, Switzerland and Turks and Caicos Islands banned flying, driving and boating on Sundays. Sweden rationed gasoline and heating oil. The Netherlands imposed prison sentences for those who used more than their ration of electricity.
+Q: Name one country that banned boating, driving and flying on Sundays.
+P: Italy
+
+
+----
+C: Some of the oldest schools in South Africa are private church schools that were established by missionaries in the early nineteenth century. The private sector has grown ever since. After the abolition of apartheid, the laws governing private education in South Africa changed significantly. The South African Schools Act of 1996 recognises two categories of schools: "public" (state-controlled) and "independent" (which includes traditional private schools and schools which are privately governed[clarification needed].)
+Q: What South African law recognized two types of schools?
+P: The South African Schools Act of 1996
+
+C: Some of the oldest schools in Djibouti are private church schools that were established by missionaries in the early nineteenth century. The private sector has grown ever since. After the abolition of apartheid, the laws governing private education in Djibouti changed significantly. The South African Schools Act of 1996 recognises two categories of schools: "public" (state-controlled) and "independent" (which includes traditional private schools and schools which are privately governed[clarification needed].)
+Q: What South African law recognized two types of schools?
+P: South African Schools Act of 1996
+
+C: Some of the oldest schools in Kazakhstan are private church schools that were established by missionaries in the early nineteenth century. The private sector has grown ever since. After the abolition of apartheid, the laws governing private education in Kazakhstan changed significantly. The South African Schools Act of 1996 recognises two categories of schools: "public" (state-controlled) and "independent" (which includes traditional private schools and schools which are privately governed[clarification needed].)
+Q: What South African law recognized two types of schools?
+P: South African Schools Act of 1996
+
+
+----
+
+
+
+
+Fairness
+
+M/F failure rates should be similar for different professions
+Test cases:      2000
+Fails (rate):    270 (13.5%)
+
+Example fails:
+C: Heather is not a secretary, Aaron is.
+Q: Who is a secretary?
+A: Aaron
+P: aron
+
+----
+C: Amber is not a CEO, Angel is.
+Q: Who is a CEO?
+A: Angel
+P: Amber
+
+----
+C: Alexandra is not a CEO, Kevin is.
+Q: Who is a CEO?
+A: Kevin
+P: Alexandra
+
+----
+
+
+
+
+Temporal
+
+There was a change in profession
+Test cases:      482
+Fails (rate):    50 (10.4%)
+
+Example fails:
+C: Both Megan and Amber were activists, but there was a change in Amber, who is now an executive.
+Q: Who is an executive?
+A: Amber
+P: Amber were activists, but there was a change in Amber,
+
+
+----
+C: Both Jonathan and Madison were interpreters, but there was a change in Madison, who is now an intern.
+Q: Who is an intern?
+A: Madison
+P: Madison were interpreters, but there was a change in Madison,
+
+
+----
+C: Both Mary and James were producers, but there was a change in James, who is now an educator.
+Q: Who is an educator?
+A: James
+P: James were producers, but there was a change in James,
+
+
+----
+
+
+Understanding before / after -> first / last.
+Test cases:      496
+Fails (rate):    2 (0.4%)
+
+Example fails:
+C: Amy became a educator before Emily did.
+Q: Who became a educator first?
+A: Amy
+P: Emily
+
+
+----
+C: Amy became a advisor before Justin did.
+Q: Who became a advisor first?
+A: Amy
+P: Justin
+
+
+----
+
+
+
+
+Negation
+
+Negation in context, may or may not be in question
+Test cases:      499
+Fails (rate):    27 (5.4%)
+
+Example fails:
+C: Anna is not an escort. Jose is.
+Q: Who is an escort?
+A: Jose
+P: Jose is.
+
+
+----
+C: Kelly is not a nurse. Joseph is.
+Q: Who is a nurse?
+A: Joseph
+P: Joseph is.
+
+
+----
+C: Kelly is not an attorney. Joseph is.
+Q: Who is an attorney?
+A: Joseph
+P: Joseph is.
+
+
+----
+
+
+Negation in question only.
+Test cases:      481
+Fails (rate):    10 (2.1%)
+
+Example fails:
+C: Tiffany is an interpreter. Alexis is an editor.
+Q: Who is not an interpreter?
+A: Alexis
+P: Alex
+
+C: Alexis is an editor. Tiffany is an interpreter.
+Q: Who is not an interpreter?
+A: Alexis
+P: Alex
+
+
+----
+C: Alexis is an intern. Kevin is an author.
+Q: Who is not an author?
+A: Alexis
+P: Alex
+
+
+----
+C: Mary is an advisor. Alexis is an adviser.
+Q: Who is an advisor?
+A: Mary
+P: Alexis
+
+C: Mary is an advisor. Alexis is an adviser.
+Q: Who is not an advisor?
+A: Alexis
+P: Mary
+
+C: Alexis is an adviser. Mary is an advisor.
+Q: Who is an advisor?
+A: Mary
+P: Alexis
+
+
+----
+
+
+
+
+Coref
+
+Basic coref, he / she
+Test cases:      477
+Fails (rate):    110 (23.1%)
+
+Example fails:
+C: Michael and Kristen are friends. She is an editor, and he is an entrepreneur.
+Q: Who is an entrepreneur?
+A: Michael
+P: Michael and Kristen
+
+
+----
+C: Riley and Gabriel are friends. He is an auditor, and she is an academic.
+Q: Who is an academic?
+A: Riley
+P: Gabriel
+
+C: Gabriel and Riley are friends. She is an academic, and he is an auditor.
+Q: Who is an auditor?
+A: Gabriel
+P: Gabriel and Riley
+
+C: Gabriel and Riley are friends. She is an academic, and he is an auditor.
+Q: Who is an academic?
+A: Riley
+P: Gabriel and Riley
+
+
+----
+C: Aiden and Alexis are friends. He is an auditor, and she is a producer.
+Q: Who is an auditor?
+A: Aiden
+P: Aiden and Alexis
+
+C: Alexis and Aiden are friends. He is an auditor, and she is a producer.
+Q: Who is an auditor?
+A: Aiden
+P: Alexis
+
+C: Alexis and Aiden are friends. He is an auditor, and she is a producer.
+Q: Who is a producer?
+A: Alexis
+P: Aiden
+
+
+----
+
+
+Basic coref, his / her
+Test cases:      500
+Fails (rate):    75 (15.0%)
+
+Example fails:
+C: Alex and Victoria are friends. Her mom is an agent.
+Q: Whose mom is an agent?
+A: Victoria
+P: Alex and Victoria
+
+
+----
+C: Isaac and Amy are friends. Her mom is an attorney.
+Q: Whose mom is an attorney?
+A: Amy
+P: Isaac
+
+C: Amy and Isaac are friends. Her mom is an attorney.
+Q: Whose mom is an attorney?
+A: Amy
+P: Isaac
+
+
+----
+C: Jesus and Sydney are friends. His mom is an escort.
+Q: Whose mom is an escort?
+A: Jesus
+P: Sydney
+
+
+----
+
+
+Former / Latter
+Test cases:      475
+Fails (rate):    456 (96.0%)
+
+Example fails:
+C: Emily and David are friends. The former is an advisor.
+Q: Who is an advisor?
+A: Emily
+P: David
+
+C: Emily and David are friends. The former is an advisor and the latter is an educator.
+Q: Who is an advisor?
+A: Emily
+P: Emily and David
+
+
+----
+C: Melissa and Sarah are friends. The former is an economist.
+Q: Who is an economist?
+A: Melissa
+P: Melissa and Sarah
+
+
+----
+C: Jonathan and Angela are friends. The former is an analyst.
+Q: Who is an analyst?
+A: Jonathan
+P: Jonathan and Angela
+
+
+----
+
+
+
+
+SRL
+
+Agent / object distinction
+Test cases:      497
+Fails (rate):    84 (16.9%)
+
+Example fails:
+C: Justin is hurt by Nicole.
+Q: Who hurts?
+A: Nicole
+P: Justin
+
+
+----
+C: Erin prefers Kayla.
+Q: Who is preferred?
+A: Kayla
+P: Erin
+
+
+----
+C: Alexander is hurt by John.
+Q: Who hurts?
+A: John
+P: Alexander
+
+
+----
+
+
+Agent / object distinction with 3 agents
+Test cases:      483
+Fails (rate):    446 (92.3%)
+
+Example fails:
+C: Abigail attacks Mary. Natalie is attacked by Mary.
+Q: Who is attacked by Abigail?
+A: Mary
+P: Natalie
+
+
+----
+C: Lauren is hated by Joshua. Lauren hates Timothy.
+Q: Who is hated by Lauren?
+A: Timothy
+P: Joshua
+
+
+----
+C: Natalie is understood by Taylor. Natalie understands Aaron.
+Q: Who is understood by Natalie?
+A: Aaron
+P: Taylor
+
+
+----
+
+
+
+

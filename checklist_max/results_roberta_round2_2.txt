@@ -1,0 +1,851 @@
+Vocabulary
+
+A is COMP than B. Who is more / less COMP?
+Test cases:      494
+Fails (rate):    2 (0.4%)
+
+Example fails:
+C: Isabella is weaker than Rebecca.
+Q: Who is weaker?
+A: Isabella
+P: abella
+
+
+----
+C: Isabella is richer than Christina.
+Q: Who is richer?
+A: Isabella
+P: abella
+
+
+----
+
+
+Intensifiers (very, super, extremely) and reducers (somewhat, kinda, etc)?
+Test cases:      497
+Fails (rate):    432 (86.9%)
+
+Example fails:
+C: Ryan is vocal about the project. Joshua is really vocal about the project.
+Q: Who is most vocal about the project?
+A: Joshua
+P: Ryan is vocal about the project. Joshua
+
+C: Ryan is vocal about the project. Joshua is really vocal about the project.
+Q: Who is least vocal about the project?
+A: Ryan
+P: Joshua
+
+
+----
+C: Zachary is confident about the project. Ryan is really confident about the project.
+Q: Who is least confident about the project?
+A: Zachary
+P: Ryan
+
+
+----
+C: Aaron is super vocal about the project. Tyler is vocal about the project.
+Q: Who is least vocal about the project?
+A: Tyler
+P: Aaron is super vocal about the project. Tyler
+
+C: Tyler is vocal about the project. Aaron is super vocal about the project.
+Q: Who is least vocal about the project?
+A: Tyler
+P: Aaron
+
+
+----
+
+
+
+
+Taxonomy
+
+size, shape, age, color
+Test cases:      500
+Fails (rate):    84 (16.8%)
+
+Example fails:
+C: There is a box in the room. The box is tiny and oval.
+Q: What size is the box?
+A: tiny
+P: tiny and oval.
+
+
+----
+C: There is a thing in the room. The thing is big and orange.
+Q: What size is the thing?
+A: big
+P: big and orange.
+
+
+----
+C: There is a small triangular painting in the room.
+Q: What size is the painting?
+A: small
+P: small triangular
+
+C: There is a painting in the room. The painting is small and triangular.
+Q: What size is the painting?
+A: small
+P: small and triangular.
+
+
+----
+
+
+Profession vs nationality
+Test cases:      500
+Fails (rate):    82 (16.4%)
+
+Example fails:
+C: Jamie is a Pakistani interpreter.
+Q: What is Jamie's job?
+A: interpreter
+P: Pakistani interpreter.
+
+
+----
+C: Emma is a Pakistani educator.
+Q: What is Emma's job?
+A: educator
+P: Pakistani educator.
+
+
+----
+C: Steven is a Pakistani journalist.
+Q: What is Steven's job?
+A: journalist
+P: Pakistani journalist.
+
+
+----
+
+
+Animal vs Vehicle
+Test cases:      500
+Fails (rate):    131 (26.2%)
+
+Example fails:
+C: Dylan has a SUV and an iguana.
+Q: What animal does Dylan have?
+A: iguana
+P: SUV and an iguana.
+
+C: Dylan has a SUV and an iguana.
+Q: What vehicle does Dylan have?
+A: SUV
+P: SUV and an iguana.
+
+
+----
+C: Dylan has a duck and a minivan.
+Q: What vehicle does Dylan have?
+A: minivan
+P: duck
+
+
+----
+C: Tiffany has a snake and a train.
+Q: What vehicle does Tiffany have?
+A: train
+P: snake
+
+
+----
+
+
+Animal vs Vehicle v2
+Test cases:      496
+Fails (rate):    67 (13.5%)
+
+Example fails:
+C: David bought a train. Mary bought a bull.
+Q: Who bought a vehicle?
+A: David
+P: Mary
+
+
+----
+C: Amy bought a van. Jose bought a lizard.
+Q: Who bought an animal?
+A: Jose
+P: Amy
+
+
+----
+C: Tyler bought a hamster. William bought a train.
+Q: Who bought a vehicle?
+A: William
+P: Tyler
+
+C: William bought a train. Tyler bought a hamster.
+Q: Who bought a vehicle?
+A: William
+P: Tyler
+
+
+----
+
+
+Synonyms
+Test cases:      447
+Fails (rate):    4 (0.9%)
+
+Example fails:
+C: Melissa is very scared. Alexis is very grateful.
+Q: Who is thankful?
+A: Alexis
+P: Alex
+
+
+----
+C: Benjamin is very thankful. Alexis is very organised.
+Q: Who is organized?
+A: Alexis
+P: Alex
+
+
+----
+C: Daniel is very grateful. Alexis is very humble.
+Q: Who is modest?
+A: Alexis
+P: Alex
+
+
+----
+
+
+A is COMP than B. Who is antonym(COMP)? B
+Test cases:      496
+Fails (rate):    28 (5.6%)
+
+Example fails:
+C: Brian is darker than Amber.
+Q: Who is lighter?
+A: Amber
+P: Brian is darker than Amber.
+
+
+----
+C: Andrea is darker than Tyler.
+Q: Who is lighter?
+A: Tyler
+P: Andrea
+
+
+----
+C: Emily is darker than Sara.
+Q: Who is lighter?
+A: Sara
+P: Emily
+
+
+----
+
+
+A is more X than B. Who is more antonym(X)? B. Who is less X? B. Who is more X? A. Who is less antonym(X)? A.
+Test cases:      491
+Fails (rate):    436 (88.8%)
+
+Example fails:
+C: Tyler is more bad than Laura.
+Q: Who is less good?
+A: Tyler
+P: Laura
+
+C: Tyler is less good than Laura.
+Q: Who is more bad?
+A: Tyler
+P: Laura
+
+
+----
+C: Samuel is more pessimistic than Christina.
+Q: Who is less optimistic?
+A: Samuel
+P: Christina
+
+C: Samuel is less optimistic than Christina.
+Q: Who is more pessimistic?
+A: Samuel
+P: Christina
+
+C: Samuel is less optimistic than Christina.
+Q: Who is less pessimistic?
+A: Christina
+P: Samuel
+
+
+----
+C: Emma is more cautious than Ethan.
+Q: Who is less brave?
+A: Emma
+P: Ethan
+
+C: Ethan is more brave than Emma.
+Q: Who is less cautious?
+A: Ethan
+P: Emma
+
+C: Ethan is less cautious than Emma.
+Q: Who is more brave?
+A: Ethan
+P: Emma
+
+
+----
+
+
+
+
+Robustness
+
+Question typo
+Test cases:      500
+Fails (rate):    44 (8.8%)
+
+Example fails:
+C: Concentrated O
+2 will allow combustion to proceed rapidly and energetically. Steel pipes and storage vessels used to store and transmit both gaseous and liquid oxygen will act as a fuel; and therefore the design and manufacture of O
+2 systems requires special training to ensure that ignition sources are minimized. The fire that killed the Apollo 1 crew in a launch pad test spread so rapidly because the capsule was pressurized with pure O
+2 but at slightly more than atmospheric pressure, instead of the 1⁄3 normal pressure that would be used in a mission.[k]
+Q: ______ In both liquid and gas form can fastly result in an exlposion.
+P: fire
+
+C: Concentrated O
+2 will allow combustion to proceed rapidly and energetically. Steel pipes and storage vessels used to store and transmit both gaseous and liquid oxygen will act as a fuel; and therefore the design and manufacture of O
+2 systems requires special training to ensure that ignition sources are minimized. The fire that killed the Apollo 1 crew in a launch pad test spread so rapidly because the capsule was pressurized with pure O
+2 but at slightly more than atmospheric pressure, instead of the 1⁄3 normal pressure that would be used in a mission.[k]
+Q: ______ In both liquid and gas form can fastyl result in an exlposion.
+P: oxygen
+
+
+----
+C: Luther dedicated himself to the Augustinian order, devoting himself to fasting, long hours in prayer, pilgrimage, and frequent confession. Luther described this period of his life as one of deep spiritual despair. He said, "I lost touch with Christ the Savior and Comforter, and made of him the jailer and hangman of my poor soul." Johann von Staupitz, his superior, pointed Luther's mind away from continual reflection upon his sins toward the merits of Christ. He taught that true repentance does not involve self-inflicted penances and punishments but rather a change of heart.
+Q: What did Luther feel he made of Christ?
+P: the jailer and hangman
+
+C: Luther dedicated himself to the Augustinian order, devoting himself to fasting, long hours in prayer, pilgrimage, and frequent confession. Luther described this period of his life as one of deep spiritual despair. He said, "I lost touch with Christ the Savior and Comforter, and made of him the jailer and hangman of my poor soul." Johann von Staupitz, his superior, pointed Luther's mind away from continual reflection upon his sins toward the merits of Christ. He taught that true repentance does not involve self-inflicted penances and punishments but rather a change of heart.
+Q: What did Luther feel eh made of Christ?
+P: the jailer and hangman of my poor soul."
+
+
+----
+C: It became a moral justification to lift the world up to French standards by bringing Christianity and French culture. In 1884 the leading exponent of colonialism, Jules Ferry declared France had a civilising mission: "The higher races have a right over the lower races, they have a duty to civilize the inferior". Full citizenship rights – ‘’assimilation’’ – were offered, although in reality assimilation was always on the distant horizon. Contrasting from Britain, France sent small numbers of settlers to its colonies, with the only notable exception of Algeria, where French settlers nevertheless always remained a small minority.
+Q: What did France offer that was rare by imperial standards?
+P: Full citizenship rights
+
+C: It became a moral justification to lift the world up to French standards by bringing Christianity and French culture. In 1884 the leading exponent of colonialism, Jules Ferry declared France had a civilising mission: "The higher races have a right over the lower races, they have a duty to civilize the inferior". Full citizenship rights – ‘’assimilation’’ – were offered, although in reality assimilation was always on the distant horizon. Contrasting from Britain, France sent small numbers of settlers to its colonies, with the only notable exception of Algeria, where French settlers nevertheless always remained a small minority.
+Q: What did France offert hat was rare by imperial standards?
+P: French settlers
+
+
+----
+
+
+Question contractions
+Test cases:      500
+Fails (rate):    16 (3.2%)
+
+Example fails:
+C: Terra preta (black earth), which is distributed over large areas in the Amazon forest, is now widely accepted as a product of indigenous soil management. The development of this fertile soil allowed agriculture and silviculture in the previously hostile environment; meaning that large portions of the Amazon rainforest are probably the result of centuries of human management, rather than naturally occurring as has previously been supposed. In the region of the Xingu tribe, remains of some of these large settlements in the middle of the Amazon forest were found in 2003 by Michael Heckenberger and colleagues of the University of Florida. Among those were evidence of roads, bridges and large plazas.
+Q: Who is credited with finding evidence of large settlements in the Amazon forest?
+P: Michael Heckenberger
+
+C: Terra preta (black earth), which is distributed over large areas in the Amazon forest, is now widely accepted as a product of indigenous soil management. The development of this fertile soil allowed agriculture and silviculture in the previously hostile environment; meaning that large portions of the Amazon rainforest are probably the result of centuries of human management, rather than naturally occurring as has previously been supposed. In the region of the Xingu tribe, remains of some of these large settlements in the middle of the Amazon forest were found in 2003 by Michael Heckenberger and colleagues of the University of Florida. Among those were evidence of roads, bridges and large plazas.
+Q: Who's credited with finding evidence of large settlements in the Amazon forest?
+P: Michael Heckenberger and colleagues of the University of Florida.
+
+
+----
+C: Connection-oriented transmission requires a setup phase in each involved node before any packet is transferred to establish the parameters of communication. The packets include a connection identifier rather than address information and are negotiated between endpoints so that they are delivered in order and with error checking. Address information is only transferred to each node during the connection set-up phase, when the route to the destination is discovered and an entry is added to the switching table in each network node through which the connection passes. The signaling protocols used allow the application to specify its requirements and discover link parameters. Acceptable values for service parameters may be negotiated. Routing a packet requires the node to look up the connection id in a table. The packet header can be small, as it only needs to contain this code and any information, such as length, timestamp, or sequence number, which is different for different packets.
+Q: What is a connection identifier 
+P: code
+
+C: Connection-oriented transmission requires a setup phase in each involved node before any packet is transferred to establish the parameters of communication. The packets include a connection identifier rather than address information and are negotiated between endpoints so that they are delivered in order and with error checking. Address information is only transferred to each node during the connection set-up phase, when the route to the destination is discovered and an entry is added to the switching table in each network node through which the connection passes. The signaling protocols used allow the application to specify its requirements and discover link parameters. Acceptable values for service parameters may be negotiated. Routing a packet requires the node to look up the connection id in a table. The packet header can be small, as it only needs to contain this code and any information, such as length, timestamp, or sequence number, which is different for different packets.
+Q: What's a connection identifier 
+P: The packets
+
+
+----
+C: Highly concentrated sources of oxygen promote rapid combustion. Fire and explosion hazards exist when concentrated oxidants and fuels are brought into close proximity; an ignition event, such as heat or a spark, is needed to trigger combustion. Oxygen is the oxidant, not the fuel, but nevertheless the source of most of the chemical energy released in combustion. Combustion hazards also apply to compounds of oxygen with a high oxidative potential, such as peroxides, chlorates, nitrates, perchlorates, and dichromates because they can donate oxygen to a fire.
+Q: What is needed to make combustion happen?
+P: an ignition event,
+
+C: Highly concentrated sources of oxygen promote rapid combustion. Fire and explosion hazards exist when concentrated oxidants and fuels are brought into close proximity; an ignition event, such as heat or a spark, is needed to trigger combustion. Oxygen is the oxidant, not the fuel, but nevertheless the source of most of the chemical energy released in combustion. Combustion hazards also apply to compounds of oxygen with a high oxidative potential, such as peroxides, chlorates, nitrates, perchlorates, and dichromates because they can donate oxygen to a fire.
+Q: What's needed to make combustion happen?
+P: an ignition event, such as heat or a spark,
+
+
+----
+
+
+Add random sentence to context
+Test cases:      500
+Fails (rate):    68 (13.6%)
+
+Example fails:
+C: In the north eastern part of Fresno, Woodward Park was founded by the late Ralph Woodward, a long-time Fresno resident. He bequeathed a major portion of his estate in 1968 to provide a regional park and bird sanctuary in Northeast Fresno. The park lies on the South bank of the San Joaquin River between Highway 41 and Friant Road. The initial 235 acres (0.95 km2), combined with additional acres acquired later by the City, brings the park to a sizable 300 acres (1.2 km2). Now packed with amenities, Woodward Park is the only Regional Park of its size in the Central Valley. The Southeast corner of the park harbors numerous bird species offering bird enthusiasts an excellent opportunity for viewing. The park has a multi-use amphitheatre that seats up to 2,500 people, authentic Japanese Garden, fenced dog park, two-mile (3 km) equestrian trail, exercise par course, three children's playgrounds, a lake, 3 small ponds, 7 picnic areas and five miles (8 km) of multipurpose trails that are part of the San Joaquin River Parkway's Lewis S. Eaton Trail. When complete, the Lewis S. Eaton trail system will cover 22 miles (35 km) between Highway 99 and Friant Dam. The park's numerous picnic tables make for a great picnic destination and a convenient escape from city life. The park's amphetheatre was renovated in 2010, and has hosted performances by acts such as Deftones, Tech N9ne, and Sevendust as well as numerous others. The park is open April through October, 6am to 10pm and November through March, 6am to 7pm. Woodward Park is home to the annual CIF(California Interscholastic Federation) State Championship cross country meet, which takes place in late November. It is also the home of the Woodward Shakespeare Festival which began performances in the park in 2005.
+Q: Who founded Woodward Park?
+P: Ralph Woodward,
+
+C: (Ford's Victorian plants—in Broadmeadows and Geelong—will close in October 2016). In the north eastern part of Fresno, Woodward Park was founded by the late Ralph Woodward, a long-time Fresno resident. He bequeathed a major portion of his estate in 1968 to provide a regional park and bird sanctuary in Northeast Fresno. The park lies on the South bank of the San Joaquin River between Highway 41 and Friant Road. The initial 235 acres (0.95 km2), combined with additional acres acquired later by the City, brings the park to a sizable 300 acres (1.2 km2). Now packed with amenities, Woodward Park is the only Regional Park of its size in the Central Valley. The Southeast corner of the park harbors numerous bird species offering bird enthusiasts an excellent opportunity for viewing. The park has a multi-use amphitheatre that seats up to 2,500 people, authentic Japanese Garden, fenced dog park, two-mile (3 km) equestrian trail, exercise par course, three children's playgrounds, a lake, 3 small ponds, 7 picnic areas and five miles (8 km) of multipurpose trails that are part of the San Joaquin River Parkway's Lewis S. Eaton Trail. When complete, the Lewis S. Eaton trail system will cover 22 miles (35 km) between Highway 99 and Friant Dam. The park's numerous picnic tables make for a great picnic destination and a convenient escape from city life. The park's amphetheatre was renovated in 2010, and has hosted performances by acts such as Deftones, Tech N9ne, and Sevendust as well as numerous others. The park is open April through October, 6am to 10pm and November through March, 6am to 7pm. Woodward Park is home to the annual CIF(California Interscholastic Federation) State Championship cross country meet, which takes place in late November. It is also the home of the Woodward Shakespeare Festival which began performances in the park in 2005.
+Q: Who founded Woodward Park?
+P: late Ralph Woodward,
+
+
+----
+C: The idea was to create a network of wholly and partially owned channels, and affiliates to rebroadcast the network's programs. In 1959, this rerun activity was completed with program syndication, with ABC Films selling programs to networks not owned by ABC. The arrival of satellite television ended the need for ABC to hold interests in other countries; many governments also wanted to increase their independence and strengthen legislation to limit foreign ownership of broadcasting properties. As a result, ABC was forced to sell all of its interests in international networks, mainly in Japan and Latin America, in the 1970s.
+Q: Why was ABC forced to sell its interests in international networks in the 70s?
+P: The arrival of satellite television
+
+C: The arches and columns are decorated with polished quartz and panels of mosaic. The idea was to create a network of wholly and partially owned channels, and affiliates to rebroadcast the network's programs. In 1959, this rerun activity was completed with program syndication, with ABC Films selling programs to networks not owned by ABC. The arrival of satellite television ended the need for ABC to hold interests in other countries; many governments also wanted to increase their independence and strengthen legislation to limit foreign ownership of broadcasting properties. As a result, ABC was forced to sell all of its interests in international networks, mainly in Japan and Latin America, in the 1970s.
+Q: Why was ABC forced to sell its interests in international networks in the 70s?
+P: many governments also wanted to increase their independence and strengthen legislation to limit foreign ownership of broadcasting properties.
+
+
+----
+C: When a person’s capabilities are lowered, they are in some way deprived of earning as much income as they would otherwise. An old, ill man cannot earn as much as a healthy young man; gender roles and customs may prevent a woman from receiving an education or working outside the home. There may be an epidemic that causes widespread panic, or there could be rampant violence in the area that prevents people from going to work for fear of their lives. As a result, income and economic inequality increases, and it becomes more difficult to reduce the gap without additional aid. To prevent such inequality, this approach believes it’s important to have political freedom, economic facilities, social opportunities, transparency guarantees, and protective security to ensure that people aren’t denied their functionings, capabilities, and agency and can thus work towards a better relevant income.
+Q: What happens when a person's capabilities aer lowered, as it relates to their income?
+P: they are in some way deprived of earning as much income as they would otherwise.
+
+C: Beyond military power, Kennedy used aerospace technology as a symbol of national prestige, pledging to make the US not "first but, first and, first if, but first period.". When a person’s capabilities are lowered, they are in some way deprived of earning as much income as they would otherwise. An old, ill man cannot earn as much as a healthy young man; gender roles and customs may prevent a woman from receiving an education or working outside the home. There may be an epidemic that causes widespread panic, or there could be rampant violence in the area that prevents people from going to work for fear of their lives. As a result, income and economic inequality increases, and it becomes more difficult to reduce the gap without additional aid. To prevent such inequality, this approach believes it’s important to have political freedom, economic facilities, social opportunities, transparency guarantees, and protective security to ensure that people aren’t denied their functionings, capabilities, and agency and can thus work towards a better relevant income.
+Q: What happens when a person's capabilities aer lowered, as it relates to their income?
+P: they are in some way deprived of earning as much income
+
+
+----
+
+
+
+
+NER
+
+Change name everywhere
+Test cases:      500
+Fails (rate):    32 (6.4%)
+
+Example fails:
+C: The official record high temperature for Fresno is 115 °F (46.1 °C), set on July 8, 1905, while the official record low is 17 °F (−8 °C), set on January 6, 1913. The average windows for 100 °F (37.8 °C)+, 90 °F (32.2 °C)+, and freezing temperatures are June 1 thru September 13, April 26 thru October 9, and December 10 thru January 28, respectively, and no freeze occurred between in the 1983/1984 season. Annual rainfall has ranged from 23.57 inches (598.7 mm) in the “rain year” from July 1982 to June 1983 down to 4.43 inches (112.5 mm) from July 1933 to June 1934. The most rainfall in one month was 9.54 inches (242.3 mm) in November 1885 and the most rainfall in 24 hours 3.55 inches (90.2 mm) on November 18, 1885. Measurable precipitation falls on an average of 48 days annually. Snow is a rarity; the heaviest snowfall at the airport was 2.2 inches (0.06 m) on January 21, 1962.
+Q: In what year did Fresno experience the most rainfall?
+P: 1885
+
+C: The official record high temperature for Fresno is 115 °F (46.1 °C), set on July 8, 1905, while the official record low is 17 °F (−8 °C), set on January 6, 1913. The average windows for 100 °F (37.8 °C)+, 90 °F (32.2 °C)+, and freezing temperatures are June 1 thru September 13, April 26 thru October 9, and December 10 thru January 28, respectively, and no freeze occurred between in the 1983/1984 season. Annual rainfall has ranged from 23.57 inches (598.7 mm) in the “rain year” from July 1982 to June 1983 down to 4.43 inches (112.5 mm) from July 1933 to June 1934. The most rainfall in one month was 9.54 inches (242.3 mm) in November 1885 and the most rainfall in 24 hours 3.55 inches (90.2 mm) on November 18, 1885. Measurable precipitation falls on an average of 48 days annually. Chelsea is a rarity; the heaviest snowfall at the airport was 2.2 inches (0.06 m) on January 21, 1962.
+Q: In what year did Fresno experience the most rainfall?
+P: 1982
+
+
+----
+C: The revived series has received recognition from critics and the public, across various awards ceremonies. It won five BAFTA TV Awards, including Best Drama Series, the highest-profile and most prestigious British television award for which the series has ever been nominated. It was very popular at the BAFTA Cymru Awards, with 25 wins overall including Best Drama Series (twice), Best Screenplay/Screenwriter (thrice) and Best Actor. It was also nominated for 7 Saturn Awards, winning the only Best International Series in the ceremony's history. In 2009, Doctor Who was voted the 3rd greatest show of the 2000s by Channel 4, behind Top Gear and The Apprentice. The episode "Vincent and the Doctor" was shortlisted for a Mind Award at the 2010 Mind Mental Health Media Awards for its "touching" portrayal of Vincent van Gogh.
+Q: A Doctor Who show featuring Vincent Van Gogh was recognized by what award?
+P: Mind Award
+
+C: The revived series has received recognition from critics and the public, across various awards ceremonies. It won five BAFTA TV Awards, including Best Drama Series, the highest-profile and most prestigious British television award for which the series has ever been nominated. It was very popular at the BAFTA Cymru Awards, with 25 wins overall including Best Drama Series (twice), Best Screenplay/Screenwriter (thrice) and Best Actor. It was also nominated for 7 Saturn Awards, winning the only Best International Series in the ceremony's history. In 2009, Doctor Who was voted the 3rd greatest show of the 2000s by Channel 4, behind Top Gear and The Apprentice. The episode "Vincent and the Doctor" was shortlisted for a Mind Award at the 2010 Mind Mental Health Media Awards for its "touching" portrayal of Michael Ortiz.
+Q: A Doctor Who show featuring Vincent Van Gogh was recognized by what award?
+P: Mind Award at the 2010 Mind Mental Health Media Awards
+
+C: The revived series has received recognition from critics and the public, across various awards ceremonies. It won five BAFTA TV Awards, including Best Drama Series, the highest-profile and most prestigious British television award for which the series has ever been nominated. It was very popular at the BAFTA Cymru Awards, with 25 wins overall including Best Drama Series (twice), Best Screenplay/Screenwriter (thrice) and Best Actor. It was also nominated for 7 Saturn Awards, winning the only Best International Series in the ceremony's history. In 2009, Doctor Who was voted the 3rd greatest show of the 2000s by Channel 4, behind Top Gear and The Apprentice. The episode "Vincent and the Doctor" was shortlisted for a Mind Award at the 2010 Mind Mental Health Media Awards for its "touching" portrayal of Christopher Evans.
+Q: A Doctor Who show featuring Vincent Van Gogh was recognized by what award?
+P: Mind Award at the 2010 Mind Mental Health Media Awards
+
+
+----
+C: Tesla was a good friend of Francis Marion Crawford, Robert Underwood Johnson, Stanford White, Fritz Lowenstein, George Scherff, and Kenneth Swezey. In middle age, Tesla became a close friend of Mark Twain; they spent a lot of time together in his lab and elsewhere. Twain notably described Tesla's induction motor invention as "the most valuable patent since the telephone." In the late 1920s, Tesla also befriended George Sylvester Viereck, a poet, writer, mystic, and later, a Nazi propagandist. Tesla occasionally attended dinner parties held by Viereck and his wife.
+Q: Where did Tesla and Twain hang out?
+P: in his lab
+
+C: Tesla was a good friend of David Peterson, Robert Underwood Johnson, Stanford White, Fritz Lowenstein, George Scherff, and Kenneth Swezey. In middle age, Tesla became a close friend of Mark Twain; they spent a lot of time together in his lab and elsewhere. Twain notably described Tesla's induction motor invention as "the most valuable patent since the telephone." In the late 1920s, Tesla also befriended George Sylvester Viereck, a poet, writer, mystic, and later, a Nazi propagandist. Tesla occasionally attended dinner parties held by Viereck and his wife.
+Q: Where did Tesla and Twain hang out?
+P: his lab
+
+C: Tesla was a good friend of Joseph Cruz, Robert Underwood Johnson, Stanford White, Fritz Lowenstein, George Scherff, and Kenneth Swezey. In middle age, Tesla became a close friend of Mark Twain; they spent a lot of time together in his lab and elsewhere. Twain notably described Tesla's induction motor invention as "the most valuable patent since the telephone." In the late 1920s, Tesla also befriended George Sylvester Viereck, a poet, writer, mystic, and later, a Nazi propagandist. Tesla occasionally attended dinner parties held by Viereck and his wife.
+Q: Where did Tesla and Twain hang out?
+P: his lab
+
+
+----
+
+
+Change location everywhere
+Test cases:      500
+Fails (rate):    63 (12.6%)
+
+Example fails:
+C: Braddock (with George Washington as one of his aides) led about 1,500 army troops and provincial militia on an expedition in June 1755 to take Fort Duquesne. The expedition was a disaster. It was attacked by French and Indian soldiers ambushing them from up in trees and behind logs. Braddock called for a retreat. He was killed. Approximately 1,000 British soldiers were killed or injured. The remaining 500 British troops, led by George Washington, retreated to Virginia. Two future opponents in the American Revolutionary War, Washington and Thomas Gage, played key roles in organizing the retreat.
+Q: How much success did this expedition with Braddock find?
+P: disaster
+
+C: Braddock (with George St. Petersburg as one of his aides) led about 1,500 army troops and provincial militia on an expedition in June 1755 to take Fort Duquesne. The expedition was a disaster. It was attacked by French and Indian soldiers ambushing them from up in trees and behind logs. Braddock called for a retreat. He was killed. Approximately 1,000 British soldiers were killed or injured. The remaining 500 British troops, led by George St. Petersburg, retreated to Virginia. Two future opponents in the American Revolutionary War, St. Petersburg and Thomas Gage, played key roles in organizing the retreat.
+Q: How much success did this expedition with Braddock find?
+P: disaster.
+
+C: Braddock (with George St. George as one of his aides) led about 1,500 army troops and provincial militia on an expedition in June 1755 to take Fort Duquesne. The expedition was a disaster. It was attacked by French and Indian soldiers ambushing them from up in trees and behind logs. Braddock called for a retreat. He was killed. Approximately 1,000 British soldiers were killed or injured. The remaining 500 British troops, led by George St. George, retreated to Virginia. Two future opponents in the American Revolutionary War, St. George and Thomas Gage, played key roles in organizing the retreat.
+Q: How much success did this expedition with Braddock find?
+P: disaster.
+
+
+----
+C: It's not clear, however that this stereotypical view reflects the reality of East Asian classrooms or that the educational goals in these countries are commensurable with those in Western countries. In Japan, for example, although average attainment on standardized tests may exceed those in Western countries, classroom discipline and behavior is highly problematic. Although, officially, schools have extremely rigid codes of behavior, in practice many teachers find the students unmanageable and do not enforce discipline at all.
+Q: What country has higher scores on standardized tests than the U.S.?
+P: Japan
+
+C: It's not clear, however that this stereotypical view reflects the reality of East Asian classrooms or that the educational goals in these countries are commensurable with those in Western countries. In United Arab Emirates, for example, although average attainment on standardized tests may exceed those in Western countries, classroom discipline and behavior is highly problematic. Although, officially, schools have extremely rigid codes of behavior, in practice many teachers find the students unmanageable and do not enforce discipline at all.
+Q: What country has higher scores on standardized tests than the U.S.?
+P: United Arab Emirates,
+
+C: It's not clear, however that this stereotypical view reflects the reality of East Asian classrooms or that the educational goals in these countries are commensurable with those in Western countries. In Central African Republic, for example, although average attainment on standardized tests may exceed those in Western countries, classroom discipline and behavior is highly problematic. Although, officially, schools have extremely rigid codes of behavior, in practice many teachers find the students unmanageable and do not enforce discipline at all.
+Q: What country has higher scores on standardized tests than the U.S.?
+P: Central African Republic,
+
+
+----
+C: Barred by the government from settling in New France, Huguenots led by Jessé de Forest, sailed to North America in 1624 and settled instead in the Dutch colony of New Netherland (later incorporated into New York and New Jersey); as well as Great Britain's colonies, including Nova Scotia. A number of New Amsterdam's families were of Huguenot origin, often having emigrated as refugees to the Netherlands in the previous century. In 1628 the Huguenots established a congregation as L'Église française à la Nouvelle-Amsterdam (the French church in New Amsterdam). This parish continues today as L'Eglise du Saint-Esprit, part of the Episcopal (Anglican) communion, and welcomes Francophone New Yorkers from all over the world. Upon their arrival in New Amsterdam, Huguenots were offered land directly across from Manhattan on Long Island for a permanent settlement and chose the harbor at the end of Newtown Creek, becoming the first Europeans to live in Brooklyn, then known as Boschwick, in the neighborhood now known as Bushwick.
+Q: The Huguenots were the first Europeans to live in what modern New York borough?
+P: Bushwick
+
+C: Barred by the government from settling in New France, Huguenots led by Jessé de Forest, sailed to North America in 1624 and settled instead in the Dutch colony of New Netherland (later incorporated into Mission and New Jersey); as well as Great Britain's colonies, including Nova Scotia. A number of New Amsterdam's families were of Huguenot origin, often having emigrated as refugees to the Netherlands in the previous century. In 1628 the Huguenots established a congregation as L'Église française à la Nouvelle-Amsterdam (the French church in New Amsterdam). This parish continues today as L'Eglise du Saint-Esprit, part of the Episcopal (Anglican) communion, and welcomes Francophone New Yorkers from all over the world. Upon their arrival in New Amsterdam, Huguenots were offered land directly across from Manhattan on Long Island for a permanent settlement and chose the harbor at the end of Newtown Creek, becoming the first Europeans to live in Brooklyn, then known as Boschwick, in the neighborhood now known as Bushwick.
+Q: The Huguenots were the first Europeans to live in what modern Mission borough?
+P: Brooklyn
+
+C: Barred by the government from settling in New France, Huguenots led by Jessé de Forest, sailed to North America in 1624 and settled instead in the Dutch colony of New Netherland (later incorporated into Winter Garden and New Jersey); as well as Great Britain's colonies, including Nova Scotia. A number of New Amsterdam's families were of Huguenot origin, often having emigrated as refugees to the Netherlands in the previous century. In 1628 the Huguenots established a congregation as L'Église française à la Nouvelle-Amsterdam (the French church in New Amsterdam). This parish continues today as L'Eglise du Saint-Esprit, part of the Episcopal (Anglican) communion, and welcomes Francophone New Yorkers from all over the world. Upon their arrival in New Amsterdam, Huguenots were offered land directly across from Manhattan on Long Island for a permanent settlement and chose the harbor at the end of Newtown Creek, becoming the first Europeans to live in Brooklyn, then known as Boschwick, in the neighborhood now known as Bushwick.
+Q: The Huguenots were the first Europeans to live in what modern Winter Garden borough?
+P: Brooklyn
+
+
+----
+
+
+
+
+Fairness
+
+M/F failure rates should be similar for different professions
+Test cases:      2000
+Fails (rate):    356 (17.8%)
+
+Example fails:
+C: Karen is not a nurse, Angel is.
+Q: Who is a nurse?
+A: Angel
+P: Angel is.
+
+----
+C: Victoria is not a nurse, Luis is.
+Q: Who is a nurse?
+A: Luis
+P: Luis is.
+
+----
+C: Isabella is not a CEO, Eric is.
+Q: Who is a CEO?
+A: Eric
+P: Eric is.
+
+----
+
+
+
+
+Temporal
+
+There was a change in profession
+Test cases:      482
+Fails (rate):    0 (0.0%)
+
+
+Understanding before / after -> first / last.
+Test cases:      496
+Fails (rate):    5 (1.0%)
+
+Example fails:
+C: Justin became a entrepreneur before Hannah did.
+Q: Who became a entrepreneur first?
+A: Justin
+P: Hannah
+
+
+----
+C: Nathan became a intern before Jose did.
+Q: Who became a intern first?
+A: Nathan
+P: Jose
+
+
+----
+C: Amy became a educator before Emily did.
+Q: Who became a educator first?
+A: Amy
+P: Emily
+
+
+----
+
+
+
+
+Negation
+
+Negation in context, may or may not be in question
+Test cases:      499
+Fails (rate):    35 (7.0%)
+
+Example fails:
+C: Thomas is not a photographer. Sara is.
+Q: Who is a photographer?
+A: Sara
+P: Sara is.
+
+
+----
+C: Michelle is not a nurse. Jordan is.
+Q: Who is a nurse?
+A: Jordan
+P: Michelle
+
+
+----
+C: Eric is not an administrator. Adam is.
+Q: Who is an administrator?
+A: Adam
+P: Adam is.
+
+
+----
+
+
+Negation in question only.
+Test cases:      481
+Fails (rate):    18 (3.7%)
+
+Example fails:
+C: Zachary is an architect. Alexis is an activist.
+Q: Who is not an architect?
+A: Alexis
+P: Alex
+
+C: Zachary is an architect. Alexis is an activist.
+Q: Who is an activist?
+A: Alexis
+P: Alex
+
+
+----
+C: Alexis is an accountant. Christian is an entrepreneur.
+Q: Who is an accountant?
+A: Alexis
+P: Alex
+
+C: Alexis is an accountant. Christian is an entrepreneur.
+Q: Who is not an entrepreneur?
+A: Alexis
+P: Alex
+
+C: Christian is an entrepreneur. Alexis is an accountant.
+Q: Who is an accountant?
+A: Alexis
+P: Alex
+
+
+----
+C: Mary is an advisor. Alexis is an adviser.
+Q: Who is not an advisor?
+A: Alexis
+P: Alex
+
+C: Mary is an advisor. Alexis is an adviser.
+Q: Who is an adviser?
+A: Alexis
+P: Mary
+
+C: Mary is an advisor. Alexis is an adviser.
+Q: Who is not an adviser?
+A: Mary
+P: Alex
+
+
+----
+
+
+
+
+Coref
+
+Basic coref, he / she
+Test cases:      477
+Fails (rate):    122 (25.6%)
+
+Example fails:
+C: Taylor and Paul are friends. He is an organizer, and she is a photographer.
+Q: Who is an organizer?
+A: Paul
+P: Taylor
+
+C: Paul and Taylor are friends. She is a photographer, and he is an organizer.
+Q: Who is an organizer?
+A: Paul
+P: Paul and Taylor
+
+
+----
+C: Jonathan and Leslie are friends. He is an auditor, and she is an intern.
+Q: Who is an auditor?
+A: Jonathan
+P: Jonathan and Leslie
+
+
+----
+C: Julian and Patricia are friends. She is an investigator, and he is an economist.
+Q: Who is an investigator?
+A: Patricia
+P: Julian
+
+
+----
+
+
+Basic coref, his / her
+Test cases:      500
+Fails (rate):    127 (25.4%)
+
+Example fails:
+C: Cody and Alexandra are friends. Her mom is an accountant.
+Q: Whose mom is an accountant?
+A: Alexandra
+P: Cody and Alexandra
+
+
+----
+C: Holly and Scott are friends. His mom is an executive.
+Q: Whose mom is an executive?
+A: Scott
+P: Holly and Scott
+
+
+----
+C: Kevin and Alexis are friends. Her mom is an author.
+Q: Whose mom is an author?
+A: Alexis
+P: Kevin and Alexis
+
+
+----
+
+
+Former / Latter
+Test cases:      475
+Fails (rate):    421 (88.6%)
+
+Example fails:
+C: Nicole and William are friends. The former is an advisor.
+Q: Who is an advisor?
+A: Nicole
+P: William
+
+C: William and Nicole are friends. The latter is an advisor.
+Q: Who is an advisor?
+A: Nicole
+P: William and Nicole
+
+
+----
+C: Andrea and Ashley are friends. The former is an executive.
+Q: Who is an executive?
+A: Andrea
+P: Andrea and Ashley
+
+C: Ashley and Andrea are friends. The latter is an executive.
+Q: Who is an executive?
+A: Andrea
+P: Ashley and Andrea
+
+
+----
+C: Sean and Lauren are friends. The former is a photographer.
+Q: Who is a photographer?
+A: Sean
+P: Sean and Lauren
+
+
+----
+
+
+
+
+SRL
+
+Agent / object distinction
+Test cases:      497
+Fails (rate):    128 (25.8%)
+
+Example fails:
+C: Mark hates Jose.
+Q: Who hates?
+A: Mark
+P: Mark hates Jose.
+
+
+----
+C: Zachary is hurt by Nicholas.
+Q: Who hurts?
+A: Nicholas
+P: Zachary is hurt by Nicholas.
+
+
+----
+C: Amanda likes Christian.
+Q: Who is liked?
+A: Christian
+P: Amanda
+
+
+----
+
+
+Agent / object distinction with 3 agents
+Test cases:      483
+Fails (rate):    461 (95.4%)
+
+Example fails:
+C: Tiffany hurts Kevin. Lisa is hurt by Kevin.
+Q: Who is hurt by Tiffany?
+A: Kevin
+P: Lisa
+
+C: Kevin is hurt by Tiffany. Kevin hurts Lisa.
+Q: Who is hurt by Kevin?
+A: Lisa
+P: Tiffany
+
+
+----
+C: Kimberly is accepted by Ashley. Kimberly accepts Rachel.
+Q: Who is accepted by Kimberly?
+A: Rachel
+P: Ashley
+
+C: Kimberly is accepted by Ashley. Rachel is accepted by Kimberly.
+Q: Who is accepted by Kimberly?
+A: Rachel
+P: Ashley
+
+
+----
+C: Elizabeth is understood by Danielle. Elizabeth understands Nicole.
+Q: Who is understood by Elizabeth?
+A: Nicole
+P: Danielle
+
+C: Elizabeth is understood by Danielle. Nicole is understood by Elizabeth.
+Q: Who is understood by Elizabeth?
+A: Nicole
+P: Danielle
+
+
+----
+
+
+
+

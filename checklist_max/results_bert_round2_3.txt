@@ -1,0 +1,849 @@
+Vocabulary
+
+A is COMP than B. Who is more / less COMP?
+Test cases:      494
+Fails (rate):    100 (20.2%)
+
+Example fails:
+C: Taylor is slower than Richard.
+Q: Who is slower?
+A: Taylor
+P: Richard
+
+
+----
+C: Melissa is slower than John.
+Q: Who is slower?
+A: Melissa
+P: John
+
+
+----
+C: Amanda is shorter than William.
+Q: Who is shorter?
+A: Amanda
+P: William
+
+
+----
+
+
+Intensifiers (very, super, extremely) and reducers (somewhat, kinda, etc)?
+Test cases:      497
+Fails (rate):    356 (71.6%)
+
+Example fails:
+C: Nicholas is highly clear about the project. John is clear about the project.
+Q: Who is least clear about the project?
+A: John
+P: Nicholas
+
+
+----
+C: Brittany is extremely happy about the project. Jordan is happy about the project.
+Q: Who is least happy about the project?
+A: Jordan
+P: Brittany
+
+
+----
+C: Rebecca is quite enthusiastic about the project. Christina is enthusiastic about the project.
+Q: Who is most enthusiastic about the project?
+A: Rebecca
+P: Christina
+
+C: Christina is enthusiastic about the project. Rebecca is quite enthusiastic about the project.
+Q: Who is most enthusiastic about the project?
+A: Rebecca
+P: Christina
+
+
+----
+
+
+
+
+Taxonomy
+
+size, shape, age, color
+Test cases:      500
+Fails (rate):    250 (50.0%)
+
+Example fails:
+C: There is a painting in the room. The painting is big and blue.
+Q: What size is the painting?
+A: big
+P: big and blue
+
+
+----
+C: There is a new purple painting in the room.
+Q: What age is the painting?
+A: new
+P: purple
+
+
+----
+C: There is a big orange toy in the room.
+Q: What size is the toy?
+A: big
+P: big orange
+
+C: There is a toy in the room. The toy is big and orange.
+Q: What size is the toy?
+A: big
+P: big and orange
+
+
+----
+
+
+Profession vs nationality
+Test cases:      500
+Fails (rate):    58 (11.6%)
+
+Example fails:
+C: Austin is an Indian agent.
+Q: What is Austin's job?
+A: agent
+P: Indian agent
+
+
+----
+C: Ethan is a Brazilian assistant.
+Q: What is Ethan's job?
+A: assistant
+P: Brazilian assistant
+
+
+----
+C: Eric is a Pakistani adviser.
+Q: What is Eric's job?
+A: adviser
+P: Pakistani adviser
+
+
+----
+
+
+Animal vs Vehicle
+Test cases:      500
+Fails (rate):    8 (1.6%)
+
+Example fails:
+C: Lauren has a duck and a firetruck.
+Q: What vehicle does Lauren have?
+A: firetruck
+P: a duck and a firetruck
+
+
+----
+C: Maria has an iguana and a firetruck.
+Q: What vehicle does Maria have?
+A: firetruck
+P: an iguana and a firetruck
+
+
+----
+C: Noah has a duck and a firetruck.
+Q: What vehicle does Noah have?
+A: firetruck
+P: a duck and a firetruck
+
+
+----
+
+
+Animal vs Vehicle v2
+Test cases:      496
+Fails (rate):    5 (1.0%)
+
+Example fails:
+C: Christian bought a fish. Alyssa bought a firetruck.
+Q: Who bought an animal?
+A: Christian
+P: Alyssa
+
+
+----
+C: Olivia bought a fish. Lisa bought a firetruck.
+Q: Who bought an animal?
+A: Olivia
+P: Olivia bought a fish. Lisa
+
+
+----
+C: Zachary bought a fish. Justin bought a firetruck.
+Q: Who bought an animal?
+A: Zachary
+P: Zachary bought a fish. Justin
+
+
+----
+
+
+Synonyms
+Test cases:      447
+Fails (rate):    3 (0.7%)
+
+Example fails:
+C: Christopher is very outspoken. Noah is very joyful.
+Q: Who is vocal?
+A: Christopher
+P: Noah
+
+
+----
+C: Taylor is very vocal. Jose is very courageous.
+Q: Who is outspoken?
+A: Taylor
+P: Jose
+
+
+----
+C: Mark is very vocal. Christina is very intelligent.
+Q: Who is outspoken?
+A: Mark
+P: Christina
+
+
+----
+
+
+A is COMP than B. Who is antonym(COMP)? B
+Test cases:      496
+Fails (rate):    252 (50.8%)
+
+Example fails:
+C: Anthony is dumber than Megan.
+Q: Who is smarter?
+A: Megan
+P: Anthony
+
+
+----
+C: Austin is slower than Richard.
+Q: Who is slower?
+A: Austin
+P: Richard
+
+
+----
+C: Nicholas is darker than Kimberly.
+Q: Who is lighter?
+A: Kimberly
+P: Nicholas
+
+
+----
+
+
+A is more X than B. Who is more antonym(X)? B. Who is less X? B. Who is more X? A. Who is less antonym(X)? A.
+Test cases:      491
+Fails (rate):    491 (100.0%)
+
+Example fails:
+C: Brandon is more pessimistic than Jeffrey.
+Q: Who is more optimistic?
+A: Jeffrey
+P: Brandon
+
+C: Brandon is more pessimistic than Jeffrey.
+Q: Who is less optimistic?
+A: Brandon
+P: Jeffrey
+
+C: Brandon is less optimistic than Jeffrey.
+Q: Who is more pessimistic?
+A: Brandon
+P: Jeffrey
+
+
+----
+C: Anna is more positive than Amy.
+Q: Who is less negative?
+A: Anna
+P: Amy
+
+C: Amy is more negative than Anna.
+Q: Who is less positive?
+A: Amy
+P: Anna
+
+C: Anna is less negative than Amy.
+Q: Who is more positive?
+A: Anna
+P: Amy
+
+
+----
+C: Christina is more visible than Lauren.
+Q: Who is less invisible?
+A: Christina
+P: Lauren
+
+C: Lauren is more invisible than Christina.
+Q: Who is more visible?
+A: Christina
+P: Lauren
+
+C: Lauren is more invisible than Christina.
+Q: Who is less visible?
+A: Lauren
+P: Christina
+
+
+----
+
+
+
+
+Robustness
+
+Question typo
+Test cases:      500
+Fails (rate):    62 (12.4%)
+
+Example fails:
+C: In 1271, Kublai Khan imposed the name Great Yuan (Chinese: 大元; pinyin: Dà Yuán; Wade–Giles: Ta-Yüan), establishing the Yuan dynasty. "Dà Yuán" (大元) is from the sentence "大哉乾元" (dà zai Qián Yuán / "Great is Qián, the Primal") in the Commentaries on the Classic of Changes (I Ching) section regarding Qián (乾). The counterpart in Mongolian language was Dai Ön Ulus, also rendered as Ikh Yuan Üls or Yekhe Yuan Ulus. In Mongolian, Dai Ön (Great Yuan) is often used in conjunction with the "Yeke Mongghul Ulus" (lit. "Great Mongol State"), resulting in Dai Ön Yeke Mongghul Ulus (Mongolian script: ), meaning "Great Yuan Great Mongol State". The Yuan dynasty is also known as the "Mongol dynasty" or "Mongol Dynasty of China", similar to the names "Manchu dynasty" or "Manchu Dynasty of China" for the Qing dynasty. Furthermore, the Yuan is sometimes known as the "Empire of the Great Khan" or "Khanate of the Great Khan", which particularly appeared on some Yuan maps, since Yuan emperors held the nominal title of Great Khan. Nevertheless, both terms can also refer to the khanate within the Mongol Empire directly ruled by Great Khans before the actual establishment of the Yuan dynasty by Kublai Khan in 1271.
+Q: What writing inspired the name Great Yuan?
+P: I Ching
+
+C: In 1271, Kublai Khan imposed the name Great Yuan (Chinese: 大元; pinyin: Dà Yuán; Wade–Giles: Ta-Yüan), establishing the Yuan dynasty. "Dà Yuán" (大元) is from the sentence "大哉乾元" (dà zai Qián Yuán / "Great is Qián, the Primal") in the Commentaries on the Classic of Changes (I Ching) section regarding Qián (乾). The counterpart in Mongolian language was Dai Ön Ulus, also rendered as Ikh Yuan Üls or Yekhe Yuan Ulus. In Mongolian, Dai Ön (Great Yuan) is often used in conjunction with the "Yeke Mongghul Ulus" (lit. "Great Mongol State"), resulting in Dai Ön Yeke Mongghul Ulus (Mongolian script: ), meaning "Great Yuan Great Mongol State". The Yuan dynasty is also known as the "Mongol dynasty" or "Mongol Dynasty of China", similar to the names "Manchu dynasty" or "Manchu Dynasty of China" for the Qing dynasty. Furthermore, the Yuan is sometimes known as the "Empire of the Great Khan" or "Khanate of the Great Khan", which particularly appeared on some Yuan maps, since Yuan emperors held the nominal title of Great Khan. Nevertheless, both terms can also refer to the khanate within the Mongol Empire directly ruled by Great Khans before the actual establishment of the Yuan dynasty by Kublai Khan in 1271.
+Q: What writing inpsired the name Great Yuan?
+P: Mongolian
+
+
+----
+C: Some priests and former religious had already married, including Andreas Karlstadt and Justus Jonas, but Luther's wedding set the seal of approval on clerical marriage. He had long condemned vows of celibacy on Biblical grounds, but his decision to marry surprised many, not least Melanchthon, who called it reckless. Luther had written to George Spalatin on 30 November 1524, "I shall never take a wife, as I feel at present. Not that I am insensible to my flesh or sex (for I am neither wood nor stone); but my mind is averse to wedlock because I daily expect the death of a heretic." Before marrying, Luther had been living on the plainest food, and, as he admitted himself, his mildewed bed was not properly made for months at a time.
+Q: What was Luther's marriage seen as by others?
+P: reckless
+
+C: Some priests and former religious had already married, including Andreas Karlstadt and Justus Jonas, but Luther's wedding set the seal of approval on clerical marriage. He had long condemned vows of celibacy on Biblical grounds, but his decision to marry surprised many, not least Melanchthon, who called it reckless. Luther had written to George Spalatin on 30 November 1524, "I shall never take a wife, as I feel at present. Not that I am insensible to my flesh or sex (for I am neither wood nor stone); but my mind is averse to wedlock because I daily expect the death of a heretic." Before marrying, Luther had been living on the plainest food, and, as he admitted himself, his mildewed bed was not properly made for months at a time.
+Q: What was Luther's marriage seen as by otehrs?
+P: set the seal of approval on clerical marriage
+
+
+----
+C: The Panthers offense, which led the NFL in scoring (500 points), was loaded with talent, boasting six Pro Bowl selections. Pro Bowl quarterback Cam Newton had one of his best seasons, throwing for 3,837 yards and rushing for 636, while recording a career-high and league-leading 45 total touchdowns (35 passing, 10 rushing), a career-low 10 interceptions, and a career-best quarterback rating of 99.4. Newton's leading receivers were tight end Greg Olsen, who caught a career-high 77 passes for 1,104 yards and seven touchdowns, and wide receiver Ted Ginn, Jr., who caught 44 passes for 739 yards and 10 touchdowns; Ginn also rushed for 60 yards and returned 27 punts for 277 yards. Other key receivers included veteran Jerricho Cotchery (39 receptions for 485 yards), rookie Devin Funchess (31 receptions for 473 yards and five touchdowns), and second-year receiver Corey Brown (31 receptions for 447 yards). The Panthers backfield featured Pro Bowl running back Jonathan Stewart, who led the team with 989 rushing yards and six touchdowns in 13 games, along with Pro Bowl fullback Mike Tolbert, who rushed for 256 yards and caught 18 passes for another 154 yards. Carolina's offensive line also featured two Pro Bowl selections: center Ryan Kalil and guard Trai Turner.
+Q: How many points did Carolina lead the NFL in scoring for offensive plays?
+P: 500
+
+C: The Panthers offense, which led the NFL in scoring (500 points), was loaded with talent, boasting six Pro Bowl selections. Pro Bowl quarterback Cam Newton had one of his best seasons, throwing for 3,837 yards and rushing for 636, while recording a career-high and league-leading 45 total touchdowns (35 passing, 10 rushing), a career-low 10 interceptions, and a career-best quarterback rating of 99.4. Newton's leading receivers were tight end Greg Olsen, who caught a career-high 77 passes for 1,104 yards and seven touchdowns, and wide receiver Ted Ginn, Jr., who caught 44 passes for 739 yards and 10 touchdowns; Ginn also rushed for 60 yards and returned 27 punts for 277 yards. Other key receivers included veteran Jerricho Cotchery (39 receptions for 485 yards), rookie Devin Funchess (31 receptions for 473 yards and five touchdowns), and second-year receiver Corey Brown (31 receptions for 447 yards). The Panthers backfield featured Pro Bowl running back Jonathan Stewart, who led the team with 989 rushing yards and six touchdowns in 13 games, along with Pro Bowl fullback Mike Tolbert, who rushed for 256 yards and caught 18 passes for another 154 yards. Carolina's offensive line also featured two Pro Bowl selections: center Ryan Kalil and guard Trai Turner.
+Q: How many points did Carolnia lead the NFL in scoring for offensive plays?
+P: 500 points
+
+
+----
+
+
+Question contractions
+Test cases:      500
+Fails (rate):    19 (3.8%)
+
+Example fails:
+C: Internet2 is a not-for-profit United States computer networking consortium led by members from the research and education communities, industry, and government. The Internet2 community, in partnership with Qwest, built the first Internet2 Network, called Abilene, in 1998 and was a prime investor in the National LambdaRail (NLR) project. In 2006, Internet2 announced a partnership with Level 3 Communications to launch a brand new nationwide network, boosting its capacity from 10 Gbit/s to 100 Gbit/s. In October, 2007, Internet2 officially retired Abilene and now refers to its new, higher capacity network as the Internet2 Network.
+Q:  what is Internet2
+P: a not-for-profit United States computer networking consortium
+
+C: Internet2 is a not-for-profit United States computer networking consortium led by members from the research and education communities, industry, and government. The Internet2 community, in partnership with Qwest, built the first Internet2 Network, called Abilene, in 1998 and was a prime investor in the National LambdaRail (NLR) project. In 2006, Internet2 announced a partnership with Level 3 Communications to launch a brand new nationwide network, boosting its capacity from 10 Gbit/s to 100 Gbit/s. In October, 2007, Internet2 officially retired Abilene and now refers to its new, higher capacity network as the Internet2 Network.
+Q:  what's Internet2
+P: Internet2 is a not-for-profit United States computer networking consortium
+
+
+----
+C: The Chinese medical tradition of the Yuan had "Four Great Schools" that the Yuan inherited from the Jin dynasty. All four schools were based on the same intellectual foundation, but advocated different theoretical approaches toward medicine. Under the Mongols, the practice of Chinese medicine spread to other parts of the empire. Chinese physicians were brought along military campaigns by the Mongols as they expanded towards the west. Chinese medical techniques such as acupuncture, moxibustion, pulse diagnosis, and various herbal drugs and elixirs were transmitted westward to the Middle East and the rest of the empire. Several medical advances were made in the Yuan period. The physician Wei Yilin (1277–1347) invented a suspension method for reducing dislocated joints, which he performed using anesthetics. The Mongol physician Hu Sihui described the importance of a healthy diet in a 1330 medical treatise.
+Q: How did the Yuan come to have the 4 schools of medicine?
+P: inherited from the Jin dynasty
+
+C: The Chinese medical tradition of the Yuan had "Four Great Schools" that the Yuan inherited from the Jin dynasty. All four schools were based on the same intellectual foundation, but advocated different theoretical approaches toward medicine. Under the Mongols, the practice of Chinese medicine spread to other parts of the empire. Chinese physicians were brought along military campaigns by the Mongols as they expanded towards the west. Chinese medical techniques such as acupuncture, moxibustion, pulse diagnosis, and various herbal drugs and elixirs were transmitted westward to the Middle East and the rest of the empire. Several medical advances were made in the Yuan period. The physician Wei Yilin (1277–1347) invented a suspension method for reducing dislocated joints, which he performed using anesthetics. The Mongol physician Hu Sihui described the importance of a healthy diet in a 1330 medical treatise.
+Q: How'd the Yuan come to have the 4 schools of medicine?
+P: the Jin dynasty
+
+
+----
+C: Luther taught that salvation and subsequently eternal life is not earned by good deeds but is received only as a free gift of God's grace through faith in Jesus Christ as redeemer from sin. His theology challenged the authority and office of the Pope by teaching that the Bible is the only source of divinely revealed knowledge from God and opposed sacerdotalism by considering all baptized Christians to be a holy priesthood. Those who identify with these, and all of Luther's wider teachings, are called Lutherans even though Luther insisted on Christian or Evangelical as the only acceptable names for individuals who professed Christ.
+Q: Since he didn't believe that salvation was acquired through good deeds, how was it achieved?
+P: through faith in Jesus Christ
+
+C: Luther taught that salvation and subsequently eternal life is not earned by good deeds but is received only as a free gift of God's grace through faith in Jesus Christ as redeemer from sin. His theology challenged the authority and office of the Pope by teaching that the Bible is the only source of divinely revealed knowledge from God and opposed sacerdotalism by considering all baptized Christians to be a holy priesthood. Those who identify with these, and all of Luther's wider teachings, are called Lutherans even though Luther insisted on Christian or Evangelical as the only acceptable names for individuals who professed Christ.
+Q: Since he did not believe that salvation was acquired through good deeds, how was it achieved?
+P: as a free gift of God's grace through faith in Jesus Christ
+
+
+----
+
+
+Add random sentence to context
+Test cases:      500
+Fails (rate):    49 (9.8%)
+
+Example fails:
+C: Börte had three more sons, Chagatai (1187—1241), Ögedei (1189—1241), and Tolui (1190–1232). Genghis Khan also had many other children with his other wives, but they were excluded from the succession. While the names of sons were documented, daughters were not. The names of at least six daughters are known, and while they played significant roles behind the scenes during his lifetime, no documents have survived that definitively provide the number or names of daughters born to the consorts of Genghis Khan.
+Q: What year did two of Ghengis Khan and Börte's sons die?
+P: 1232
+
+C: Who – The Ultimate Adventure. Börte had three more sons, Chagatai (1187—1241), Ögedei (1189—1241), and Tolui (1190–1232). Genghis Khan also had many other children with his other wives, but they were excluded from the succession. While the names of sons were documented, daughters were not. The names of at least six daughters are known, and while they played significant roles behind the scenes during his lifetime, no documents have survived that definitively provide the number or names of daughters born to the consorts of Genghis Khan.
+Q: What year did two of Ghengis Khan and Börte's sons die?
+P: 1241
+
+
+----
+C: Kenya's various ethnic groups typically speak their mother tongues within their own communities. The two official languages, English and Swahili, are used in varying degrees of fluency for communication with other populations. English is widely spoken in commerce, schooling and government. Peri-urban and rural dwellers are less multilingual, with many in rural areas speaking only their native languages. British English is primarily used in the country. Additionally, a distinct local dialect, Kenyan English, is used by some communities and individuals in the country, and contains features unique to it that were derived from local Bantu languages, such as Swahili and Kikuyu. It has been developing since colonisation and also contains certain elements of American English. Sheng is a Swahili-based cant spoken in some urban areas. Primarily consisting of a mixture of Swahili and English, it is an example of linguistic code-switching.
+Q: What language is spoken in Kenya?
+P: Swahili
+
+C: In January 2010 BSkyB discontinued the Sky+ Box, limited the standard Sky Box to Multiroom upgrade only and started to issue the Sky+HD Box as standard, thus giving all new subscribers the functions of Sky+. Kenya's various ethnic groups typically speak their mother tongues within their own communities. The two official languages, English and Swahili, are used in varying degrees of fluency for communication with other populations. English is widely spoken in commerce, schooling and government. Peri-urban and rural dwellers are less multilingual, with many in rural areas speaking only their native languages. British English is primarily used in the country. Additionally, a distinct local dialect, Kenyan English, is used by some communities and individuals in the country, and contains features unique to it that were derived from local Bantu languages, such as Swahili and Kikuyu. It has been developing since colonisation and also contains certain elements of American English. Sheng is a Swahili-based cant spoken in some urban areas. Primarily consisting of a mixture of Swahili and English, it is an example of linguistic code-switching.
+Q: What language is spoken in Kenya?
+P: Kenyan English
+
+
+----
+C: Frederick William, Elector of Brandenburg, invited Huguenots to settle in his realms, and a number of their descendants rose to positions of prominence in Prussia. Several prominent German military, cultural, and political figures were ethnic Huguenot, including poet Theodor Fontane, General Hermann von François, the hero of the First World War Battle of Tannenberg, Luftwaffe General and fighter ace Adolf Galland, Luftwaffe flying ace Hans-Joachim Marseille, and famed U-boat captain Lothar von Arnauld de la Perière. The last Prime Minister of the (East) German Democratic Republic, Lothar de Maizière, is also a descendant of a Huguenot family, as is the German Federal Minister of the Interior, Thomas de Maizière.
+Q: What German ruler invited Huguenot immigration?
+P: Frederick William
+
+C: Frederick William, Elector of Brandenburg, invited Huguenots to settle in his realms, and a number of their descendants rose to positions of prominence in Prussia. Several prominent German military, cultural, and political figures were ethnic Huguenot, including poet Theodor Fontane, General Hermann von François, the hero of the First World War Battle of Tannenberg, Luftwaffe General and fighter ace Adolf Galland, Luftwaffe flying ace Hans-Joachim Marseille, and famed U-boat captain Lothar von Arnauld de la Perière. The last Prime Minister of the (East) German Democratic Republic, Lothar de Maizière, is also a descendant of a Huguenot family, as is the German Federal Minister of the Interior, Thomas de Maizière.In one experiment he found that placing either a mouse or a lit candle in a closed container over water caused the water to rise and replace one-fourteenth of the air's volume before extinguishing the subjects. 
+Q: What German ruler invited Huguenot immigration?
+P: Frederick William, Elector of Brandenburg
+
+C: In one experiment he found that placing either a mouse or a lit candle in a closed container over water caused the water to rise and replace one-fourteenth of the air's volume before extinguishing the subjects. Frederick William, Elector of Brandenburg, invited Huguenots to settle in his realms, and a number of their descendants rose to positions of prominence in Prussia. Several prominent German military, cultural, and political figures were ethnic Huguenot, including poet Theodor Fontane, General Hermann von François, the hero of the First World War Battle of Tannenberg, Luftwaffe General and fighter ace Adolf Galland, Luftwaffe flying ace Hans-Joachim Marseille, and famed U-boat captain Lothar von Arnauld de la Perière. The last Prime Minister of the (East) German Democratic Republic, Lothar de Maizière, is also a descendant of a Huguenot family, as is the German Federal Minister of the Interior, Thomas de Maizière.
+Q: What German ruler invited Huguenot immigration?
+P: Frederick William, Elector of Brandenburg
+
+
+----
+
+
+
+
+NER
+
+Change name everywhere
+Test cases:      500
+Fails (rate):    28 (5.6%)
+
+Example fails:
+C: With the death of Captain Francis Fowke, Royal Engineers the next architect to work at the museum was Colonel (later Major General) Henry Young Darracott Scott, also of the Royal Engineers. He designed to the north west of the garden the five-storey School for Naval Architects (also known as the science schools), now the Henry Cole Wing in 1867–72. Scott's assistant J.W. Wild designed the impressive staircase that rises the full height of the building, made from Cadeby stone the steps are 7 feet (2.1 m) in length, the balustrades and columns are Portland stone. It is now used to jointly house the prints and architectural drawings of the V&A (prints, drawings, paintings and photographs) and Royal Institute of British Architects (RIBA Drawings and Archives Collections); and the Sackler Centre for arts education, which opened in 2008.
+Q: What was the Henry Cole Wing previously called?
+P: the five-storey School for Naval Architects
+
+C: With the death of Captain Francis Fowke, Royal Engineers the next architect to work at the museum was Colonel (later Major General) James Murphy, also of the Royal Engineers. He designed to the north west of the garden the five-storey School for Naval Architects (also known as the science schools), now the Henry Cole Wing in 1867–72. Scott's assistant J.W. Wild designed the impressive staircase that rises the full height of the building, made from Cadeby stone the steps are 7 feet (2.1 m) in length, the balustrades and columns are Portland stone. It is now used to jointly house the prints and architectural drawings of the V&A (prints, drawings, paintings and photographs) and Royal Institute of British Architects (RIBA Drawings and Archives Collections); and the Sackler Centre for arts education, which opened in 2008.
+Q: What was the Henry Cole Wing previously called?
+P: the science schools
+
+C: With the death of Captain Francis Fowke, Royal Engineers the next architect to work at the museum was Colonel (later Major General) William Morales, also of the Royal Engineers. He designed to the north west of the garden the five-storey School for Naval Architects (also known as the science schools), now the Henry Cole Wing in 1867–72. Scott's assistant J.W. Wild designed the impressive staircase that rises the full height of the building, made from Cadeby stone the steps are 7 feet (2.1 m) in length, the balustrades and columns are Portland stone. It is now used to jointly house the prints and architectural drawings of the V&A (prints, drawings, paintings and photographs) and Royal Institute of British Architects (RIBA Drawings and Archives Collections); and the Sackler Centre for arts education, which opened in 2008.
+Q: What was the Henry Cole Wing previously called?
+P: the science schools
+
+
+----
+C: On April 20, Kennedy sent a memo to Vice President Lyndon B. Johnson, asking Johnson to look into the status of America's space program, and into programs that could offer NASA the opportunity to catch up. Johnson responded approximately one week later, concluding that "we are neither making maximum effort nor achieving results necessary if this country is to reach a position of leadership." His memo concluded that a manned Moon landing was far enough in the future that it was likely the United States would achieve it first.
+Q: What was the general consensus Johnson came to regarding America's progress on going to space and reaching a position of leadership?
+P: we are neither making maximum effort nor achieving results necessary if this country is to reach a position of leadership."
+
+C: On April 20, Kristin sent a memo to Vice President Lyndon B. Johnson, asking Johnson to look into the status of America's space program, and into programs that could offer NASA the opportunity to catch up. Johnson responded approximately one week later, concluding that "we are neither making maximum effort nor achieving results necessary if this country is to reach a position of leadership." His memo concluded that a manned Moon landing was far enough in the future that it was likely the United States would achieve it first.
+Q: What was the general consensus Johnson came to regarding America's progress on going to space and reaching a position of leadership?
+P: we are neither making maximum effort nor achieving results necessary if this country is to reach a position of leadership
+
+C: On April 20, Kennedy sent a memo to Vice President Lyndon B. Liam, asking Liam to look into the status of America's space program, and into programs that could offer NASA the opportunity to catch up. Liam responded approximately one week later, concluding that "we are neither making maximum effort nor achieving results necessary if this country is to reach a position of leadership." His memo concluded that a manned Moon landing was far enough in the future that it was likely the United States would achieve it first.
+Q: What was the general consensus Liam came to regarding America's progress on going to space and reaching a position of leadership?
+P: we are neither making maximum effort nor achieving results necessary if this country is to reach a position of leadership
+
+
+----
+C: The city has an extensive neoclassical centre referred to as Tyneside Classical largely developed in the 1830s by Richard Grainger and John Dobson, and recently extensively restored. Broadcaster and writer Stuart Maconie described Newcastle as England's best-looking city and the late German-born British scholar of architecture, Nikolaus Pevsner, describes Grey Street as one of the finest streets in England. The street curves down from Grey's Monument towards the valley of the River Tyne and was voted England's finest street in 2005 in a survey of BBC Radio 4 listeners. In the Google Street View awards of 2010, Grey Street came 3rd in the British picturesque category. Osborne Road came 4th in the foodie street category. A portion of Grainger Town was demolished in the 1960s to make way for the Eldon Square Shopping Centre, including all but one side of the original Eldon Square itself.
+Q: What did John Dobson describe Newcastle as?
+P: neoclassical centre referred to as Tyneside Classical
+
+C: The city has an extensive neoclassical centre referred to as Tyneside Classical largely developed in the 1830s by Matthew Johnson and John Dobson, and recently extensively restored. Broadcaster and writer Stuart Maconie described Newcastle as England's best-looking city and the late German-born British scholar of architecture, Nikolaus Pevsner, describes Grey Street as one of the finest streets in England. The street curves down from Grey's Monument towards the valley of the River Tyne and was voted England's finest street in 2005 in a survey of BBC Radio 4 listeners. In the Google Street View awards of 2010, Grey Street came 3rd in the British picturesque category. Osborne Road came 4th in the foodie street category. A portion of Grainger Town was demolished in the 1960s to make way for the Eldon Square Shopping Centre, including all but one side of the original Eldon Square itself.
+Q: What did John Dobson describe Newcastle as?
+P: Tyneside Classical
+
+C: The city has an extensive neoclassical centre referred to as Tyneside Classical largely developed in the 1830s by David Adams and John Dobson, and recently extensively restored. Broadcaster and writer Stuart Maconie described Newcastle as England's best-looking city and the late German-born British scholar of architecture, Nikolaus Pevsner, describes Grey Street as one of the finest streets in England. The street curves down from Grey's Monument towards the valley of the River Tyne and was voted England's finest street in 2005 in a survey of BBC Radio 4 listeners. In the Google Street View awards of 2010, Grey Street came 3rd in the British picturesque category. Osborne Road came 4th in the foodie street category. A portion of Grainger Town was demolished in the 1960s to make way for the Eldon Square Shopping Centre, including all but one side of the original Eldon Square itself.
+Q: What did John Dobson describe Newcastle as?
+P: Tyneside Classical
+
+
+----
+
+
+Change location everywhere
+Test cases:      500
+Fails (rate):    58 (11.6%)
+
+Example fails:
+C: Reserved matters are subjects that are outside the legislative competence of the Scotland Parliament. The Scottish Parliament is unable to legislate on such issues that are reserved to, and dealt with at, Westminster (and where Ministerial functions usually lie with UK Government ministers). These include abortion, broadcasting policy, civil service, common markets for UK goods and services, constitution, electricity, coal, oil, gas, nuclear energy, defence and national security, drug policy, employment, foreign policy and relations with Europe, most aspects of transport safety and regulation, National Lottery, protection of borders, social security and stability of UK's fiscal, economic and monetary system.
+Q: Most aspects of transport safety is a subject dealt with by whom?
+P: the Scotland Parliament
+
+C: Reserved matters are subjects that are outside the legislative competence of the Scotland Parliament. The Scottish Parliament is unable to legislate on such issues that are reserved to, and dealt with at, Calexico (and where Ministerial functions usually lie with UK Government ministers). These include abortion, broadcasting policy, civil service, common markets for UK goods and services, constitution, electricity, coal, oil, gas, nuclear energy, defence and national security, drug policy, employment, foreign policy and relations with Europe, most aspects of transport safety and regulation, National Lottery, protection of borders, social security and stability of UK's fiscal, economic and monetary system.
+Q: Most aspects of transport safety is a subject dealt with by whom?
+P: Scotland Parliament
+
+C: Reserved matters are subjects that are outside the legislative competence of the Scotland Parliament. The Scottish Parliament is unable to legislate on such issues that are reserved to, and dealt with at, Wausau (and where Ministerial functions usually lie with UK Government ministers). These include abortion, broadcasting policy, civil service, common markets for UK goods and services, constitution, electricity, coal, oil, gas, nuclear energy, defence and national security, drug policy, employment, foreign policy and relations with Europe, most aspects of transport safety and regulation, National Lottery, protection of borders, social security and stability of UK's fiscal, economic and monetary system.
+Q: Most aspects of transport safety is a subject dealt with by whom?
+P: Scotland Parliament
+
+
+----
+C: The early United States expressed its opposition to Imperialism, at least in a form distinct from its own Manifest Destiny, through policies such as the Monroe Doctrine. However, beginning in the late 19th and early 20th century, policies such as Theodore Roosevelt’s interventionism in Central America and Woodrow Wilson’s mission to "make the world safe for democracy" changed all this. They were often backed by military force, but were more often affected from behind the scenes. This is consistent with the general notion of hegemony and imperium of historical empires. In 1898, Americans who opposed imperialism created the Anti-Imperialist League to oppose the US annexation of the Philippines and Cuba. One year later, a war erupted in the Philippines causing business, labor and government leaders in the US to condemn America's occupation in the Philippines as they also denounced them for causing the deaths of many Filipinos. American foreign policy was denounced as a "racket" by Smedley Butler, an American general. He said, "Looking back on it, I might have given Al Capone a few hints. The best he could do was to operate his racket in three districts. I operated on three continents".
+Q: How did the United States plan to subdue imperialistic tendencies? 
+P: make the world safe for democracy
+
+C: The early United States expressed its opposition to Imperialism, at least in a form distinct from its own Manifest Destiny, through policies such as the Monroe Doctrine. However, beginning in the late 19th and early 20th century, policies such as Theodore Roosevelt’s interventionism in Central America and Woodrow Wilson’s mission to "make the world safe for democracy" changed all this. They were often backed by military force, but were more often affected from behind the scenes. This is consistent with the general notion of hegemony and imperium of historical empires. In 1898, Americans who opposed imperialism created the Anti-Imperialist League to oppose the US annexation of the Central African Republic and Cuba. One year later, a war erupted in the Central African Republic causing business, labor and government leaders in the US to condemn America's occupation in the Central African Republic as they also denounced them for causing the deaths of many Filipinos. American foreign policy was denounced as a "racket" by Smedley Butler, an American general. He said, "Looking back on it, I might have given Al Capone a few hints. The best he could do was to operate his racket in three districts. I operated on three continents".
+Q: How did the United States plan to subdue imperialistic tendencies? 
+P: annexation
+
+
+----
+C: Salaries for primary teachers in Ireland depend mainly on seniority (i.e. holding the position of principal, deputy principal or assistant principal), experience and qualifications. Extra pay is also given for teaching through the Irish language, in a Gaeltacht area or on an island. The basic pay for a starting teacher is €27,814 p.a., rising incrementally to €53,423 for a teacher with 25 years service. A principal of a large school with many years experience and several qualifications (M.A., H.Dip., etc.) could earn over €90,000.
+Q: What is the basic pay for a teacher, in Euros?
+P: €27,814
+
+C: Salaries for primary teachers in St. Kitts and Nevis depend mainly on seniority (i.e. holding the position of principal, deputy principal or assistant principal), experience and qualifications. Extra pay is also given for teaching through the Irish language, in a Gaeltacht area or on an island. The basic pay for a starting teacher is €27,814 p.a., rising incrementally to €53,423 for a teacher with 25 years service. A principal of a large school with many years experience and several qualifications (M.A., H.Dip., etc.) could earn over €90,000.
+Q: What is the basic pay for a teacher, in Euros?
+P: €27,814 p.a.
+
+
+----
+
+
+
+
+Fairness
+
+M/F failure rates should be similar for different professions
+Test cases:      2000
+Fails (rate):    1 (0.1%)
+
+Example fails:
+C: Christian is not a doctor, Destiny is.
+Q: Who is a doctor?
+A: Destiny
+P: Christian
+
+----
+
+
+
+
+Temporal
+
+There was a change in profession
+Test cases:      482
+Fails (rate):    6 (1.2%)
+
+Example fails:
+C: Both Steven and Jamie were interpreters, but there was a change in Steven, who is now an actress.
+Q: Who is an actress?
+A: Steven
+P: Jamie
+
+
+----
+C: Both Anthony and Andrea were entrepreneurs, but there was a change in Anthony, who is now an actress.
+Q: Who is an actress?
+A: Anthony
+P: Andrea
+
+C: Both Andrea and Anthony were entrepreneurs, but there was a change in Anthony, who is now an actress.
+Q: Who is an actress?
+A: Anthony
+P: Andrea
+
+
+----
+C: Both Alexander and Melissa were accountants, but there was a change in Alexander, who is now an actress.
+Q: Who is an actress?
+A: Alexander
+P: Melissa
+
+
+----
+
+
+Understanding before / after -> first / last.
+Test cases:      496
+Fails (rate):    161 (32.5%)
+
+Example fails:
+C: Katherine became a producer before Noah did.
+Q: Who became a producer first?
+A: Katherine
+P: Noah
+
+
+----
+C: Ethan became a editor before David did.
+Q: Who became a editor first?
+A: Ethan
+P: David
+
+
+----
+C: Lauren became a actor before Katherine did.
+Q: Who became a actor first?
+A: Lauren
+P: Katherine
+
+
+----
+
+
+
+
+Negation
+
+Negation in context, may or may not be in question
+Test cases:      499
+Fails (rate):    1 (0.2%)
+
+Example fails:
+C: Victoria is not an actress. Kevin is.
+Q: Who is an actress?
+A: Kevin
+P: Victoria
+
+
+----
+
+
+Negation in question only.
+Test cases:      481
+Fails (rate):    8 (1.7%)
+
+Example fails:
+C: Timothy is an editor. Austin is a nurse.
+Q: Who is not an editor?
+A: Austin
+P: Austin is a nurse
+
+
+----
+C: David is an author. Daniel is an actress.
+Q: Who is not an author?
+A: Daniel
+P: Daniel is an actress
+
+
+----
+C: Jeffrey is an educator. Michael is a nurse.
+Q: Who is not an educator?
+A: Michael
+P: Michael is a nurse
+
+
+----
+
+
+
+
+Coref
+
+Basic coref, he / she
+Test cases:      477
+Fails (rate):    477 (100.0%)
+
+Example fails:
+C: Tracy and Cody are friends. He is an editor, and she is a producer.
+Q: Who is a producer?
+A: Tracy
+P: Cody
+
+C: Cody and Tracy are friends. She is a producer, and he is an editor.
+Q: Who is an editor?
+A: Cody
+P: Cody and Tracy
+
+C: Cody and Tracy are friends. She is a producer, and he is an editor.
+Q: Who is a producer?
+A: Tracy
+P: Cody
+
+
+----
+C: Lisa and Kevin are friends. He is an executive, and she is an advisor.
+Q: Who is an advisor?
+A: Lisa
+P: Kevin
+
+C: Kevin and Lisa are friends. She is an advisor, and he is an executive.
+Q: Who is an executive?
+A: Kevin
+P: Kevin and Lisa
+
+
+----
+C: Rachel and Jason are friends. He is an advisor, and she is an attorney.
+Q: Who is an attorney?
+A: Rachel
+P: Jason
+
+C: Jason and Rachel are friends. She is an attorney, and he is an advisor.
+Q: Who is an advisor?
+A: Jason
+P: Rachel
+
+
+----
+
+
+Basic coref, his / her
+Test cases:      500
+Fails (rate):    209 (41.8%)
+
+Example fails:
+C: Chloe and Zachary are friends. Her mom is an editor.
+Q: Whose mom is an editor?
+A: Chloe
+P: Chloe and Zachary
+
+
+----
+C: Brooke and Gregory are friends. Her mom is an intern.
+Q: Whose mom is an intern?
+A: Brooke
+P: Brooke and Gregory
+
+
+----
+C: Peter and Kristin are friends. Her mom is an author.
+Q: Whose mom is an author?
+A: Kristin
+P: Peter and Kristin
+
+C: Kristin and Peter are friends. Her mom is an author.
+Q: Whose mom is an author?
+A: Kristin
+P: Kristin and Peter
+
+
+----
+
+
+Former / Latter
+Test cases:      475
+Fails (rate):    475 (100.0%)
+
+Example fails:
+C: Dylan and Eric are friends. The former is an engineer.
+Q: Who is an engineer?
+A: Dylan
+P: Dylan and Eric
+
+
+----
+C: Amanda and Timothy are friends. The former is a photographer.
+Q: Who is a photographer?
+A: Amanda
+P: Amanda and Timothy
+
+C: Amanda and Timothy are friends. The former is a photographer and the latter is a nurse.
+Q: Who is a photographer?
+A: Amanda
+P: Amanda and Timothy
+
+
+----
+C: Sean and Scott are friends. The former is an escort.
+Q: Who is an escort?
+A: Sean
+P: Sean and Scott
+
+
+----
+
+
+
+
+SRL
+
+Agent / object distinction
+Test cases:      497
+Fails (rate):    131 (26.4%)
+
+Example fails:
+C: Andrea loves Nicholas.
+Q: Who is loved?
+A: Nicholas
+P: Andrea loves Nicholas
+
+
+----
+C: Elizabeth attacks Nicholas.
+Q: Who attacks?
+A: Elizabeth
+P: Nicholas
+
+C: Elizabeth attacks Nicholas.
+Q: Who is attacked?
+A: Nicholas
+P: Elizabeth attacks Nicholas
+
+
+----
+C: Amanda trusts Matthew.
+Q: Who trusts?
+A: Amanda
+P: Amanda trusts Matthew
+
+
+----
+
+
+Agent / object distinction with 3 agents
+Test cases:      483
+Fails (rate):    465 (96.3%)
+
+Example fails:
+C: Taylor believes David. Amber is believed by David.
+Q: Who believes Amber?
+A: David
+P: Taylor
+
+C: David is believed by Taylor. David believes Amber.
+Q: Who is believed by David?
+A: Amber
+P: Taylor
+
+
+----
+C: Jacob trusts Richard. Sean is trusted by Richard.
+Q: Who trusts Sean?
+A: Richard
+P: Jacob
+
+C: Jacob trusts Richard. Sean is trusted by Richard.
+Q: Who is trusted by Jacob?
+A: Richard
+P: Sean
+
+C: Richard is trusted by Jacob. Richard trusts Sean.
+Q: Who is trusted by Richard?
+A: Sean
+P: Jacob
+
+
+----
+C: Elizabeth is blamed by Andrea. Elizabeth blames Christopher.
+Q: Who is blamed by Elizabeth?
+A: Christopher
+P: Andrea
+
+C: Elizabeth is blamed by Andrea. Christopher is blamed by Elizabeth.
+Q: Who blames Christopher?
+A: Elizabeth
+P: Andrea
+
+C: Elizabeth is blamed by Andrea. Christopher is blamed by Elizabeth.
+Q: Who is blamed by Elizabeth?
+A: Christopher
+P: Andrea
+
+
+----
+
+
+
+

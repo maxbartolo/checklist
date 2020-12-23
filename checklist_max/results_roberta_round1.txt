@@ -1,0 +1,856 @@
+Vocabulary
+
+A is COMP than B. Who is more / less COMP?
+Test cases:      494
+Fails (rate):    2 (0.4%)
+
+Example fails:
+C: Stephanie is smaller than Jacob.
+Q: Who is less small?
+A: Jacob
+P: Stephanie
+
+
+----
+C: Samuel is shorter than Patrick.
+Q: Who is less short?
+A: Patrick
+P: Samuel
+
+
+----
+
+
+Intensifiers (very, super, extremely) and reducers (somewhat, kinda, etc)?
+Test cases:      497
+Fails (rate):    328 (66.0%)
+
+Example fails:
+C: Ashley is super cautious about the project. Tyler is cautious about the project.
+Q: Who is most cautious about the project?
+A: Ashley
+P: Tyler
+
+C: Tyler is cautious about the project. Ashley is super cautious about the project.
+Q: Who is most cautious about the project?
+A: Ashley
+P: Tyler
+
+
+----
+C: Michael is enthusiastic about the project. Sean is super enthusiastic about the project.
+Q: Who is least enthusiastic about the project?
+A: Michael
+P: Michael is enthusiastic about the project. Sean
+
+
+----
+C: Jason is clear about the project. Aaron is very clear about the project.
+Q: Who is least clear about the project?
+A: Jason
+P: Aaron
+
+C: Jason is somewhat clear about the project. Aaron is clear about the project.
+Q: Who is least clear about the project?
+A: Jason
+P: Aaron
+
+
+----
+
+
+
+
+Taxonomy
+
+size, shape, age, color
+Test cases:      500
+Fails (rate):    281 (56.2%)
+
+Example fails:
+C: There is a small oval box in the room.
+Q: What size is the box?
+A: small
+P: small oval
+
+C: There is a box in the room. The box is small and oval.
+Q: What size is the box?
+A: small
+P: small and oval.
+
+
+----
+C: There is a clock in the room. The clock is small and yellow.
+Q: What size is the clock?
+A: small
+P: small and yellow.
+
+
+----
+C: There is a box in the room. The box is square and grey.
+Q: What shape is the box?
+A: square
+P: square and grey.
+
+
+----
+
+
+Profession vs nationality
+Test cases:      500
+Fails (rate):    441 (88.2%)
+
+Example fails:
+C: Brittany is a Japanese assistant.
+Q: What is Brittany's job?
+A: assistant
+P: a Japanese assistant.
+
+C: Brittany is an assistant and Japanese.
+Q: What is Brittany's job?
+A: assistant
+P: assistant and Japanese.
+
+
+----
+C: Katherine is an American assistant.
+Q: What is Katherine's job?
+A: assistant
+P: American assistant.
+
+C: Katherine is an assistant and American.
+Q: What is Katherine's job?
+A: assistant
+P: assistant and American.
+
+
+----
+C: Stephanie is a Russian educator.
+Q: What is Stephanie's job?
+A: educator
+P: Russian educator.
+
+C: Stephanie is an educator and Russian.
+Q: What is Stephanie's job?
+A: educator
+P: educator and Russian.
+
+
+----
+
+
+Animal vs Vehicle
+Test cases:      500
+Fails (rate):    315 (63.0%)
+
+Example fails:
+C: Dylan has a hamster and a motorcycle.
+Q: What vehicle does Dylan have?
+A: motorcycle
+P: a hamster and a motorcycle.
+
+C: Dylan has a motorcycle and a hamster.
+Q: What vehicle does Dylan have?
+A: motorcycle
+P: a motorcycle and a hamster.
+
+
+----
+C: Heather has a snake and a minivan.
+Q: What vehicle does Heather have?
+A: minivan
+P: a snake and a minivan.
+
+C: Heather has a minivan and a snake.
+Q: What vehicle does Heather have?
+A: minivan
+P: a minivan and a snake.
+
+
+----
+C: Natalie has a bull and a bike.
+Q: What vehicle does Natalie have?
+A: bike
+P: a bull and a bike.
+
+C: Natalie has a bike and a bull.
+Q: What vehicle does Natalie have?
+A: bike
+P: bike and a bull.
+
+
+----
+
+
+Animal vs Vehicle v2
+Test cases:      496
+Fails (rate):    52 (10.5%)
+
+Example fails:
+C: Sean bought a bull. Kimberly bought a train.
+Q: Who bought a vehicle?
+A: Kimberly
+P: Sean bought a bull. Kimberly
+
+C: Kimberly bought a train. Sean bought a bull.
+Q: Who bought a vehicle?
+A: Kimberly
+P: Sean
+
+
+----
+C: David bought a bike. Amber bought a snake.
+Q: Who bought a vehicle?
+A: David
+P: Amber
+
+
+----
+C: Andrew bought a train. Michelle bought a hamster.
+Q: Who bought a vehicle?
+A: Andrew
+P: Michelle
+
+
+----
+
+
+Synonyms
+Test cases:      447
+Fails (rate):    2 (0.4%)
+
+Example fails:
+C: Ethan is very outspoken. Alexis is very modest.
+Q: Who is humble?
+A: Alexis
+P: Alex
+
+
+----
+C: Melissa is very scared. Alexis is very grateful.
+Q: Who is thankful?
+A: Alexis
+P: Alex
+
+
+----
+
+
+A is COMP than B. Who is antonym(COMP)? B
+Test cases:      496
+Fails (rate):    21 (4.2%)
+
+Example fails:
+C: Michael is sadder than Sean.
+Q: Who is happier?
+A: Sean
+P: Michael
+
+
+----
+C: Mary is lighter than Taylor.
+Q: Who is darker?
+A: Taylor
+P: Mary
+
+
+----
+C: Ryan is lighter than Noah.
+Q: Who is darker?
+A: Noah
+P: Ryan
+
+
+----
+
+
+A is more X than B. Who is more antonym(X)? B. Who is less X? B. Who is more X? A. Who is less antonym(X)? A.
+Test cases:      491
+Fails (rate):    488 (99.4%)
+
+Example fails:
+C: Lisa is more active than Jordan.
+Q: Who is less passive?
+A: Lisa
+P: Jordan
+
+C: Jordan is less active than Lisa.
+Q: Who is less passive?
+A: Lisa
+P: Jordan
+
+C: Lisa is less passive than Jordan.
+Q: Who is more active?
+A: Lisa
+P: Jordan
+
+
+----
+C: Natalie is more visible than Lisa.
+Q: Who is less invisible?
+A: Natalie
+P: Lisa
+
+C: Lisa is more invisible than Natalie.
+Q: Who is more visible?
+A: Natalie
+P: Lisa
+
+C: Lisa is more invisible than Natalie.
+Q: Who is less visible?
+A: Lisa
+P: Natalie
+
+
+----
+C: Austin is more optimistic than Stephanie.
+Q: Who is less pessimistic?
+A: Austin
+P: Stephanie
+
+C: Stephanie is more pessimistic than Austin.
+Q: Who is less optimistic?
+A: Stephanie
+P: Austin
+
+C: Austin is less pessimistic than Stephanie.
+Q: Who is more optimistic?
+A: Austin
+P: Stephanie
+
+
+----
+
+
+
+
+Robustness
+
+Question typo
+Test cases:      500
+Fails (rate):    51 (10.2%)
+
+Example fails:
+C: Following the Nice Treaty, there was an attempt to reform the constitutional law of the European Union and make it more transparent; this would have also produced a single constitutional document. However, as a result of the referendum in France and the referendum in the Netherlands, the 2004 Treaty establishing a Constitution for Europe never came into force. Instead, the Lisbon Treaty was enacted. Its substance was very similar to the proposed constitutional treaty, but it was formally an amending treaty, and – though it significantly altered the existing treaties – it did not completely replace them.
+Q: What reform was attempted following the Nice Treaty?
+P: the constitutional law of the European Union and make it more transparent;
+
+C: Following the Nice Treaty, there was an attempt to reform the constitutional law of the European Union and make it more transparent; this would have also produced a single constitutional document. However, as a result of the referendum in France and the referendum in the Netherlands, the 2004 Treaty establishing a Constitution for Europe never came into force. Instead, the Lisbon Treaty was enacted. Its substance was very similar to the proposed constitutional treaty, but it was formally an amending treaty, and – though it significantly altered the existing treaties – it did not completely replace them.
+Q: What rfeorm was attempted following the Nice Treaty?
+P: reform the constitutional law of the European Union and make it more transparent;
+
+
+----
+C: Luther taught that salvation and subsequently eternal life is not earned by good deeds but is received only as a free gift of God's grace through faith in Jesus Christ as redeemer from sin. His theology challenged the authority and office of the Pope by teaching that the Bible is the only source of divinely revealed knowledge from God and opposed sacerdotalism by considering all baptized Christians to be a holy priesthood. Those who identify with these, and all of Luther's wider teachings, are called Lutherans even though Luther insisted on Christian or Evangelical as the only acceptable names for individuals who professed Christ.
+Q: What did Martin Luther believe achieved God's Grace?
+P: faith in Jesus Christ
+
+C: Luther taught that salvation and subsequently eternal life is not earned by good deeds but is received only as a free gift of God's grace through faith in Jesus Christ as redeemer from sin. His theology challenged the authority and office of the Pope by teaching that the Bible is the only source of divinely revealed knowledge from God and opposed sacerdotalism by considering all baptized Christians to be a holy priesthood. Those who identify with these, and all of Luther's wider teachings, are called Lutherans even though Luther insisted on Christian or Evangelical as the only acceptable names for individuals who professed Christ.
+Q: What did Martin Luther believe aciheved God's Grace?
+P: Jesus Christ
+
+
+----
+C: The availability of the Bible in vernacular languages was important to the spread of the Protestant movement and development of the Reformed church in France. The country had a long history of struggles with the papacy by the time the Protestant Reformation finally arrived. Around 1294, a French version of the Scriptures was prepared by the Roman Catholic priest, Guyard de Moulin. A two-volume illustrated folio paraphrase version based on his manuscript, by Jean de Rély, was printed in Paris in 1487.
+Q: When did the first French language bible appear?
+P: Around 1294,
+
+C: The availability of the Bible in vernacular languages was important to the spread of the Protestant movement and development of the Reformed church in France. The country had a long history of struggles with the papacy by the time the Protestant Reformation finally arrived. Around 1294, a French version of the Scriptures was prepared by the Roman Catholic priest, Guyard de Moulin. A two-volume illustrated folio paraphrase version based on his manuscript, by Jean de Rély, was printed in Paris in 1487.
+Q: When did the first Frnech language bible appear?
+P: 1294
+
+
+----
+
+
+Question contractions
+Test cases:      500
+Fails (rate):    12 (2.4%)
+
+Example fails:
+C: Light has been shown to be a requirement for chloroplast division. Chloroplasts can grow and progress through some of the constriction stages under poor quality green light, but are slow to complete division—they require exposure to bright white light to complete division. Spinach leaves grown under green light have been observed to contain many large dumbbell-shaped chloroplasts. Exposure to white light can stimulate these chloroplasts to divide and reduce the population of dumbbell-shaped chloroplasts.
+Q: What is necessary for chloroplasts to replicate?
+P: bright white light
+
+C: Light has been shown to be a requirement for chloroplast division. Chloroplasts can grow and progress through some of the constriction stages under poor quality green light, but are slow to complete division—they require exposure to bright white light to complete division. Spinach leaves grown under green light have been observed to contain many large dumbbell-shaped chloroplasts. Exposure to white light can stimulate these chloroplasts to divide and reduce the population of dumbbell-shaped chloroplasts.
+Q: What's necessary for chloroplasts to replicate?
+P: division—they require exposure to bright white light
+
+
+----
+C: Luther taught that salvation and subsequently eternal life is not earned by good deeds but is received only as a free gift of God's grace through faith in Jesus Christ as redeemer from sin. His theology challenged the authority and office of the Pope by teaching that the Bible is the only source of divinely revealed knowledge from God and opposed sacerdotalism by considering all baptized Christians to be a holy priesthood. Those who identify with these, and all of Luther's wider teachings, are called Lutherans even though Luther insisted on Christian or Evangelical as the only acceptable names for individuals who professed Christ.
+Q: Since he didn't believe that salvation was acquired through good deeds, how was it achieved?
+P: faith in Jesus Christ as redeemer from sin.
+
+C: Luther taught that salvation and subsequently eternal life is not earned by good deeds but is received only as a free gift of God's grace through faith in Jesus Christ as redeemer from sin. His theology challenged the authority and office of the Pope by teaching that the Bible is the only source of divinely revealed knowledge from God and opposed sacerdotalism by considering all baptized Christians to be a holy priesthood. Those who identify with these, and all of Luther's wider teachings, are called Lutherans even though Luther insisted on Christian or Evangelical as the only acceptable names for individuals who professed Christ.
+Q: Since he did not believe that salvation was acquired through good deeds, how was it achieved?
+P: free gift of God's grace through faith in Jesus Christ as redeemer from sin.
+
+
+----
+C: The collection of Italian, Medieval, Renaissance, Baroque and Neoclassical sculpture (both original and in cast form) is unequalled outside of Italy. It includes Canova's The Three Graces, which the museum jointly owns with National Galleries of Scotland. Italian sculptors whose work is held by the museum include: Bartolomeo Bon, Bartolomeo Bellano, Luca della Robbia, Giovanni Pisano, Donatello, Agostino di Duccio, Andrea Riccio, Antonio Rossellino, Andrea del Verrocchio, Antonio Lombardo, Pier Jacopo Alari Bonacolsi, Andrea della Robbia, Michelozzo di Bartolomeo, Michelangelo (represented by a freehand wax model and casts of his most famous sculptures), Jacopo Sansovino, Alessandro Algardi, Antonio Calcagni, Benvenuto Cellini (Medusa's head dated c. 1547), Agostino Busti, Bartolomeo Ammannati, Giacomo della Porta, Giambologna (Samson Slaying a Philistine (Giambologna) c. 1562, his finest work outside Italy), Bernini (Neptune and Triton c. 1622–3), Giovanni Battista Foggini, Vincenzo Foggini (Samson and the Philistines), Massimiliano Soldani Benzi, Antonio Corradini, Andrea Brustolon, Giovanni Battista Piranesi, Innocenzo Spinazzi, Canova, Carlo Marochetti and Raffaelle Monti. An unusual sculpture is the ancient Roman statue of Narcissus restored by Valerio Cioli c1564 with plaster. There are several small scale bronzes by Donatello, Alessandro Vittoria, Tiziano Aspetti and Francesco Fanelli in the collection. The largest item from Italy is the Chancel Chapel from Santa Chiara Florence dated 1493–1500, designed by Giuliano da Sangallo it is 11.1 metres in height by 5.4 metres square, it includes a grand sculpted tabernacle by Antonio Rossellino and coloured terracotta decoration.
+Q: What is the largest item from Italy that is part of the sculpture collection?
+P: Chancel Chapel from Santa Chiara Florence
+
+C: The collection of Italian, Medieval, Renaissance, Baroque and Neoclassical sculpture (both original and in cast form) is unequalled outside of Italy. It includes Canova's The Three Graces, which the museum jointly owns with National Galleries of Scotland. Italian sculptors whose work is held by the museum include: Bartolomeo Bon, Bartolomeo Bellano, Luca della Robbia, Giovanni Pisano, Donatello, Agostino di Duccio, Andrea Riccio, Antonio Rossellino, Andrea del Verrocchio, Antonio Lombardo, Pier Jacopo Alari Bonacolsi, Andrea della Robbia, Michelozzo di Bartolomeo, Michelangelo (represented by a freehand wax model and casts of his most famous sculptures), Jacopo Sansovino, Alessandro Algardi, Antonio Calcagni, Benvenuto Cellini (Medusa's head dated c. 1547), Agostino Busti, Bartolomeo Ammannati, Giacomo della Porta, Giambologna (Samson Slaying a Philistine (Giambologna) c. 1562, his finest work outside Italy), Bernini (Neptune and Triton c. 1622–3), Giovanni Battista Foggini, Vincenzo Foggini (Samson and the Philistines), Massimiliano Soldani Benzi, Antonio Corradini, Andrea Brustolon, Giovanni Battista Piranesi, Innocenzo Spinazzi, Canova, Carlo Marochetti and Raffaelle Monti. An unusual sculpture is the ancient Roman statue of Narcissus restored by Valerio Cioli c1564 with plaster. There are several small scale bronzes by Donatello, Alessandro Vittoria, Tiziano Aspetti and Francesco Fanelli in the collection. The largest item from Italy is the Chancel Chapel from Santa Chiara Florence dated 1493–1500, designed by Giuliano da Sangallo it is 11.1 metres in height by 5.4 metres square, it includes a grand sculpted tabernacle by Antonio Rossellino and coloured terracotta decoration.
+Q: What's the largest item from Italy that's part of the sculpture collection?
+P: Canova's The Three Graces,
+
+
+----
+
+
+Add random sentence to context
+Test cases:      500
+Fails (rate):    74 (14.8%)
+
+Example fails:
+C: Despite waiving longtime running back DeAngelo Williams and losing top wide receiver Kelvin Benjamin to a torn ACL in the preseason, the Carolina Panthers had their best regular season in franchise history, becoming the seventh team to win at least 15 regular season games since the league expanded to a 16-game schedule in 1978. Carolina started the season 14–0, not only setting franchise records for the best start and the longest single-season winning streak, but also posting the best start to a season by an NFC team in NFL history, breaking the 13–0 record previously shared with the 2009 New Orleans Saints and the 2011 Green Bay Packers. With their NFC-best 15–1 regular season record, the Panthers clinched home-field advantage throughout the NFC playoffs for the first time in franchise history. Ten players were selected to the Pro Bowl (the most in franchise history) along with eight All-Pro selections.
+Q: What team had the best start ever in the NFL?
+P: Carolina
+
+C: Despite waiving longtime running back DeAngelo Williams and losing top wide receiver Kelvin Benjamin to a torn ACL in the preseason, the Carolina Panthers had their best regular season in franchise history, becoming the seventh team to win at least 15 regular season games since the league expanded to a 16-game schedule in 1978. Carolina started the season 14–0, not only setting franchise records for the best start and the longest single-season winning streak, but also posting the best start to a season by an NFC team in NFL history, breaking the 13–0 record previously shared with the 2009 New Orleans Saints and the 2011 Green Bay Packers. With their NFC-best 15–1 regular season record, the Panthers clinched home-field advantage throughout the NFC playoffs for the first time in franchise history. Ten players were selected to the Pro Bowl (the most in franchise history) along with eight All-Pro selections.According to Siad, orientalism allowed Europe to establish itself as the superior and the norm, which justified its dominance over the essentialized Orient. 
+Q: What team had the best start ever in the NFL?
+P: Carolina Panthers
+
+C: According to Siad, orientalism allowed Europe to establish itself as the superior and the norm, which justified its dominance over the essentialized Orient. Despite waiving longtime running back DeAngelo Williams and losing top wide receiver Kelvin Benjamin to a torn ACL in the preseason, the Carolina Panthers had their best regular season in franchise history, becoming the seventh team to win at least 15 regular season games since the league expanded to a 16-game schedule in 1978. Carolina started the season 14–0, not only setting franchise records for the best start and the longest single-season winning streak, but also posting the best start to a season by an NFC team in NFL history, breaking the 13–0 record previously shared with the 2009 New Orleans Saints and the 2011 Green Bay Packers. With their NFC-best 15–1 regular season record, the Panthers clinched home-field advantage throughout the NFC playoffs for the first time in franchise history. Ten players were selected to the Pro Bowl (the most in franchise history) along with eight All-Pro selections.
+Q: What team had the best start ever in the NFL?
+P: Carolina Panthers
+
+
+----
+C: In August 1227, during the fall of Yinchuan, the capital of Western Xia, Genghis Khan died. The exact cause of his death remains a mystery, and is variously attributed to being killed in action against the Western Xia, illness, falling from his horse, or wounds sustained in hunting or battle. According to The Secret History of the Mongols Genghis Khan fell from his horse while hunting and died because of the injury. He was already old and tired from his journeys. The Galician–Volhynian Chronicle alleges he was killed by the Western Xia in battle, while Marco Polo wrote that he died after the infection of an arrow wound he received during his final campaign. Later Mongol chronicles connect Genghis' death with a Western Xia princess taken as war booty. One chronicle from the early 17th century even relates the legend that the princess hid a small dagger and stabbed him, though some Mongol authors have doubted this version and suspected it to be an invention by the rival Oirads.
+Q: Later chronicles of Genghis Khan's death implicate a princess from what empire in his death?
+P: Western Xia
+
+C: Some were sent to colonize places as diverse as French Guiana and the Falkland Islands; these latter efforts were unsuccessful. In August 1227, during the fall of Yinchuan, the capital of Western Xia, Genghis Khan died. The exact cause of his death remains a mystery, and is variously attributed to being killed in action against the Western Xia, illness, falling from his horse, or wounds sustained in hunting or battle. According to The Secret History of the Mongols Genghis Khan fell from his horse while hunting and died because of the injury. He was already old and tired from his journeys. The Galician–Volhynian Chronicle alleges he was killed by the Western Xia in battle, while Marco Polo wrote that he died after the infection of an arrow wound he received during his final campaign. Later Mongol chronicles connect Genghis' death with a Western Xia princess taken as war booty. One chronicle from the early 17th century even relates the legend that the princess hid a small dagger and stabbed him, though some Mongol authors have doubted this version and suspected it to be an invention by the rival Oirads.
+Q: Later chronicles of Genghis Khan's death implicate a princess from what empire in his death?
+P: Western Xia,
+
+
+----
+C: Lake Constance consists of three bodies of water: the Obersee ("upper lake"), the Untersee ("lower lake"), and a connecting stretch of the Rhine, called the Seerhein ("Lake Rhine"). The lake is situated in Germany, Switzerland and Austria near the Alps. Specifically, its shorelines lie in the German states of Bavaria and Baden-Württemberg, the Austrian state of Vorarlberg, and the Swiss cantons of Thurgau and St. Gallen. The Rhine flows into it from the south following the Swiss-Austrian border. It is located at approximately 47°39′N 9°19′E﻿ / ﻿47.650°N 9.317°E﻿ / 47.650; 9.317.
+Q: Where is the border of Swiss and Austria?
+P: the Alps.
+
+C: Because of the complexity of medications including specific indications, effectiveness of treatment regimens, safety of medications (i.e., drug interactions) and patient compliance issues (in the hospital and at home). Lake Constance consists of three bodies of water: the Obersee ("upper lake"), the Untersee ("lower lake"), and a connecting stretch of the Rhine, called the Seerhein ("Lake Rhine"). The lake is situated in Germany, Switzerland and Austria near the Alps. Specifically, its shorelines lie in the German states of Bavaria and Baden-Württemberg, the Austrian state of Vorarlberg, and the Swiss cantons of Thurgau and St. Gallen. The Rhine flows into it from the south following the Swiss-Austrian border. It is located at approximately 47°39′N 9°19′E﻿ / ﻿47.650°N 9.317°E﻿ / 47.650; 9.317.
+Q: Where is the border of Swiss and Austria?
+P: The Rhine
+
+
+----
+
+
+
+
+NER
+
+Change name everywhere
+Test cases:      500
+Fails (rate):    35 (7.0%)
+
+Example fails:
+C: Luther sympathised with some of the peasants' grievances, as he showed in his response to the Twelve Articles in May 1525, but he reminded the aggrieved to obey the temporal authorities. During a tour of Thuringia, he became enraged at the widespread burning of convents, monasteries, bishops' palaces, and libraries. In Against the Murderous, Thieving Hordes of Peasants, written on his return to Wittenberg, he gave his interpretation of the Gospel teaching on wealth, condemned the violence as the devil's work, and called for the nobles to put down the rebels like mad dogs:
+Q: What did Luther call the revolting peasants?
+P: Murderous, Thieving Hordes
+
+C: Nathaniel sympathised with some of the peasants' grievances, as he showed in his response to the Twelve Articles in May 1525, but he reminded the aggrieved to obey the temporal authorities. During a tour of Thuringia, he became enraged at the widespread burning of convents, monasteries, bishops' palaces, and libraries. In Against the Murderous, Thieving Hordes of Peasants, written on his return to Wittenberg, he gave his interpretation of the Gospel teaching on wealth, condemned the violence as the devil's work, and called for the nobles to put down the rebels like mad dogs:
+Q: What did Nathaniel call the revolting peasants?
+P: mad dogs:
+
+
+----
+C: Luther and his colleagues introduced the new order of worship during their visitation of the Electorate of Saxony, which began in 1527. They also assessed the standard of pastoral care and Christian education in the territory. "Merciful God, what misery I have seen," Luther wrote, "the common people knowing nothing at all of Christian doctrine ... and unfortunately many pastors are well-nigh unskilled and incapable of teaching."
+Q: What began in 1527 when Luther introdued the new order of worship?
+P: their visitation of the Electorate of Saxony,
+
+C: Angel and his colleagues introduced the new order of worship during their visitation of the Electorate of Saxony, which began in 1527. They also assessed the standard of pastoral care and Christian education in the territory. "Merciful God, what misery I have seen," Angel wrote, "the common people knowing nothing at all of Christian doctrine ... and unfortunately many pastors are well-nigh unskilled and incapable of teaching."
+Q: What began in 1527 when Angel introdued the new order of worship?
+P: the Electorate of Saxony,
+
+C: Caleb and his colleagues introduced the new order of worship during their visitation of the Electorate of Saxony, which began in 1527. They also assessed the standard of pastoral care and Christian education in the territory. "Merciful God, what misery I have seen," Caleb wrote, "the common people knowing nothing at all of Christian doctrine ... and unfortunately many pastors are well-nigh unskilled and incapable of teaching."
+Q: What began in 1527 when Caleb introdued the new order of worship?
+P: Electorate of Saxony,
+
+
+----
+C: Continuing the style of the earlier buildings, various designers were responsible for the decoration, the terracotta embellishments were again the work of Godfrey Sykes, although sgraffito was used to decorate the east side of the building designed by F. W. Moody, a final embellishment were the wrought iron gates made as late as 1885 designed by Starkie Gardner, these lead to a passage through the building. Scott also designed the two Cast Courts 1870–73 to the southeast of the garden (the site of the "Brompton Boilers"), these vast spaces have ceilings 70 feet (21 m) in height to accommodate the plaster casts of parts of famous buildings, including Trajan's Column (in two separate pieces). The final part of the museum designed by Scott was the Art Library and what is now the sculpture gallery on the south side of the garden, built 1877–83, the exterior mosaic panels in the parapet were designed by Reuben Townroe who also designed the plaster work in the library, Sir John Taylor designed the book shelves and cases, also this was the first part of the museum to have electric lighting. This completed the northern half of the site, creating a quadrangle with the garden at its centre, but left the museum without a proper façade. In 1890 the government launched a competition to design new buildings for the museum, with architect Alfred Waterhouse as one of the judges; this would give the museum a new imposing front entrance.
+Q: Where is the sculpture gallery now located?
+P: south side of the garden,
+
+C: Continuing the style of the earlier buildings, various designers were responsible for the decoration, the terracotta embellishments were again the work of Godfrey Sykes, although sgraffito was used to decorate the east side of the building designed by F. W. Moody, a final embellishment were the wrought iron gates made as late as 1885 designed by Starkie Gardner, these lead to a passage through the building. Scott also designed the two Cast Courts 1870–73 to the southeast of the garden (the site of the "Brompton Boilers"), these vast spaces have ceilings 70 feet (21 m) in height to accommodate the plaster casts of parts of famous buildings, including Trajan's Column (in two separate pieces). The final part of the museum designed by Scott was the Art Library and what is now the sculpture gallery on the south side of the garden, built 1877–83, the exterior mosaic panels in the parapet were designed by Reuben Townroe who also designed the plaster work in the library, Sir Christopher Scott designed the book shelves and cases, also this was the first part of the museum to have electric lighting. This completed the northern half of the site, creating a quadrangle with the garden at its centre, but left the museum without a proper façade. In 1890 the government launched a competition to design new buildings for the museum, with architect Alfred Waterhouse as one of the judges; this would give the museum a new imposing front entrance.
+Q: Where is the sculpture gallery now located?
+P: on the south side of the garden,
+
+C: Continuing the style of the earlier buildings, various designers were responsible for the decoration, the terracotta embellishments were again the work of Joseph Baker, although sgraffito was used to decorate the east side of the building designed by F. W. Moody, a final embellishment were the wrought iron gates made as late as 1885 designed by Starkie Gardner, these lead to a passage through the building. Scott also designed the two Cast Courts 1870–73 to the southeast of the garden (the site of the "Brompton Boilers"), these vast spaces have ceilings 70 feet (21 m) in height to accommodate the plaster casts of parts of famous buildings, including Trajan's Column (in two separate pieces). The final part of the museum designed by Scott was the Art Library and what is now the sculpture gallery on the south side of the garden, built 1877–83, the exterior mosaic panels in the parapet were designed by Reuben Townroe who also designed the plaster work in the library, Sir John Taylor designed the book shelves and cases, also this was the first part of the museum to have electric lighting. This completed the northern half of the site, creating a quadrangle with the garden at its centre, but left the museum without a proper façade. In 1890 the government launched a competition to design new buildings for the museum, with architect Alfred Waterhouse as one of the judges; this would give the museum a new imposing front entrance.
+Q: Where is the sculpture gallery now located?
+P: on the south side of the garden,
+
+
+----
+
+
+Change location everywhere
+Test cases:      500
+Fails (rate):    60 (12.0%)
+
+Example fails:
+C: French Huguenot explorer Jean Ribault charted the St. Johns River in 1562 calling it the River of May because he discovered it in May. Ribault erected a stone column near present-day Jacksonville claiming the newly discovered land for France. In 1564, René Goulaine de Laudonnière established the first European settlement, Fort Caroline, on the St. Johns near the main village of the Saturiwa. Philip II of Spain ordered Pedro Menéndez de Avilés to protect the interest of Spain by attacking the French presence at Fort Caroline. On September 20, 1565, a Spanish force from the nearby Spanish settlement of St. Augustine attacked Fort Caroline, and killed nearly all the French soldiers defending it. The Spanish renamed the fort San Mateo, and following the ejection of the French, St. Augustine's position as the most important settlement in Florida was solidified. The location of Fort Caroline is subject to debate but a reconstruction of the fort was established on the St. Johns River in 1964.
+Q: Who led the attack of the French colony in 1565?
+P: Philip II of Spain ordered Pedro Menéndez de Avilés
+
+C: French Huguenot explorer Jean Ribault charted the St. Johns River in 1562 calling it the River of May because he discovered it in May. Ribault erected a stone column near present-day Jacksonville claiming the newly discovered land for France. In 1564, René Goulaine de Laudonnière established the first European settlement, Fort Caroline, on the St. Johns near the main village of the Saturiwa. Philip II of Equatorial Guinea ordered Pedro Menéndez de Avilés to protect the interest of Equatorial Guinea by attacking the French presence at Fort Caroline. On September 20, 1565, a Spanish force from the nearby Spanish settlement of St. Augustine attacked Fort Caroline, and killed nearly all the French soldiers defending it. The Spanish renamed the fort San Mateo, and following the ejection of the French, St. Augustine's position as the most important settlement in Florida was solidified. The location of Fort Caroline is subject to debate but a reconstruction of the fort was established on the St. Johns River in 1964.
+Q: Who led the attack of the French colony in 1565?
+P: Pedro Menéndez de Avilés
+
+C: French Huguenot explorer Jean Ribault charted the St. Johns River in 1562 calling it the River of May because he discovered it in May. Ribault erected a stone column near present-day Jacksonville claiming the newly discovered land for France. In 1564, René Goulaine de Laudonnière established the first European settlement, Fort Caroline, on the St. Johns near the main village of the Saturiwa. Philip II of Slovak Republic ordered Pedro Menéndez de Avilés to protect the interest of Slovak Republic by attacking the French presence at Fort Caroline. On September 20, 1565, a Spanish force from the nearby Spanish settlement of St. Augustine attacked Fort Caroline, and killed nearly all the French soldiers defending it. The Spanish renamed the fort San Mateo, and following the ejection of the French, St. Augustine's position as the most important settlement in Florida was solidified. The location of Fort Caroline is subject to debate but a reconstruction of the fort was established on the St. Johns River in 1964.
+Q: Who led the attack of the French colony in 1565?
+P: Pedro Menéndez de Avilés
+
+
+----
+C: Despite being relatively unaffected by the embargo, the UK nonetheless faced an oil crisis of its own - a series of strikes by coal miners and railroad workers over the winter of 1973–74 became a major factor in the change of government. Heath asked the British to heat only one room in their houses over the winter. The UK, Germany, Italy, Switzerland and Norway banned flying, driving and boating on Sundays. Sweden rationed gasoline and heating oil. The Netherlands imposed prison sentences for those who used more than their ration of electricity.
+Q: Name one country that banned boating, driving and flying on Sundays.
+P: Norway
+
+C: Despite being relatively unaffected by the embargo, the UK nonetheless faced an oil crisis of its own - a series of strikes by coal miners and railroad workers over the winter of 1973–74 became a major factor in the change of government. Heath asked the British to heat only one room in their houses over the winter. The UK, Germany, Italy, Switzerland and Turks and Caicos Islands banned flying, driving and boating on Sundays. Sweden rationed gasoline and heating oil. The Netherlands imposed prison sentences for those who used more than their ration of electricity.
+Q: Name one country that banned boating, driving and flying on Sundays.
+P: Switzerland
+
+C: Despite being relatively unaffected by the embargo, the UK nonetheless faced an oil crisis of its own - a series of strikes by coal miners and railroad workers over the winter of 1973–74 became a major factor in the change of government. Heath asked the British to heat only one room in their houses over the winter. The UK, Cambodia, Italy, Switzerland and Norway banned flying, driving and boating on Sundays. Sweden rationed gasoline and heating oil. The Netherlands imposed prison sentences for those who used more than their ration of electricity.
+Q: Name one country that banned boating, driving and flying on Sundays.
+P: Switzerland and Norway
+
+
+----
+C: Kenya ranks low on Transparency International's Corruption Perception Index (CPI), a metric which attempts to gauge the prevalence of public sector corruption in various countries. In 2012, the nation placed 139th out of 176 total countries in the CPI, with a score of 27/100. However, there are several rather significant developments with regards to curbing corruption from the Kenyan government, for instance, the establishment of a new and independent Ethics and Anti-Corruption Commission (EACC).
+Q: What does the CPI scale measure?
+P: prevalence of public sector corruption
+
+C: Cayman Islands ranks low on Transparency International's Corruption Perception Index (CPI), a metric which attempts to gauge the prevalence of public sector corruption in various countries. In 2012, the nation placed 139th out of 176 total countries in the CPI, with a score of 27/100. However, there are several rather significant developments with regards to curbing corruption from the Kenyan government, for instance, the establishment of a new and independent Ethics and Anti-Corruption Commission (EACC).
+Q: What does the CPI scale measure?
+P: the prevalence of public sector corruption
+
+C: Dominican Republic ranks low on Transparency International's Corruption Perception Index (CPI), a metric which attempts to gauge the prevalence of public sector corruption in various countries. In 2012, the nation placed 139th out of 176 total countries in the CPI, with a score of 27/100. However, there are several rather significant developments with regards to curbing corruption from the Kenyan government, for instance, the establishment of a new and independent Ethics and Anti-Corruption Commission (EACC).
+Q: What does the CPI scale measure?
+P: the prevalence of public sector corruption
+
+
+----
+
+
+
+
+Fairness
+
+M/F failure rates should be similar for different professions
+Test cases:      2000
+Fails (rate):    431 (21.6%)
+
+Example fails:
+C: Kimberly is not a CEO, Sean is.
+Q: Who is a CEO?
+A: Sean
+P: Sean is.
+
+----
+C: Victoria is not a CEO, Chad is.
+Q: Who is a CEO?
+A: Chad
+P: Victoria
+
+----
+C: Robert is not a secretary, Erin is.
+Q: Who is a secretary?
+A: Erin
+P: Robert
+
+----
+
+
+
+
+Temporal
+
+There was a change in profession
+Test cases:      482
+Fails (rate):    1 (0.2%)
+
+Example fails:
+C: Both William and Victoria were architects, but there was a change in William, who is now a photographer.
+Q: Who is a photographer?
+A: William
+P: William and Victoria were architects, but there was a change in William,
+
+
+----
+
+
+Understanding before / after -> first / last.
+Test cases:      496
+Fails (rate):    482 (97.2%)
+
+Example fails:
+C: Nicholas became a academic after Katherine did.
+Q: Who became a academic last?
+A: Nicholas
+P: Katherine
+
+
+----
+C: Christopher became a investor after Elizabeth did.
+Q: Who became a investor last?
+A: Christopher
+P: Elizabeth
+
+
+----
+C: Emily became a educator after Amy did.
+Q: Who became a educator last?
+A: Emily
+P: Amy
+
+
+----
+
+
+
+
+Negation
+
+Negation in context, may or may not be in question
+Test cases:      499
+Fails (rate):    49 (9.8%)
+
+Example fails:
+C: Ethan is not an agent. Sara is.
+Q: Who is an agent?
+A: Sara
+P: Sara is.
+
+
+----
+C: Katherine is an actress. Alexis is not.
+Q: Who is not an actress?
+A: Alexis
+P: Alex
+
+
+----
+C: Ethan is not an attorney. Adam is.
+Q: Who is an attorney?
+A: Adam
+P: Adam is.
+
+
+----
+
+
+Negation in question only.
+Test cases:      481
+Fails (rate):    345 (71.7%)
+
+Example fails:
+C: Katherine is an interpreter. Brandon is a photographer.
+Q: Who is not a photographer?
+A: Katherine
+P: Brandon
+
+
+----
+C: Christopher is an analyst. Christina is an auditor.
+Q: Who is not an auditor?
+A: Christopher
+P: Christina
+
+
+----
+C: Ryan is an adviser. William is an artist.
+Q: Who is not an artist?
+A: Ryan
+P: William
+
+
+----
+
+
+
+
+Coref
+
+Basic coref, he / she
+Test cases:      477
+Fails (rate):    144 (30.2%)
+
+Example fails:
+C: Charles and Amber are friends. He is an intern, and she is an actor.
+Q: Who is an actor?
+A: Amber
+P: Amber are friends. He is an intern, and she
+
+C: Amber and Charles are friends. He is an intern, and she is an actor.
+Q: Who is an actor?
+A: Amber
+P: Amber and Charles are friends. He is an intern, and she
+
+C: Charles and Amber are friends. She is an actor, and he is an intern.
+Q: Who is an actor?
+A: Amber
+P: Charles
+
+
+----
+C: Kristin and Richard are friends. He is an engineer, and she is a historian.
+Q: Who is an engineer?
+A: Richard
+P: Kristin and Richard
+
+
+----
+C: Katherine and Christian are friends. He is an editor, and she is an accountant.
+Q: Who is an editor?
+A: Christian
+P: Katherine and Christian
+
+
+----
+
+
+Basic coref, his / her
+Test cases:      500
+Fails (rate):    176 (35.2%)
+
+Example fails:
+C: Julie and Richard are friends. His mom is an administrator.
+Q: Whose mom is an administrator?
+A: Richard
+P: Julie and Richard
+
+
+----
+C: Jackson and Kelsey are friends. Her mom is an engineer.
+Q: Whose mom is an engineer?
+A: Kelsey
+P: Jackson and Kelsey
+
+
+----
+C: Angel and Hailey are friends. Her mom is an interpreter.
+Q: Whose mom is an interpreter?
+A: Hailey
+P: Angel
+
+
+----
+
+
+Former / Latter
+Test cases:      475
+Fails (rate):    437 (92.0%)
+
+Example fails:
+C: Brandon and Tiffany are friends. The former is an auditor.
+Q: Who is an auditor?
+A: Brandon
+P: Brandon and Tiffany
+
+
+----
+C: Erin and Alexis are friends. The former is an economist.
+Q: Who is an economist?
+A: Erin
+P: Erin and Alexis
+
+C: Alexis and Erin are friends. The latter is an economist.
+Q: Who is an economist?
+A: Erin
+P: Alexis and Erin
+
+C: Alexis and Erin are friends. The former is an auditor and the latter is an economist.
+Q: Who is an economist?
+A: Erin
+P: Alexis and Erin
+
+
+----
+C: Taylor and Danielle are friends. The former is an assistant.
+Q: Who is an assistant?
+A: Taylor
+P: Taylor and Danielle
+
+C: Danielle and Taylor are friends. The latter is an assistant.
+Q: Who is an assistant?
+A: Taylor
+P: Danielle and Taylor
+
+
+----
+
+
+
+
+SRL
+
+Agent / object distinction
+Test cases:      497
+Fails (rate):    252 (50.7%)
+
+Example fails:
+C: Jason hates Alyssa.
+Q: Who hates?
+A: Jason
+P: Alyssa
+
+C: Alyssa is hated by Jason.
+Q: Who hates?
+A: Jason
+P: Alyssa
+
+
+----
+C: William is preferred by Zachary.
+Q: Who is preferred?
+A: William
+P: Zachary
+
+
+----
+C: Alyssa is followed by Erin.
+Q: Who is followed?
+A: Alyssa
+P: Erin
+
+
+----
+
+
+Agent / object distinction with 3 agents
+Test cases:      483
+Fails (rate):    392 (81.2%)
+
+Example fails:
+C: Aaron is understood by Jason. Aaron understands Tiffany.
+Q: Who is understood by Aaron?
+A: Tiffany
+P: Jason
+
+
+----
+C: Alyssa is disliked by Abigail. Alyssa dislikes John.
+Q: Who is disliked by Alyssa?
+A: John
+P: Abigail
+
+
+----
+C: Jeffrey is blamed by Rebecca. Jeffrey blames Maria.
+Q: Who is blamed by Jeffrey?
+A: Maria
+P: Rebecca
+
+
+----
+
+
+
+

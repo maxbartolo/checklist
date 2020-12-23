@@ -1,0 +1,971 @@
+Vocabulary
+
+A is COMP than B. Who is more / less COMP?
+Test cases:      494
+Fails (rate):    360 (72.9%)
+
+Example fails:
+C: Amanda is cleaner than Jason.
+Q: Who is less clean?
+A: Jason
+P: Amanda
+
+
+----
+C: Andrea is nicer than Kevin.
+Q: Who is less nice?
+A: Kevin
+P: Andrea
+
+
+----
+C: Alexander is slower than Hannah.
+Q: Who is less slow?
+A: Hannah
+P: Alexander
+
+
+----
+
+
+Intensifiers (very, super, extremely) and reducers (somewhat, kinda, etc)?
+Test cases:      497
+Fails (rate):    494 (99.4%)
+
+Example fails:
+C: Hannah is bullish about the project. Rebecca is really bullish about the project.
+Q: Who is most bullish about the project?
+A: Rebecca
+P: Hannah
+
+
+----
+C: Steven is super ambitious about the project. Tiffany is ambitious about the project.
+Q: Who is least ambitious about the project?
+A: Tiffany
+P: Steven
+
+C: Tiffany is ambitious about the project. Steven is super ambitious about the project.
+Q: Who is most ambitious about the project?
+A: Steven
+P: Tiffany
+
+C: Tiffany is ambitious about the project. Steven is super ambitious about the project.
+Q: Who is least ambitious about the project?
+A: Tiffany
+P: Steven
+
+
+----
+C: Erin is quite serious about the project. Jacob is serious about the project.
+Q: Who is least serious about the project?
+A: Jacob
+P: Erin
+
+C: Jacob is serious about the project. Erin is quite serious about the project.
+Q: Who is most serious about the project?
+A: Erin
+P: Jacob
+
+C: Jacob is serious about the project. Erin is quite serious about the project.
+Q: Who is least serious about the project?
+A: Jacob
+P: Erin
+
+
+----
+
+
+
+
+Taxonomy
+
+size, shape, age, color
+Test cases:      500
+Fails (rate):    495 (99.0%)
+
+Example fails:
+C: There is an oval white sculpture in the room.
+Q: What shape is the sculpture?
+A: oval
+P: oval white
+
+C: There is a sculpture in the room. The sculpture is oval and white.
+Q: What shape is the sculpture?
+A: oval
+P: oval and white
+
+C: There is a sculpture in the room. The sculpture is oval and white.
+Q: What color is the sculpture?
+A: white
+P: oval and white
+
+
+----
+C: There is a small green thing in the room.
+Q: What size is the thing?
+A: small
+P: green
+
+C: There is a thing in the room. The thing is small and green.
+Q: What size is the thing?
+A: small
+P: small and green
+
+C: There is a thing in the room. The thing is small and green.
+Q: What color is the thing?
+A: green
+P: small and green
+
+
+----
+C: There is an enormous square sculpture in the room.
+Q: What size is the sculpture?
+A: enormous
+P: square
+
+C: There is a sculpture in the room. The sculpture is enormous and square.
+Q: What size is the sculpture?
+A: enormous
+P: enormous and square
+
+C: There is a sculpture in the room. The sculpture is enormous and square.
+Q: What shape is the sculpture?
+A: square
+P: enormous and square
+
+
+----
+
+
+Profession vs nationality
+Test cases:      500
+Fails (rate):    85 (17.0%)
+
+Example fails:
+C: Lauren is a Japanese adviser.
+Q: What is Lauren's job?
+A: adviser
+P: Japanese adviser
+
+C: Lauren is an adviser and Japanese.
+Q: What is Lauren's job?
+A: adviser
+P: an adviser and Japanese.
+
+
+----
+C: Brittany is a Japanese assistant.
+Q: What is Brittany's job?
+A: assistant
+P: Japanese assistant
+
+
+----
+C: Lisa is an Indian adviser.
+Q: What is Lisa's job?
+A: adviser
+P: Indian adviser
+
+
+----
+
+
+Animal vs Vehicle
+Test cases:      500
+Fails (rate):    360 (72.0%)
+
+Example fails:
+C: Jose has a cow and a tractor.
+Q: What vehicle does Jose have?
+A: tractor
+P: cow
+
+C: Jose has a tractor and a cow.
+Q: What animal does Jose have?
+A: cow
+P: tractor
+
+
+----
+C: Isabella has a bull and a minivan.
+Q: What vehicle does Isabella have?
+A: minivan
+P: bull
+
+
+----
+C: Samantha has an iguana and a car.
+Q: What vehicle does Samantha have?
+A: car
+P: iguana
+
+
+----
+
+
+Animal vs Vehicle v2
+Test cases:      496
+Fails (rate):    228 (46.0%)
+
+Example fails:
+C: Jamie bought an iguana. Alexander bought a firetruck.
+Q: Who bought a vehicle?
+A: Alexander
+P: Jamie
+
+
+----
+C: Amber bought a SUV. Katherine bought a fish.
+Q: Who bought an animal?
+A: Katherine
+P: Amber
+
+
+----
+C: Michelle bought a hamster. Andrew bought a train.
+Q: Who bought a vehicle?
+A: Andrew
+P: Michelle
+
+
+----
+
+
+Synonyms
+Test cases:      447
+Fails (rate):    24 (5.4%)
+
+Example fails:
+C: Tyler is very vocal. Ethan is very intelligent.
+Q: Who is outspoken?
+A: Tyler
+P: Ethan
+
+
+----
+C: Tyler is very vocal. Jamie is very intelligent.
+Q: Who is outspoken?
+A: Tyler
+P: Jamie
+
+
+----
+C: Richard is very vocal. Mark is very intelligent.
+Q: Who is outspoken?
+A: Richard
+P: Mark
+
+
+----
+
+
+A is COMP than B. Who is antonym(COMP)? B
+Test cases:      496
+Fails (rate):    496 (100.0%)
+
+Example fails:
+C: Austin is darker than Andrea.
+Q: Who is lighter?
+A: Andrea
+P: Austin
+
+C: Andrea is lighter than Austin.
+Q: Who is darker?
+A: Austin
+P: Andrea
+
+
+----
+C: Kyle is richer than Brandon.
+Q: Who is poorer?
+A: Brandon
+P: Kyle
+
+C: Brandon is poorer than Kyle.
+Q: Who is richer?
+A: Kyle
+P: Brandon
+
+
+----
+C: Alyssa is worse than Michelle.
+Q: Who is better?
+A: Michelle
+P: Alyssa
+
+
+----
+
+
+A is more X than B. Who is more antonym(X)? B. Who is less X? B. Who is more X? A. Who is less antonym(X)? A.
+Test cases:      491
+Fails (rate):    491 (100.0%)
+
+Example fails:
+C: Daniel is more positive than Taylor.
+Q: Who is less positive?
+A: Taylor
+P: Daniel
+
+C: Daniel is more positive than Taylor.
+Q: Who is more negative?
+A: Taylor
+P: Daniel
+
+C: Taylor is more negative than Daniel.
+Q: Who is more positive?
+A: Daniel
+P: Taylor
+
+
+----
+C: Robert is more impatient than Kayla.
+Q: Who is less impatient?
+A: Kayla
+P: Robert
+
+C: Robert is more impatient than Kayla.
+Q: Who is more patient?
+A: Kayla
+P: Robert
+
+C: Kayla is more patient than Robert.
+Q: Who is more impatient?
+A: Robert
+P: Kayla
+
+
+----
+C: Christian is more active than Amanda.
+Q: Who is more passive?
+A: Amanda
+P: Christian
+
+C: Christian is more active than Amanda.
+Q: Who is less passive?
+A: Christian
+P: Amanda
+
+C: Amanda is more passive than Christian.
+Q: Who is more active?
+A: Christian
+P: Amanda
+
+
+----
+
+
+
+
+Robustness
+
+Question typo
+Test cases:      500
+Fails (rate):    90 (18.0%)
+
+Example fails:
+C: This is true throughout most of the United States as well. However, alternative approaches for primary education do exist. One of these, sometimes referred to as a "platoon" system, involves placing a group of students together in one class that moves from one specialist to another for every subject. The advantage here is that students learn from teachers who specialize in one subject and who tend to be more knowledgeable in that one area than a teacher who teaches many subjects. Students still derive a strong sense of security by staying with the same group of peers for all classes.
+Q: In a platoon style teaching, what gives the children security?
+P: staying with the same group of peers for all classes
+
+C: This is true throughout most of the United States as well. However, alternative approaches for primary education do exist. One of these, sometimes referred to as a "platoon" system, involves placing a group of students together in one class that moves from one specialist to another for every subject. The advantage here is that students learn from teachers who specialize in one subject and who tend to be more knowledgeable in that one area than a teacher who teaches many subjects. Students still derive a strong sense of security by staying with the same group of peers for all classes.
+Q: In a platoon style teaching, what gives the childre nsecurity?
+P: staying with the same group of peers for all classes.
+
+
+----
+C: The availability of the Bible in vernacular languages was important to the spread of the Protestant movement and development of the Reformed church in France. The country had a long history of struggles with the papacy by the time the Protestant Reformation finally arrived. Around 1294, a French version of the Scriptures was prepared by the Roman Catholic priest, Guyard de Moulin. A two-volume illustrated folio paraphrase version based on his manuscript, by Jean de Rély, was printed in Paris in 1487.
+Q: An illustrated, paraphrased version of this appeared when?
+P: based on his manuscript
+
+C: The availability of the Bible in vernacular languages was important to the spread of the Protestant movement and development of the Reformed church in France. The country had a long history of struggles with the papacy by the time the Protestant Reformation finally arrived. Around 1294, a French version of the Scriptures was prepared by the Roman Catholic priest, Guyard de Moulin. A two-volume illustrated folio paraphrase version based on his manuscript, by Jean de Rély, was printed in Paris in 1487.
+Q: An illustrated, paraphrased version of this appeared wehn?
+P: folio
+
+
+----
+C: Teaching in Canada requires a post-secondary degree Bachelor's Degree. In most provinces a second Bachelor's Degree such as a Bachelor of Education is required to become a qualified teacher. Salary ranges from $40,000/year to $90,000/yr. Teachers have the option to teach for a public school which is funded by the provincial government or teaching in a private school which is funded by the private sector, businesses and sponsors.
+Q: Where does a private school get funding to operate?
+P: the private sector, businesses and sponsors
+
+C: Teaching in Canada requires a post-secondary degree Bachelor's Degree. In most provinces a second Bachelor's Degree such as a Bachelor of Education is required to become a qualified teacher. Salary ranges from $40,000/year to $90,000/yr. Teachers have the option to teach for a public school which is funded by the provincial government or teaching in a private school which is funded by the private sector, businesses and sponsors.
+Q: Where does a private schoo lget funding to operate?
+P: businesses and sponsors
+
+
+----
+
+
+Question contractions
+Test cases:      500
+Fails (rate):    54 (10.8%)
+
+Example fails:
+C: On 1 February 2007, the eve of the publication of IPCC's major report on climate, a study was published suggesting that temperatures and sea levels have been rising at or above the maximum rates proposed during the last IPCC report in 2001. The study compared IPCC 2001 projections on temperature and sea level change with observations. Over the six years studied, the actual temperature rise was near the top end of the range given by IPCC's 2001 projection, and the actual sea level rise was above the top of the range of the IPCC projection.
+Q: How did the 2001 IPCC report compare to reality for 2001-2006?
+P: projections on temperature and sea level change with observations
+
+C: On 1 February 2007, the eve of the publication of IPCC's major report on climate, a study was published suggesting that temperatures and sea levels have been rising at or above the maximum rates proposed during the last IPCC report in 2001. The study compared IPCC 2001 projections on temperature and sea level change with observations. Over the six years studied, the actual temperature rise was near the top end of the range given by IPCC's 2001 projection, and the actual sea level rise was above the top of the range of the IPCC projection.
+Q: How'd the 2001 IPCC report compare to reality for 2001-2006?
+P: compared IPCC 2001 projections on temperature and sea level change with observations
+
+
+----
+C: Downtown San Diego is the central business district of San Diego, though the city is filled with business districts. These include Carmel Valley, Del Mar Heights, Mission Valley, Rancho Bernardo, Sorrento Mesa, and University City. Most of these districts are located in Northern San Diego and some within North County regions.
+Q: What is the central business district of San Diego?
+P: Downtown
+
+C: Downtown San Diego is the central business district of San Diego, though the city is filled with business districts. These include Carmel Valley, Del Mar Heights, Mission Valley, Rancho Bernardo, Sorrento Mesa, and University City. Most of these districts are located in Northern San Diego and some within North County regions.
+Q: What's the central business district of San Diego?
+P: Downtown San Diego
+
+
+----
+C: Although Kenya is the biggest and most advanced economy in east and central Africa, and has an affluent urban minority, it has a Human Development Index (HDI) of 0.519, ranked 145 out of 186 in the world. As of 2005, 17.7% of Kenyans lived on less than $1.25 a day. The important agricultural sector is one of the least developed and largely inefficient, employing 75% of the workforce compared to less than 3% in the food secure developed countries. Kenya is usually classified as a frontier market or occasionally an emerging market, but it is not one of the least developed countries.
+Q: What is Kenya's HDI?
+P: 0.519
+
+C: Although Kenya is the biggest and most advanced economy in east and central Africa, and has an affluent urban minority, it has a Human Development Index (HDI) of 0.519, ranked 145 out of 186 in the world. As of 2005, 17.7% of Kenyans lived on less than $1.25 a day. The important agricultural sector is one of the least developed and largely inefficient, employing 75% of the workforce compared to less than 3% in the food secure developed countries. Kenya is usually classified as a frontier market or occasionally an emerging market, but it is not one of the least developed countries.
+Q: What's Kenya's HDI?
+P: Human Development Index
+
+
+----
+
+
+Add random sentence to context
+Test cases:      500
+Fails (rate):    89 (17.8%)
+
+Example fails:
+C: In this last connection, the name could suggest the derogatory inference of superstitious worship; popular fancy held that Huguon, the gate of King Hugo, was haunted by the ghost of le roi Huguet (regarded by Roman Catholics as an infamous scoundrel) and other spirits, who instead of being in Purgatory came back to harm the living at night. It was in this place in Tours that the prétendus réformés ("these supposedly 'reformed'") habitually gathered at night, both for political purposes, and for prayer and singing psalms. Such explanations have been traced to the contemporary, Reguier de la Plancha (d. 1560), who in De l'Estat de France offered the following account as to the origin of the name, as cited by The Cape Monthly:
+Q: By what other name was the Gate known?
+P: King Hugo
+
+C: The couple left for the Far East ten years later. In this last connection, the name could suggest the derogatory inference of superstitious worship; popular fancy held that Huguon, the gate of King Hugo, was haunted by the ghost of le roi Huguet (regarded by Roman Catholics as an infamous scoundrel) and other spirits, who instead of being in Purgatory came back to harm the living at night. It was in this place in Tours that the prétendus réformés ("these supposedly 'reformed'") habitually gathered at night, both for political purposes, and for prayer and singing psalms. Such explanations have been traced to the contemporary, Reguier de la Plancha (d. 1560), who in De l'Estat de France offered the following account as to the origin of the name, as cited by The Cape Monthly:
+Q: By what other name was the Gate known?
+P: Huguon
+
+
+----
+C: The Maroons compete in the NCAA's Division III as members of the University Athletic Association (UAA). The university was a founding member of the Big Ten Conference and participated in the NCAA Division I Men's Basketball and Football and was a regular participant in the Men's Basketball tournament. In 1935, the University of Chicago reached the Sweet Sixteen. In 1935, Chicago Maroons football player Jay Berwanger became the first winner of the Heisman Trophy. However, the university chose to withdraw from the conference in 1946 after University President Robert Maynard Hutchins de-emphasized varsity athletics in 1939 and dropped football. (In 1969, Chicago reinstated football as a Division III team, resuming playing its home games at the new Stagg Field.)
+Q: The Maroons compete in what league division?
+P: NCAA's Division III
+
+C: Clergy are members of their Annual Conference rather than of any local congregation, and are appointed to a local church or other charge annually by the conference's resident Bishop at the meeting of the Annual Conference. The Maroons compete in the NCAA's Division III as members of the University Athletic Association (UAA). The university was a founding member of the Big Ten Conference and participated in the NCAA Division I Men's Basketball and Football and was a regular participant in the Men's Basketball tournament. In 1935, the University of Chicago reached the Sweet Sixteen. In 1935, Chicago Maroons football player Jay Berwanger became the first winner of the Heisman Trophy. However, the university chose to withdraw from the conference in 1946 after University President Robert Maynard Hutchins de-emphasized varsity athletics in 1939 and dropped football. (In 1969, Chicago reinstated football as a Division III team, resuming playing its home games at the new Stagg Field.)
+Q: The Maroons compete in what league division?
+P: Division III
+
+
+----
+C: Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+Q: Based on population alone, what is Jacksonville's ranking in the United States?
+P: 12th
+
+C: Article 102 allows the European Council to regulations to govern mergers between firms (the current regulation is the Regulation 139/2004/EC). Jacksonville is the largest city by population in the U.S. state of Florida, and the largest city by area in the contiguous United States. It is the county seat of Duval County, with which the city government consolidated in 1968. Consolidation gave Jacksonville its great size and placed most of its metropolitan population within the city limits; with an estimated population of 853,382 in 2014, it is the most populous city proper in Florida and the Southeast, and the 12th most populous in the United States. Jacksonville is the principal city in the Jacksonville metropolitan area, with a population of 1,345,596 in 2010.
+Q: Based on population alone, what is Jacksonville's ranking in the United States?
+P: largest city by population in the U.S. state of Florida
+
+
+----
+
+
+
+
+NER
+
+Change name everywhere
+Test cases:      500
+Fails (rate):    43 (8.6%)
+
+Example fails:
+C: Luther had been suffering from ill health for years, including Ménière's disease, vertigo, fainting, tinnitus, and a cataract in one eye. From 1531 to 1546, his health deteriorated further. The years of struggle with Rome, the antagonisms with and among his fellow reformers, and the scandal which ensued from the bigamy of the Philip of Hesse incident, in which Luther had played a leading role, all may have contributed. In 1536, he began to suffer from kidney and bladder stones, and arthritis, and an ear infection ruptured an ear drum. In December 1544, he began to feel the effects of angina.
+Q: How was Luther's health for the years of 1531 to 1546?
+P: his health deteriorated further
+
+C: Nicholas had been suffering from ill health for years, including Ménière's disease, vertigo, fainting, tinnitus, and a cataract in one eye. From 1531 to 1546, his health deteriorated further. The years of struggle with Rome, the antagonisms with and among his fellow reformers, and the scandal which ensued from the bigamy of the Philip of Hesse incident, in which Nicholas had played a leading role, all may have contributed. In 1536, he began to suffer from kidney and bladder stones, and arthritis, and an ear infection ruptured an ear drum. In December 1544, he began to feel the effects of angina.
+Q: How was Nicholas's health for the years of 1531 to 1546?
+P: deteriorated further
+
+C: Isaiah had been suffering from ill health for years, including Ménière's disease, vertigo, fainting, tinnitus, and a cataract in one eye. From 1531 to 1546, his health deteriorated further. The years of struggle with Rome, the antagonisms with and among his fellow reformers, and the scandal which ensued from the bigamy of the Philip of Hesse incident, in which Isaiah had played a leading role, all may have contributed. In 1536, he began to suffer from kidney and bladder stones, and arthritis, and an ear infection ruptured an ear drum. In December 1544, he began to feel the effects of angina.
+Q: How was Isaiah's health for the years of 1531 to 1546?
+P: deteriorated further
+
+
+----
+C: The first European to travel the length of the Amazon River was Francisco de Orellana in 1542. The BBC's Unnatural Histories presents evidence that Orellana, rather than exaggerating his claims as previously thought, was correct in his observations that a complex civilization was flourishing along the Amazon in the 1540s. It is believed that the civilization was later devastated by the spread of diseases from Europe, such as smallpox. Since the 1970s, numerous geoglyphs have been discovered on deforested land dating between AD 0–1250, furthering claims about Pre-Columbian civilizations. Ondemar Dias is accredited with first discovering the geoglyphs in 1977 and Alceu Ranzi with furthering their discovery after flying over Acre. The BBC's Unnatural Histories presented evidence that the Amazon rainforest, rather than being a pristine wilderness, has been shaped by man for at least 11,000 years through practices such as forest gardening and terra preta.
+Q: During what time did civilization in the Amazon was flourishing when Orellana made his observations?
+P: 1540s
+
+C: The first European to travel the length of the Amazon River was Christopher Jones in 1542. The BBC's Unnatural Histories presents evidence that Orellana, rather than exaggerating his claims as previously thought, was correct in his observations that a complex civilization was flourishing along the Amazon in the 1540s. It is believed that the civilization was later devastated by the spread of diseases from Europe, such as smallpox. Since the 1970s, numerous geoglyphs have been discovered on deforested land dating between AD 0–1250, furthering claims about Pre-Columbian civilizations. Ondemar Dias is accredited with first discovering the geoglyphs in 1977 and Alceu Ranzi with furthering their discovery after flying over Acre. The BBC's Unnatural Histories presented evidence that the Amazon rainforest, rather than being a pristine wilderness, has been shaped by man for at least 11,000 years through practices such as forest gardening and terra preta.
+Q: During what time did civilization in the Amazon was flourishing when Orellana made his observations?
+P: the 1540s
+
+C: The first European to travel the length of the Amazon River was Joshua Edwards in 1542. The BBC's Unnatural Histories presents evidence that Orellana, rather than exaggerating his claims as previously thought, was correct in his observations that a complex civilization was flourishing along the Amazon in the 1540s. It is believed that the civilization was later devastated by the spread of diseases from Europe, such as smallpox. Since the 1970s, numerous geoglyphs have been discovered on deforested land dating between AD 0–1250, furthering claims about Pre-Columbian civilizations. Ondemar Dias is accredited with first discovering the geoglyphs in 1977 and Alceu Ranzi with furthering their discovery after flying over Acre. The BBC's Unnatural Histories presented evidence that the Amazon rainforest, rather than being a pristine wilderness, has been shaped by man for at least 11,000 years through practices such as forest gardening and terra preta.
+Q: During what time did civilization in the Amazon was flourishing when Orellana made his observations?
+P: the 1540s
+
+
+----
+C: Two days later, the FBI ordered the Alien Property Custodian to seize Tesla's belongings, even though Tesla was an American citizen. Tesla's entire estate from the Hotel New Yorker and other New York City hotels was transported to the Manhattan Storage and Warehouse Company under the Office of Alien Property (OAP) seal. John G. Trump, a professor at M.I.T. and a well-known electrical engineer serving as a technical aide to the National Defense Research Committee, was called in to analyze the Tesla items in OAP custody. After a three-day investigation, Trump's report concluded that there was nothing which would constitute a hazard in unfriendly hands, stating:
+Q: What happened to Tesla's belongings?
+P: the FBI ordered the Alien Property Custodian to seize
+
+C: Two days later, the FBI ordered the Alien Property Custodian to seize Hannah's belongings, even though Hannah was an American citizen. Hannah's entire estate from the Hotel New Yorker and other New York City hotels was transported to the Manhattan Storage and Warehouse Company under the Office of Alien Property (OAP) seal. John G. Trump, a professor at M.I.T. and a well-known electrical engineer serving as a technical aide to the National Defense Research Committee, was called in to analyze the Hannah items in OAP custody. After a three-day investigation, Trump's report concluded that there was nothing which would constitute a hazard in unfriendly hands, stating:
+Q: What happened to Hannah's belongings?
+P: was transported to the Manhattan Storage and Warehouse
+
+C: Two days later, the FBI ordered the Alien Property Custodian to seize Jasmine's belongings, even though Jasmine was an American citizen. Jasmine's entire estate from the Hotel New Yorker and other New York City hotels was transported to the Manhattan Storage and Warehouse Company under the Office of Alien Property (OAP) seal. John G. Trump, a professor at M.I.T. and a well-known electrical engineer serving as a technical aide to the National Defense Research Committee, was called in to analyze the Jasmine items in OAP custody. After a three-day investigation, Trump's report concluded that there was nothing which would constitute a hazard in unfriendly hands, stating:
+Q: What happened to Jasmine's belongings?
+P: was transported to the Manhattan Storage and Warehouse
+
+
+----
+
+
+Change location everywhere
+Test cases:      500
+Fails (rate):    93 (18.6%)
+
+Example fails:
+C: In the China of the Yuan, or Mongol era, various important developments in the arts occurred or continued in their development, including the areas of painting, mathematics, calligraphy, poetry, and theater, with many great artists and writers being famous today. Due to the coming together of painting, poetry, and calligraphy at this time many of the artists practicing these different pursuits were the same individuals, though perhaps more famed for one area of their achievements than others. Often in terms of the further development of landscape painting as well as the classical joining together of the arts of painting, poetry, and calligraphy, the Song dynasty and the Yuan dynasty are linked together. In the area of Chinese painting during the Yuan dynasty there were many famous painters. In the area of calligraphy many of the great calligraphers were from the Yuan dynasty era. In Yuan poetry, the main development was the qu, which was used among other poetic forms by most of the famous Yuan poets. Many of the poets were also involved in the major developments in the theater during this time, and the other way around, with people important in the theater becoming famous through the development of the sanqu type of qu. One of the key factors in the mix of the zaju variety show was the incorporation of poetry both classical and of the newer qu form. One of the important cultural developments during the Yuan era was the consolidation of poetry, painting, and calligraphy into a unified piece of the type that tends to come to mind when people think of classical Chinese art. Another important aspect of Yuan times is the increasing incorporation of the then current, vernacular Chinese into both the qu form of poetry and the zaju variety show. Another important consideration regarding Yuan dynasty arts and culture is that so much of it has survived in China, relatively to works from the Tang dynasty and Song dynasty, which have often been better preserved in places such as the Shōsōin, in Japan.
+Q: What dynasty shared artistic inspiration with the Yuan?
+P: Tang dynasty
+
+C: In the Sri Lanka of the Yuan, or Mongol era, various important developments in the arts occurred or continued in their development, including the areas of painting, mathematics, calligraphy, poetry, and theater, with many great artists and writers being famous today. Due to the coming together of painting, poetry, and calligraphy at this time many of the artists practicing these different pursuits were the same individuals, though perhaps more famed for one area of their achievements than others. Often in terms of the further development of landscape painting as well as the classical joining together of the arts of painting, poetry, and calligraphy, the Song dynasty and the Yuan dynasty are linked together. In the area of Chinese painting during the Yuan dynasty there were many famous painters. In the area of calligraphy many of the great calligraphers were from the Yuan dynasty era. In Yuan poetry, the main development was the qu, which was used among other poetic forms by most of the famous Yuan poets. Many of the poets were also involved in the major developments in the theater during this time, and the other way around, with people important in the theater becoming famous through the development of the sanqu type of qu. One of the key factors in the mix of the zaju variety show was the incorporation of poetry both classical and of the newer qu form. One of the important cultural developments during the Yuan era was the consolidation of poetry, painting, and calligraphy into a unified piece of the type that tends to come to mind when people think of classical Chinese art. Another important aspect of Yuan times is the increasing incorporation of the then current, vernacular Chinese into both the qu form of poetry and the zaju variety show. Another important consideration regarding Yuan dynasty arts and culture is that so much of it has survived in Sri Lanka, relatively to works from the Tang dynasty and Song dynasty, which have often been better preserved in places such as the Shōsōin, in Japan.
+Q: What dynasty shared artistic inspiration with the Yuan?
+P: the Tang dynasty
+
+C: In the Eswatini of the Yuan, or Mongol era, various important developments in the arts occurred or continued in their development, including the areas of painting, mathematics, calligraphy, poetry, and theater, with many great artists and writers being famous today. Due to the coming together of painting, poetry, and calligraphy at this time many of the artists practicing these different pursuits were the same individuals, though perhaps more famed for one area of their achievements than others. Often in terms of the further development of landscape painting as well as the classical joining together of the arts of painting, poetry, and calligraphy, the Song dynasty and the Yuan dynasty are linked together. In the area of Chinese painting during the Yuan dynasty there were many famous painters. In the area of calligraphy many of the great calligraphers were from the Yuan dynasty era. In Yuan poetry, the main development was the qu, which was used among other poetic forms by most of the famous Yuan poets. Many of the poets were also involved in the major developments in the theater during this time, and the other way around, with people important in the theater becoming famous through the development of the sanqu type of qu. One of the key factors in the mix of the zaju variety show was the incorporation of poetry both classical and of the newer qu form. One of the important cultural developments during the Yuan era was the consolidation of poetry, painting, and calligraphy into a unified piece of the type that tends to come to mind when people think of classical Chinese art. Another important aspect of Yuan times is the increasing incorporation of the then current, vernacular Chinese into both the qu form of poetry and the zaju variety show. Another important consideration regarding Yuan dynasty arts and culture is that so much of it has survived in Eswatini, relatively to works from the Tang dynasty and Song dynasty, which have often been better preserved in places such as the Shōsōin, in Japan.
+Q: What dynasty shared artistic inspiration with the Yuan?
+P: the Tang dynasty
+
+
+----
+C: The two symbols most commonly associated with pharmacy in English-speaking countries are the mortar and pestle and the ℞ (recipere) character, which is often written as "Rx" in typed text. The show globe was also used until the early 20th century. Pharmacy organizations often use other symbols, such as the Bowl of Hygieia which is often used in the Netherlands, conical measures, and caduceuses in their logos. Other symbols are common in different countries: the green Greek cross in France, Argentina, the United Kingdom, Belgium, Ireland, Italy, Spain, and India, the increasingly rare Gaper in the Netherlands, and a red stylized letter A in Germany and Austria (from Apotheke, the German word for pharmacy, from the same Greek root as the English word 'apothecary').
+Q: What symbol was employed until early in the 20th century?
+P: The show globe
+
+C: The two symbols most commonly associated with pharmacy in English-speaking countries are the mortar and pestle and the ℞ (recipere) character, which is often written as "Rx" in typed text. The show globe was also used until the early 20th century. Pharmacy organizations often use other symbols, such as the Bowl of Hygieia which is often used in the Netherlands, conical measures, and caduceuses in their logos. Other symbols are common in different countries: the green Greek cross in France, Argentina, the United Kingdom, South Sudan, Ireland, Italy, Spain, and India, the increasingly rare Gaper in the Netherlands, and a red stylized letter A in Germany and Austria (from Apotheke, the German word for pharmacy, from the same Greek root as the English word 'apothecary').
+Q: What symbol was employed until early in the 20th century?
+P: show globe
+
+C: The two symbols most commonly associated with pharmacy in English-speaking countries are the mortar and pestle and the ℞ (recipere) character, which is often written as "Rx" in typed text. The show globe was also used until the early 20th century. Pharmacy organizations often use other symbols, such as the Bowl of Hygieia which is often used in the Netherlands, conical measures, and caduceuses in their logos. Other symbols are common in different countries: the green Greek cross in France, Argentina, the United Kingdom, Belgium, Ireland, Italy, Papua New Guinea, and India, the increasingly rare Gaper in the Netherlands, and a red stylized letter A in Germany and Austria (from Apotheke, the German word for pharmacy, from the same Greek root as the English word 'apothecary').
+Q: What symbol was employed until early in the 20th century?
+P: show globe
+
+
+----
+C: In 1952, when the release of the FCC's Sixth Report and Order announced the end of its freeze on new station license applications, among the issues the Commission was slated to address was whether to approve the UPT-ABC merger. One FCC Commissioner saw the possibility of ABC, funded by UPT, becoming a viable and competitive third television network. On February 9, 1953, the FCC approved UPT's purchase of ABC in exchange for $25 million in shares. The merged company, renamed American Broadcasting-Paramount Theatres, Inc. and headquartered in the Paramount Building at 1501 Broadway in Manhattan, owned six AM and several FM radio stations, five television stations and 644 cinemas in 300 U.S. cities. To comply with FCC ownership restrictions in effect at the time that barred common ownership of two television stations in the same market, UPT sold its Chicago television station, WBKB-TV, to CBS (which subsequently changed the station's call letters to WBBM-TV) for $6 million, while it kept ABC's existing Chicago station, WENR-TV. The merged company acquired the WBKB call letters for channel 7, which would eventually become WLS-TV. Goldenson began to sell some of the older theaters to help finance the new television network.
+Q: Where was American Broadcasting-Paramount Theatres, Inc headquartered after the merger?
+P: 1501 Broadway in Manhattan
+
+C: In 1952, when the release of the FCC's Sixth Report and Order announced the end of its freeze on new station license applications, among the issues the Commission was slated to address was whether to approve the UPT-ABC merger. One FCC Commissioner saw the possibility of ABC, funded by UPT, becoming a viable and competitive third television network. On February 9, 1953, the FCC approved UPT's purchase of ABC in exchange for $25 million in shares. The merged company, renamed American Broadcasting-Paramount Theatres, Inc. and headquartered in the Paramount Building at 1501 Broadway in Manhattan, owned six AM and several FM radio stations, five television stations and 644 cinemas in 300 U.S. cities. To comply with FCC ownership restrictions in effect at the time that barred common ownership of two television stations in the same market, UPT sold its Rock Hill television station, WBKB-TV, to CBS (which subsequently changed the station's call letters to WBBM-TV) for $6 million, while it kept ABC's existing Rock Hill station, WENR-TV. The merged company acquired the WBKB call letters for channel 7, which would eventually become WLS-TV. Goldenson began to sell some of the older theaters to help finance the new television network.
+Q: Where was American Broadcasting-Paramount Theatres, Inc headquartered after the merger?
+P: Manhattan
+
+C: In 1952, when the release of the FCC's Sixth Report and Order announced the end of its freeze on new station license applications, among the issues the Commission was slated to address was whether to approve the UPT-ABC merger. One FCC Commissioner saw the possibility of ABC, funded by UPT, becoming a viable and competitive third television network. On February 9, 1953, the FCC approved UPT's purchase of ABC in exchange for $25 million in shares. The merged company, renamed American Broadcasting-Paramount Theatres, Inc. and headquartered in the Paramount Building at 1501 Broadway in Manhattan, owned six AM and several FM radio stations, five television stations and 644 cinemas in 300 U.S. cities. To comply with FCC ownership restrictions in effect at the time that barred common ownership of two television stations in the same market, UPT sold its Fullerton television station, WBKB-TV, to CBS (which subsequently changed the station's call letters to WBBM-TV) for $6 million, while it kept ABC's existing Fullerton station, WENR-TV. The merged company acquired the WBKB call letters for channel 7, which would eventually become WLS-TV. Goldenson began to sell some of the older theaters to help finance the new television network.
+Q: Where was American Broadcasting-Paramount Theatres, Inc headquartered after the merger?
+P: Manhattan
+
+
+----
+
+
+
+
+Fairness
+
+M/F failure rates should be similar for different professions
+Test cases:      2000
+Fails (rate):    168 (8.4%)
+
+Example fails:
+C: Mary is not a secretary, Angel is.
+Q: Who is a secretary?
+A: Angel
+P: Mary
+
+----
+C: Amber is not a doctor, Christian is.
+Q: Who is a doctor?
+A: Christian
+P: Amber
+
+----
+C: Liam is not a doctor, Tiffany is.
+Q: Who is a doctor?
+A: Tiffany
+P: Liam
+
+----
+
+
+
+
+Temporal
+
+There was a change in profession
+Test cases:      482
+Fails (rate):    0 (0.0%)
+
+
+Understanding before / after -> first / last.
+Test cases:      496
+Fails (rate):    496 (100.0%)
+
+Example fails:
+C: Jennifer became a artist after Heather did.
+Q: Who became a artist first?
+A: Heather
+P: Jennifer
+
+
+----
+C: Robert became a agent before Maria did.
+Q: Who became a agent last?
+A: Maria
+P: Robert
+
+C: Maria became a agent after Robert did.
+Q: Who became a agent first?
+A: Robert
+P: Maria
+
+
+----
+C: Christina became a organizer before Jose did.
+Q: Who became a organizer last?
+A: Jose
+P: Christina
+
+C: Jose became a organizer after Christina did.
+Q: Who became a organizer first?
+A: Christina
+P: Jose
+
+
+----
+
+
+
+
+Negation
+
+Negation in context, may or may not be in question
+Test cases:      499
+Fails (rate):    174 (34.9%)
+
+Example fails:
+C: Austin is not an escort. Samuel is.
+Q: Who is an escort?
+A: Samuel
+P: Austin
+
+
+----
+C: Benjamin is not an actress. Christian is.
+Q: Who is an actress?
+A: Christian
+P: Benjamin
+
+
+----
+C: Jeffrey is not an academic. Nicole is.
+Q: Who is an academic?
+A: Nicole
+P: Jeffrey
+
+
+----
+
+
+Negation in question only.
+Test cases:      481
+Fails (rate):    481 (100.0%)
+
+Example fails:
+C: Daniel is an actor. Kevin is an analyst.
+Q: Who is not an actor?
+A: Kevin
+P: Daniel
+
+C: Daniel is an actor. Kevin is an analyst.
+Q: Who is not an analyst?
+A: Daniel
+P: Kevin
+
+C: Kevin is an analyst. Daniel is an actor.
+Q: Who is not an actor?
+A: Kevin
+P: Daniel
+
+
+----
+C: Nicholas is an adviser. Matthew is an attorney.
+Q: Who is not an adviser?
+A: Matthew
+P: Nicholas
+
+C: Nicholas is an adviser. Matthew is an attorney.
+Q: Who is not an attorney?
+A: Nicholas
+P: Matthew
+
+C: Matthew is an attorney. Nicholas is an adviser.
+Q: Who is not an adviser?
+A: Matthew
+P: Nicholas
+
+
+----
+C: Erin is an advisor. Jordan is an engineer.
+Q: Who is not an advisor?
+A: Jordan
+P: Erin
+
+C: Erin is an advisor. Jordan is an engineer.
+Q: Who is not an engineer?
+A: Erin
+P: Jordan
+
+C: Jordan is an engineer. Erin is an advisor.
+Q: Who is not an advisor?
+A: Jordan
+P: Erin
+
+
+----
+
+
+
+
+Coref
+
+Basic coref, he / she
+Test cases:      477
+Fails (rate):    477 (100.0%)
+
+Example fails:
+C: Logan and Alexis are friends. He is an analyst, and she is an economist.
+Q: Who is an analyst?
+A: Logan
+P: Alexis
+
+C: Alexis and Logan are friends. He is an analyst, and she is an economist.
+Q: Who is an economist?
+A: Alexis
+P: Alexis and Logan
+
+C: Logan and Alexis are friends. She is an economist, and he is an analyst.
+Q: Who is an analyst?
+A: Logan
+P: Alexis
+
+
+----
+C: Kenneth and Caroline are friends. He is a photographer, and she is an adviser.
+Q: Who is a photographer?
+A: Kenneth
+P: He
+
+C: Caroline and Kenneth are friends. He is a photographer, and she is an adviser.
+Q: Who is an adviser?
+A: Caroline
+P: Caroline and Kenneth
+
+C: Kenneth and Caroline are friends. She is an adviser, and he is a photographer.
+Q: Who is a photographer?
+A: Kenneth
+P: She is an adviser, and he is a photographer.
+
+
+----
+C: Ryan and Leslie are friends. He is an agent, and she is a photographer.
+Q: Who is an agent?
+A: Ryan
+P: He
+
+C: Leslie and Ryan are friends. He is an agent, and she is a photographer.
+Q: Who is a photographer?
+A: Leslie
+P: Ryan
+
+C: Ryan and Leslie are friends. She is a photographer, and he is an agent.
+Q: Who is an agent?
+A: Ryan
+P: Leslie
+
+
+----
+
+
+Basic coref, his / her
+Test cases:      500
+Fails (rate):    419 (83.8%)
+
+Example fails:
+C: Christopher and Olivia are friends. Her mom is an architect.
+Q: Whose mom is an architect?
+A: Olivia
+P: Christopher and Olivia
+
+C: Olivia and Christopher are friends. Her mom is an architect.
+Q: Whose mom is an architect?
+A: Olivia
+P: Olivia and Christopher
+
+
+----
+C: Jayden and Christina are friends. His mom is an investor.
+Q: Whose mom is an investor?
+A: Jayden
+P: Jayden and Christina
+
+C: Christina and Jayden are friends. His mom is an investor.
+Q: Whose mom is an investor?
+A: Jayden
+P: Christina and Jayden
+
+
+----
+C: Leslie and Jacob are friends. His mom is a producer.
+Q: Whose mom is a producer?
+A: Jacob
+P: Leslie and Jacob
+
+
+----
+
+
+Former / Latter
+Test cases:      475
+Fails (rate):    475 (100.0%)
+
+Example fails:
+C: Jordan and Sean are friends. The former is an architect.
+Q: Who is an architect?
+A: Jordan
+P: Sean
+
+C: Jordan and Sean are friends. The former is an architect and the latter is an organizer.
+Q: Who is an architect?
+A: Jordan
+P: Jordan and Sean
+
+
+----
+C: Robert and Mary are friends. The former is an executive.
+Q: Who is an executive?
+A: Robert
+P: The former
+
+C: Robert and Mary are friends. The former is an executive and the latter is an assistant.
+Q: Who is an executive?
+A: Robert
+P: Robert and Mary
+
+
+----
+C: Benjamin and Katherine are friends. The former is an artist.
+Q: Who is an artist?
+A: Benjamin
+P: The former
+
+C: Benjamin and Katherine are friends. The former is an artist and the latter is an author.
+Q: Who is an artist?
+A: Benjamin
+P: The former
+
+
+----
+
+
+
+
+SRL
+
+Agent / object distinction
+Test cases:      497
+Fails (rate):    149 (30.0%)
+
+Example fails:
+C: Lisa blames Samuel.
+Q: Who blames?
+A: Lisa
+P: Samuel
+
+
+----
+C: Jamie hurts Mark.
+Q: Who hurts?
+A: Jamie
+P: Mark
+
+
+----
+C: Elizabeth blames Kelly.
+Q: Who blames?
+A: Elizabeth
+P: Kelly
+
+
+----
+
+
+Agent / object distinction with 3 agents
+Test cases:      483
+Fails (rate):    475 (98.3%)
+
+Example fails:
+C: Scott attacks Christian. Victoria is attacked by Christian.
+Q: Who attacks Victoria?
+A: Christian
+P: Scott
+
+C: Scott attacks Christian. Victoria is attacked by Christian.
+Q: Who is attacked by Scott?
+A: Christian
+P: Victoria
+
+
+----
+C: Christian likes Emma. Alexis is liked by Emma.
+Q: Who likes Alexis?
+A: Emma
+P: Christian
+
+C: Christian likes Emma. Alexis is liked by Emma.
+Q: Who is liked by Christian?
+A: Emma
+P: Alexis
+
+C: Emma is liked by Christian. Emma likes Alexis.
+Q: Who likes Emma?
+A: Christian
+P: Alexis
+
+
+----
+C: William understands Megan. Megan understands Maria.
+Q: Who understands Maria?
+A: Megan
+P: William
+
+C: William understands Megan. Maria is understood by Megan.
+Q: Who is understood by William?
+A: Megan
+P: Maria
+
+C: Megan is understood by William. Megan understands Maria.
+Q: Who understands Maria?
+A: Megan
+P: Megan is understood by William. Megan
+
+
+----
+
+
+
+

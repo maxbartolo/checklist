@@ -1,0 +1,902 @@
+Vocabulary
+
+A is COMP than B. Who is more / less COMP?
+Test cases:      494
+Fails (rate):    99 (20.0%)
+
+Example fails:
+C: Brian is younger than Sara.
+Q: Who is less young?
+A: Sara
+P: Brian
+
+
+----
+C: Jonathan is younger than Maria.
+Q: Who is less young?
+A: Maria
+P: Jonathan
+
+
+----
+C: Kyle is tougher than Olivia.
+Q: Who is less tough?
+A: Olivia
+P: Kyle
+
+
+----
+
+
+Intensifiers (very, super, extremely) and reducers (somewhat, kinda, etc)?
+Test cases:      497
+Fails (rate):    454 (91.3%)
+
+Example fails:
+C: Erin is ambitious about the project. Emma is quite ambitious about the project.
+Q: Who is most ambitious about the project?
+A: Emma
+P: Erin
+
+C: Erin is ambitious about the project. Emma is quite ambitious about the project.
+Q: Who is least ambitious about the project?
+A: Erin
+P: Emma
+
+
+----
+C: Megan is concerned about the project. Dylan is particularly concerned about the project.
+Q: Who is least concerned about the project?
+A: Megan
+P: Dylan
+
+
+----
+C: Victoria is particular about the project. Emily is really particular about the project.
+Q: Who is most particular about the project?
+A: Emily
+P: Victoria
+
+C: Victoria is particular about the project. Emily is really particular about the project.
+Q: Who is least particular about the project?
+A: Victoria
+P: Emily
+
+
+----
+
+
+
+
+Taxonomy
+
+size, shape, age, color
+Test cases:      500
+Fails (rate):    412 (82.4%)
+
+Example fails:
+C: There is a big white table in the room.
+Q: What size is the table?
+A: big
+P: big white
+
+
+----
+C: There is an enormous pink box in the room.
+Q: What size is the box?
+A: enormous
+P: enormous pink
+
+C: There is a box in the room. The box is enormous and pink.
+Q: What size is the box?
+A: enormous
+P: enormous and pink
+
+
+----
+C: There is a figure in the room. The figure is tiny and old.
+Q: What size is the figure?
+A: tiny
+P: tiny and old
+
+
+----
+
+
+Profession vs nationality
+Test cases:      500
+Fails (rate):    247 (49.4%)
+
+Example fails:
+C: Jamie is an Indonesian escort.
+Q: What is Jamie's job?
+A: escort
+P: Indonesian escort
+
+
+----
+C: Natalie is a Pakistani activist.
+Q: What is Natalie's job?
+A: activist
+P: Pakistani activist
+
+
+----
+C: Brian is an Indonesian assistant.
+Q: What is Brian's job?
+A: assistant
+P: Indonesian assistant
+
+
+----
+
+
+Animal vs Vehicle
+Test cases:      500
+Fails (rate):    128 (25.6%)
+
+Example fails:
+C: Joshua has a cat and a firetruck.
+Q: What animal does Joshua have?
+A: cat
+P: a cat and a firetruck
+
+C: Joshua has a firetruck and a cat.
+Q: What animal does Joshua have?
+A: cat
+P: a firetruck and a cat
+
+
+----
+C: Ethan has a hamster and a firetruck.
+Q: What vehicle does Ethan have?
+A: firetruck
+P: a hamster and a firetruck
+
+C: Ethan has a firetruck and a hamster.
+Q: What animal does Ethan have?
+A: hamster
+P: a firetruck and a hamster
+
+
+----
+C: Kevin has a firetruck and a guinea pig.
+Q: What animal does Kevin have?
+A: guinea pig
+P: a firetruck and a guinea pig
+
+
+----
+
+
+Animal vs Vehicle v2
+Test cases:      496
+Fails (rate):    130 (26.2%)
+
+Example fails:
+C: Nicole bought a firetruck. Kelly bought a duck.
+Q: Who bought an animal?
+A: Kelly
+P: Nicole
+
+
+----
+C: Sophia bought a serpent. Emma bought a train.
+Q: Who bought a vehicle?
+A: Emma
+P: Sophia bought a serpent. Emma
+
+
+----
+C: Anna bought a bull. Austin bought a firetruck.
+Q: Who bought a vehicle?
+A: Austin
+P: Anna bought a bull. Austin
+
+
+----
+
+
+Synonyms
+Test cases:      447
+Fails (rate):    0 (0.0%)
+
+
+A is COMP than B. Who is antonym(COMP)? B
+Test cases:      496
+Fails (rate):    334 (67.3%)
+
+Example fails:
+C: Michael is better than Laura.
+Q: Who is worse?
+A: Laura
+P: Michael
+
+C: Laura is worse than Michael.
+Q: Who is better?
+A: Michael
+P: Laura
+
+
+----
+C: Matthew is quieter than Abigail.
+Q: Who is louder?
+A: Abigail
+P: Matthew
+
+
+----
+C: David is better than Kayla.
+Q: Who is worse?
+A: Kayla
+P: David
+
+
+----
+
+
+A is more X than B. Who is more antonym(X)? B. Who is less X? B. Who is more X? A. Who is less antonym(X)? A.
+Test cases:      491
+Fails (rate):    491 (100.0%)
+
+Example fails:
+C: Christina is more visible than Lauren.
+Q: Who is more invisible?
+A: Lauren
+P: Christina
+
+C: Christina is more visible than Lauren.
+Q: Who is less invisible?
+A: Christina
+P: Lauren
+
+C: Lauren is more invisible than Christina.
+Q: Who is more visible?
+A: Christina
+P: Lauren
+
+
+----
+C: Natalie is more humble than William.
+Q: Who is more proud?
+A: William
+P: Natalie
+
+C: Natalie is more humble than William.
+Q: Who is less proud?
+A: Natalie
+P: William
+
+C: William is more proud than Natalie.
+Q: Who is more humble?
+A: Natalie
+P: William
+
+
+----
+C: Alyssa is more rude than Brittany.
+Q: Who is more polite?
+A: Brittany
+P: Alyssa is more rude than Brittany
+
+C: Alyssa is more rude than Brittany.
+Q: Who is less polite?
+A: Alyssa
+P: Brittany
+
+C: Brittany is more polite than Alyssa.
+Q: Who is more rude?
+A: Alyssa
+P: Brittany
+
+
+----
+
+
+
+
+Robustness
+
+Question typo
+Test cases:      500
+Fails (rate):    58 (11.6%)
+
+Example fails:
+C: In business, notable alumni include Microsoft CEO Satya Nadella, Oracle Corporation founder and the third richest man in America Larry Ellison, Goldman Sachs and MF Global CEO as well as former Governor of New Jersey Jon Corzine, McKinsey & Company founder and author of the first management accounting textbook James O. McKinsey, Arley D. Cathey, Bloomberg L.P. CEO Daniel Doctoroff, Credit Suisse CEO Brady Dougan, Morningstar, Inc. founder and CEO Joe Mansueto, Chicago Cubs owner and chairman Thomas S. Ricketts, and NBA commissioner Adam Silver.
+Q: Who founded McKinsey & Company?
+P: Jon Corzine
+
+C: In business, notable alumni include Microsoft CEO Satya Nadella, Oracle Corporation founder and the third richest man in America Larry Ellison, Goldman Sachs and MF Global CEO as well as former Governor of New Jersey Jon Corzine, McKinsey & Company founder and author of the first management accounting textbook James O. McKinsey, Arley D. Cathey, Bloomberg L.P. CEO Daniel Doctoroff, Credit Suisse CEO Brady Dougan, Morningstar, Inc. founder and CEO Joe Mansueto, Chicago Cubs owner and chairman Thomas S. Ricketts, and NBA commissioner Adam Silver.
+Q: Who founded MciKnsey & Company?
+P: James O. McKinsey
+
+
+----
+C: Luther taught that salvation and subsequently eternal life is not earned by good deeds but is received only as a free gift of God's grace through faith in Jesus Christ as redeemer from sin. His theology challenged the authority and office of the Pope by teaching that the Bible is the only source of divinely revealed knowledge from God and opposed sacerdotalism by considering all baptized Christians to be a holy priesthood. Those who identify with these, and all of Luther's wider teachings, are called Lutherans even though Luther insisted on Christian or Evangelical as the only acceptable names for individuals who professed Christ.
+Q: What did Martin Luther believe achieved God's Grace?
+P: faith in Jesus Christ
+
+C: Luther taught that salvation and subsequently eternal life is not earned by good deeds but is received only as a free gift of God's grace through faith in Jesus Christ as redeemer from sin. His theology challenged the authority and office of the Pope by teaching that the Bible is the only source of divinely revealed knowledge from God and opposed sacerdotalism by considering all baptized Christians to be a holy priesthood. Those who identify with these, and all of Luther's wider teachings, are called Lutherans even though Luther insisted on Christian or Evangelical as the only acceptable names for individuals who professed Christ.
+Q: What did Martin Luther believe aciheved God's Grace?
+P: Jesus Christ
+
+
+----
+C: The earliest known movie featuring some exterior scenes filmed in the city is On the Night of the Fire (1939), though by and large the action is studio-bound. Later came The Clouded Yellow (1951) and Payroll (1961), both of which feature more extensive scenes filmed in the city. The 1971 film Get Carter was shot on location in and around Newcastle and offers an opportunity to see what Newcastle looked like in the 1960s and early 1970s. The city was also backdrop to another gangster film, the 1988 film noir thriller Stormy Monday, directed by Mike Figgis and starring Tommy Lee Jones, Melanie Griffith, Sting and Sean Bean.
+Q: What famous musician starred in Stormy Monday?
+P: Tommy Lee Jones, Melanie Griffith, Sting
+
+C: The earliest known movie featuring some exterior scenes filmed in the city is On the Night of the Fire (1939), though by and large the action is studio-bound. Later came The Clouded Yellow (1951) and Payroll (1961), both of which feature more extensive scenes filmed in the city. The 1971 film Get Carter was shot on location in and around Newcastle and offers an opportunity to see what Newcastle looked like in the 1960s and early 1970s. The city was also backdrop to another gangster film, the 1988 film noir thriller Stormy Monday, directed by Mike Figgis and starring Tommy Lee Jones, Melanie Griffith, Sting and Sean Bean.
+Q: hWat famous musician starred in Stormy Monday?
+P: Tommy Lee Jones
+
+
+----
+
+
+Question contractions
+Test cases:      500
+Fails (rate):    17 (3.4%)
+
+Example fails:
+C: Terra preta (black earth), which is distributed over large areas in the Amazon forest, is now widely accepted as a product of indigenous soil management. The development of this fertile soil allowed agriculture and silviculture in the previously hostile environment; meaning that large portions of the Amazon rainforest are probably the result of centuries of human management, rather than naturally occurring as has previously been supposed. In the region of the Xingu tribe, remains of some of these large settlements in the middle of the Amazon forest were found in 2003 by Michael Heckenberger and colleagues of the University of Florida. Among those were evidence of roads, bridges and large plazas.
+Q: Who is credited with finding evidence of large settlements in the Amazon forest?
+P: Michael Heckenberger and colleagues of the University of Florida
+
+C: Terra preta (black earth), which is distributed over large areas in the Amazon forest, is now widely accepted as a product of indigenous soil management. The development of this fertile soil allowed agriculture and silviculture in the previously hostile environment; meaning that large portions of the Amazon rainforest are probably the result of centuries of human management, rather than naturally occurring as has previously been supposed. In the region of the Xingu tribe, remains of some of these large settlements in the middle of the Amazon forest were found in 2003 by Michael Heckenberger and colleagues of the University of Florida. Among those were evidence of roads, bridges and large plazas.
+Q: Who's credited with finding evidence of large settlements in the Amazon forest?
+P: Michael Heckenberger and colleagues
+
+
+----
+C: Chloroplasts have their own ribosomes, which they use to synthesize a small fraction of their proteins. Chloroplast ribosomes are about two-thirds the size of cytoplasmic ribosomes (around 17 nm vs 25 nm). They take mRNAs transcribed from the chloroplast DNA and translate them into protein. While similar to bacterial ribosomes, chloroplast translation is more complex than in bacteria, so chloroplast ribosomes include some chloroplast-unique features. Small subunit ribosomal RNAs in several Chlorophyta and euglenid chloroplasts lack motifs for shine-dalgarno sequence recognition, which is considered essential for translation initiation in most chloroplasts and prokaryotes. Such loss is also rarely observed in other plastids and prokaryotes.
+Q: What are some Chlorophyta and euglenid chloroplasts missing?
+P: motifs for shine-dalgarno sequence recognition
+
+C: Chloroplasts have their own ribosomes, which they use to synthesize a small fraction of their proteins. Chloroplast ribosomes are about two-thirds the size of cytoplasmic ribosomes (around 17 nm vs 25 nm). They take mRNAs transcribed from the chloroplast DNA and translate them into protein. While similar to bacterial ribosomes, chloroplast translation is more complex than in bacteria, so chloroplast ribosomes include some chloroplast-unique features. Small subunit ribosomal RNAs in several Chlorophyta and euglenid chloroplasts lack motifs for shine-dalgarno sequence recognition, which is considered essential for translation initiation in most chloroplasts and prokaryotes. Such loss is also rarely observed in other plastids and prokaryotes.
+Q: What're some Chlorophyta and euglenid chloroplasts missing?
+P: Small subunit ribosomal RNAs
+
+
+----
+C: In Mongolia today, Genghis Khan's name and likeness are endorsed on products, streets, buildings, and other places. His face can be found on everyday commodities, from liquor bottles to candy products, and on the largest denominations of 500, 1,000, 5,000, 10,000, and 20,000 Mongolian tögrög (₮). Mongolia's main international airport in Ulaanbaatar is named Chinggis Khaan International Airport. Major Genghis Khan statues have been erected before the parliament and near Ulaanbaatar. There have been repeated discussions about regulating the use of his name and image to avoid trivialization.
+Q: What is the name of contemporary Mongolian currency?
+P: tögrög
+
+C: In Mongolia today, Genghis Khan's name and likeness are endorsed on products, streets, buildings, and other places. His face can be found on everyday commodities, from liquor bottles to candy products, and on the largest denominations of 500, 1,000, 5,000, 10,000, and 20,000 Mongolian tögrög (₮). Mongolia's main international airport in Ulaanbaatar is named Chinggis Khaan International Airport. Major Genghis Khan statues have been erected before the parliament and near Ulaanbaatar. There have been repeated discussions about regulating the use of his name and image to avoid trivialization.
+Q: What's the name of contemporary Mongolian currency?
+P: Mongolian tögrög
+
+
+----
+
+
+Add random sentence to context
+Test cases:      500
+Fails (rate):    49 (9.8%)
+
+Example fails:
+C: Luther's hymns inspired composers to write music. Johann Sebastian Bach included several verses as chorales in his cantatas and based chorale cantatas entirely on them, namely Christ lag in Todes Banden, BWV 4, as early as possibly 1707, in his second annual cycle (1724 to 1725) Ach Gott, vom Himmel sieh darein, BWV 2, Christ unser Herr zum Jordan kam, BWV 7, Nun komm, der Heiden Heiland, BWV 62, Gelobet seist du, Jesu Christ, BWV 91, and Aus tiefer Not schrei ich zu dir, BWV 38, later Ein feste Burg ist unser Gott, BWV 80, and in 1735 Wär Gott nicht mit uns diese Zeit, BWV 14.
+Q: When was the last use by Bach of Luther's work?
+P: 1735
+
+C: Luther's hymns inspired composers to write music. Johann Sebastian Bach included several verses as chorales in his cantatas and based chorale cantatas entirely on them, namely Christ lag in Todes Banden, BWV 4, as early as possibly 1707, in his second annual cycle (1724 to 1725) Ach Gott, vom Himmel sieh darein, BWV 2, Christ unser Herr zum Jordan kam, BWV 7, Nun komm, der Heiden Heiland, BWV 62, Gelobet seist du, Jesu Christ, BWV 91, and Aus tiefer Not schrei ich zu dir, BWV 38, later Ein feste Burg ist unser Gott, BWV 80, and in 1735 Wär Gott nicht mit uns diese Zeit, BWV 14.Priestley published his findings in 1775 in a paper titled "An Account of Further Discoveries in Air" which was included in the second volume of his book titled Experiments and Observations on Different Kinds of Air. 
+Q: When was the last use by Bach of Luther's work?
+P: 1724 to 1725
+
+C: Priestley published his findings in 1775 in a paper titled "An Account of Further Discoveries in Air" which was included in the second volume of his book titled Experiments and Observations on Different Kinds of Air. Luther's hymns inspired composers to write music. Johann Sebastian Bach included several verses as chorales in his cantatas and based chorale cantatas entirely on them, namely Christ lag in Todes Banden, BWV 4, as early as possibly 1707, in his second annual cycle (1724 to 1725) Ach Gott, vom Himmel sieh darein, BWV 2, Christ unser Herr zum Jordan kam, BWV 7, Nun komm, der Heiden Heiland, BWV 62, Gelobet seist du, Jesu Christ, BWV 91, and Aus tiefer Not schrei ich zu dir, BWV 38, later Ein feste Burg ist unser Gott, BWV 80, and in 1735 Wär Gott nicht mit uns diese Zeit, BWV 14.
+Q: When was the last use by Bach of Luther's work?
+P: 1725
+
+
+----
+C: For the salary year beginning April 2008, unpromoted teachers in Scotland earned from £20,427 for a Probationer, up to £32,583 after 6 years teaching, but could then go on to earn up to £39,942 as they complete the modules to earn Chartered Teacher Status (requiring at least 6 years at up to two modules per year.) Promotion to Principal Teacher positions attracts a salary of between £34,566 and £44,616; Deputy Head, and Head teachers earn from £40,290 to £78,642. Teachers in Scotland can be registered members of trade unions with the main ones being the Educational Institute of Scotland and the Scottish Secondary Teachers' Association.
+Q: What would a Probationer need to do to earn more money, after 6 years?
+P: teaching
+
+C: It has been argued that the term "civil disobedience" has always suffered from ambiguity and in modern times, become utterly debased. For the salary year beginning April 2008, unpromoted teachers in Scotland earned from £20,427 for a Probationer, up to £32,583 after 6 years teaching, but could then go on to earn up to £39,942 as they complete the modules to earn Chartered Teacher Status (requiring at least 6 years at up to two modules per year.) Promotion to Principal Teacher positions attracts a salary of between £34,566 and £44,616; Deputy Head, and Head teachers earn from £40,290 to £78,642. Teachers in Scotland can be registered members of trade unions with the main ones being the Educational Institute of Scotland and the Scottish Secondary Teachers' Association.
+Q: What would a Probationer need to do to earn more money, after 6 years?
+P: teaching, but could then go on to earn up to £39,942 as they complete the modules to earn Chartered Teacher Status
+
+
+----
+C: Subsequently, Californios (dissatisfied with inequitable taxes and land laws) and pro-slavery southerners in the lightly populated "Cow Counties" of southern California attempted three times in the 1850s to achieve a separate statehood or territorial status separate from Northern California. The last attempt, the Pico Act of 1859, was passed by the California State Legislature and signed by the State governor John B. Weller. It was approved overwhelmingly by nearly 75% of voters in the proposed Territory of Colorado. This territory was to include all the counties up to the then much larger Tulare County (that included what is now Kings, most of Kern, and part of Inyo counties) and San Luis Obispo County. The proposal was sent to Washington, D.C. with a strong advocate in Senator Milton Latham. However, the secession crisis following the election of Abraham Lincoln in 1860 led to the proposal never coming to a vote.
+Q: How many times did southern California attempt to achieve a separate statehood?
+P: three times
+
+C: However, at the same time, the UMC Judicial Council, in 2008, ruled that conferences can determine their own policy related to transgender pastors, and therefore some regional conferences have voted to recognize ordained transgender pastors. Subsequently, Californios (dissatisfied with inequitable taxes and land laws) and pro-slavery southerners in the lightly populated "Cow Counties" of southern California attempted three times in the 1850s to achieve a separate statehood or territorial status separate from Northern California. The last attempt, the Pico Act of 1859, was passed by the California State Legislature and signed by the State governor John B. Weller. It was approved overwhelmingly by nearly 75% of voters in the proposed Territory of Colorado. This territory was to include all the counties up to the then much larger Tulare County (that included what is now Kings, most of Kern, and part of Inyo counties) and San Luis Obispo County. The proposal was sent to Washington, D.C. with a strong advocate in Senator Milton Latham. However, the secession crisis following the election of Abraham Lincoln in 1860 led to the proposal never coming to a vote.
+Q: How many times did southern California attempt to achieve a separate statehood?
+P: three
+
+
+----
+
+
+
+
+NER
+
+Change name everywhere
+Test cases:      500
+Fails (rate):    29 (5.8%)
+
+Example fails:
+C: On 6 November 1915, a Reuters news agency report from London had the 1915 Nobel Prize in Physics awarded to Thomas Edison and Nikola Tesla; however, on 15 November, a Reuters story from Stockholm stated the prize that year was being awarded to Sir William Henry Bragg and William Lawrence Bragg "for their services in the analysis of crystal structure by means of X-rays.":245 There were unsubstantiated rumors at the time that Tesla and/or Edison had refused the prize.:245 The Nobel Foundation said, "Any rumor that a person has not been given a Nobel Prize because he has made known his intention to refuse the reward is ridiculous"; a recipient could only decline a Nobel Prize after he is announced a winner.:245
+Q: What was the rumored reason Edison and Tesla were not awarded the prize?
+P: refuse the reward
+
+C: On 6 November 1915, a Reuters news agency report from London had the 1915 Nobel Prize in Physics awarded to Thomas Christian and Nikola Tesla; however, on 15 November, a Reuters story from Stockholm stated the prize that year was being awarded to Sir William Henry Bragg and William Lawrence Bragg "for their services in the analysis of crystal structure by means of X-rays.":245 There were unsubstantiated rumors at the time that Tesla and/or Christian had refused the prize.:245 The Nobel Foundation said, "Any rumor that a person has not been given a Nobel Prize because he has made known his intention to refuse the reward is ridiculous"; a recipient could only decline a Nobel Prize after he is announced a winner.:245
+Q: What was the rumored reason Christian and Tesla were not awarded the prize?
+P: he has made known his intention to refuse the reward
+
+
+----
+C: One of the great treasures in the library is the Codex Forster, some of Leonardo da Vinci's note books. The Codex consists of three parchment-bound manuscripts, Forster I, Forster II, and Forster III, quite small in size, dated between 1490 and 1505. Their contents include a large collection of sketches and references to the equestrian sculpture commissioned by the Duke of Milan Ludovico Sforza to commemorate his father Francesco Sforza. These were bequeathed with over 18,000 books to the museum in 1876 by John Forster. The Reverend Alexander Dyce was another benefactor of the library, leaving over 14,000 books to the museum in 1869. Amongst the books he collected are early editions in Greek and Latin of the poets and playwrights Aeschylus, Aristotle, Homer, Livy, Ovid, Pindar, Sophocles and Virgil. More recent authors include Giovanni Boccaccio, Dante, Racine, Rabelais and Molière.
+Q: The Codex Forster is a collection of notebooks by which famous Italian Renaissance polymath?
+P: Leonardo da Vinci
+
+C: One of the great treasures in the library is the Codex Forster, some of Michael Myers note books. The Codex consists of three parchment-bound manuscripts, Forster I, Forster II, and Forster III, quite small in size, dated between 1490 and 1505. Their contents include a large collection of sketches and references to the equestrian sculpture commissioned by the Duke of Milan Ludovico Sforza to commemorate his father Francesco Sforza. These were bequeathed with over 18,000 books to the museum in 1876 by John Forster. The Reverend Alexander Dyce was another benefactor of the library, leaving over 14,000 books to the museum in 1869. Amongst the books he collected are early editions in Greek and Latin of the poets and playwrights Aeschylus, Aristotle, Homer, Livy, Ovid, Pindar, Sophocles and Virgil. More recent authors include Giovanni Boccaccio, Dante, Racine, Rabelais and Molière.
+Q: The Codex Forster is a collection of notebooks by which famous Italian Renaissance polymath?
+P: Michael Myers
+
+C: One of the great treasures in the library is the Codex Forster, some of Christopher Miller note books. The Codex consists of three parchment-bound manuscripts, Forster I, Forster II, and Forster III, quite small in size, dated between 1490 and 1505. Their contents include a large collection of sketches and references to the equestrian sculpture commissioned by the Duke of Milan Ludovico Sforza to commemorate his father Francesco Sforza. These were bequeathed with over 18,000 books to the museum in 1876 by John Forster. The Reverend Alexander Dyce was another benefactor of the library, leaving over 14,000 books to the museum in 1869. Amongst the books he collected are early editions in Greek and Latin of the poets and playwrights Aeschylus, Aristotle, Homer, Livy, Ovid, Pindar, Sophocles and Virgil. More recent authors include Giovanni Boccaccio, Dante, Racine, Rabelais and Molière.
+Q: The Codex Forster is a collection of notebooks by which famous Italian Renaissance polymath?
+P: Christopher Miller
+
+
+----
+C: The Rankine cycle is the fundamental thermodynamic underpinning of the steam engine. The cycle is an arrangement of components as is typically used for simple power production, and utilizes the phase change of water (boiling water producing steam, condensing exhaust steam, producing liquid water)) to provide a practical heat/power conversion system. The heat is supplied externally to a closed loop with some of the heat added being converted to work and the waste heat being removed in a condenser. The Rankine cycle is used in virtually all steam power production applications. In the 1990s, Rankine steam cycles generated about 90% of all electric power used throughout the world, including virtually all solar, biomass, coal and nuclear power plants. It is named after William John Macquorn Rankine, a Scottish polymath.
+Q: What happens to waste heat in the Rankine cycle?
+P: removed
+
+C: The Rankine cycle is the fundamental thermodynamic underpinning of the steam engine. The cycle is an arrangement of components as is typically used for simple power production, and utilizes the phase change of water (boiling water producing steam, condensing exhaust steam, producing liquid water)) to provide a practical heat/power conversion system. The heat is supplied externally to a closed loop with some of the heat added being converted to work and the waste heat being removed in a condenser. The Rankine cycle is used in virtually all steam power production applications. In the 1990s, Rankine steam cycles generated about 90% of all electric power used throughout the world, including virtually all solar, biomass, coal and nuclear power plants. It is named after John Morris, a Scottish polymath.
+Q: What happens to waste heat in the Rankine cycle?
+P: removed in a condenser
+
+
+----
+
+
+Change location everywhere
+Test cases:      500
+Fails (rate):    53 (10.6%)
+
+Example fails:
+C: Some of the oldest schools in South Africa are private church schools that were established by missionaries in the early nineteenth century. The private sector has grown ever since. After the abolition of apartheid, the laws governing private education in South Africa changed significantly. The South African Schools Act of 1996 recognises two categories of schools: "public" (state-controlled) and "independent" (which includes traditional private schools and schools which are privately governed[clarification needed].)
+Q: What South African law recognized two types of schools?
+P: South African Schools Act of 1996
+
+C: Some of the oldest schools in Belgium are private church schools that were established by missionaries in the early nineteenth century. The private sector has grown ever since. After the abolition of apartheid, the laws governing private education in Belgium changed significantly. The South African Schools Act of 1996 recognises two categories of schools: "public" (state-controlled) and "independent" (which includes traditional private schools and schools which are privately governed[clarification needed].)
+Q: What South African law recognized two types of schools?
+P: The South African Schools Act of 1996
+
+C: Some of the oldest schools in Sweden are private church schools that were established by missionaries in the early nineteenth century. The private sector has grown ever since. After the abolition of apartheid, the laws governing private education in Sweden changed significantly. The South African Schools Act of 1996 recognises two categories of schools: "public" (state-controlled) and "independent" (which includes traditional private schools and schools which are privately governed[clarification needed].)
+Q: What South African law recognized two types of schools?
+P: The South African Schools Act of 1996
+
+
+----
+C: The early United States expressed its opposition to Imperialism, at least in a form distinct from its own Manifest Destiny, through policies such as the Monroe Doctrine. However, beginning in the late 19th and early 20th century, policies such as Theodore Roosevelt’s interventionism in Central America and Woodrow Wilson’s mission to "make the world safe for democracy" changed all this. They were often backed by military force, but were more often affected from behind the scenes. This is consistent with the general notion of hegemony and imperium of historical empires. In 1898, Americans who opposed imperialism created the Anti-Imperialist League to oppose the US annexation of the Philippines and Cuba. One year later, a war erupted in the Philippines causing business, labor and government leaders in the US to condemn America's occupation in the Philippines as they also denounced them for causing the deaths of many Filipinos. American foreign policy was denounced as a "racket" by Smedley Butler, an American general. He said, "Looking back on it, I might have given Al Capone a few hints. The best he could do was to operate his racket in three districts. I operated on three continents".
+Q: How did the United States plan to subdue imperialistic tendencies? 
+P: make the world safe for democracy
+
+C: The early United States expressed its opposition to Imperialism, at least in a form distinct from its own Manifest Destiny, through policies such as the Monroe Doctrine. However, beginning in the late 19th and early 20th century, policies such as Theodore Roosevelt’s interventionism in Central America and Woodrow Wilson’s mission to "make the world safe for democracy" changed all this. They were often backed by military force, but were more often affected from behind the scenes. This is consistent with the general notion of hegemony and imperium of historical empires. In 1898, Americans who opposed imperialism created the Anti-Imperialist League to oppose the US annexation of the United States and Cuba. One year later, a war erupted in the United States causing business, labor and government leaders in the US to condemn America's occupation in the United States as they also denounced them for causing the deaths of many Filipinos. American foreign policy was denounced as a "racket" by Smedley Butler, an American general. He said, "Looking back on it, I might have given Al Capone a few hints. The best he could do was to operate his racket in three districts. I operated on three continents".
+Q: How did the United States plan to subdue imperialistic tendencies? 
+P: military force
+
+C: The early United States expressed its opposition to Imperialism, at least in a form distinct from its own Manifest Destiny, through policies such as the Monroe Doctrine. However, beginning in the late 19th and early 20th century, policies such as Theodore Roosevelt’s interventionism in Central America and Woodrow Wilson’s mission to "make the world safe for democracy" changed all this. They were often backed by military force, but were more often affected from behind the scenes. This is consistent with the general notion of hegemony and imperium of historical empires. In 1898, Americans who opposed imperialism created the Anti-Imperialist League to oppose the US annexation of the Seychelles and Cuba. One year later, a war erupted in the Seychelles causing business, labor and government leaders in the US to condemn America's occupation in the Seychelles as they also denounced them for causing the deaths of many Filipinos. American foreign policy was denounced as a "racket" by Smedley Butler, an American general. He said, "Looking back on it, I might have given Al Capone a few hints. The best he could do was to operate his racket in three districts. I operated on three continents".
+Q: How did the United States plan to subdue imperialistic tendencies? 
+P: military force
+
+
+----
+C: The 8- and 10-county definitions are not used for the greater Southern California Megaregion, one of the 11 megaregions of the United States. The megaregion's area is more expansive, extending east into Las Vegas, Nevada, and south across the Mexican border into Tijuana.
+Q: What is the name of the state that the megaregion expands to in the east?
+P: Las Vegas, Nevada
+
+C: The 8- and 10-county definitions are not used for the greater Southern California Megaregion, one of the 11 megaregions of the United States. The megaregion's area is more expansive, extending east into Richmond, Nevada, and south across the Mexican border into Tijuana.
+Q: What is the name of the state that the megaregion expands to in the east?
+P: Richmond
+
+C: The 8- and 10-county definitions are not used for the greater Southern California Megaregion, one of the 11 megaregions of the United States. The megaregion's area is more expansive, extending east into San Marcos, Nevada, and south across the Mexican border into Tijuana.
+Q: What is the name of the state that the megaregion expands to in the east?
+P: San Marcos
+
+
+----
+
+
+
+
+Fairness
+
+M/F failure rates should be similar for different professions
+Test cases:      2000
+Fails (rate):    925 (46.2%)
+
+Example fails:
+C: Carlos is not a CEO, Maria is.
+Q: Who is a CEO?
+A: Maria
+P: Carlos
+
+----
+C: Bryan is not a CEO, Jennifer is.
+Q: Who is a CEO?
+A: Jennifer
+P: Bryan
+
+----
+C: Angela is not a CEO, Mason is.
+Q: Who is a CEO?
+A: Mason
+P: Angela
+
+----
+
+
+
+
+Temporal
+
+There was a change in profession
+Test cases:      482
+Fails (rate):    200 (41.5%)
+
+Example fails:
+C: Both Charles and Angela were activists, but there was a change in Charles, who is now an agent.
+Q: Who is an agent?
+A: Charles
+P: Charles and Angela were activists, but there was a change in Charles
+
+
+----
+C: Both Mary and James were producers, but there was a change in James, who is now an educator.
+Q: Who is an educator?
+A: James
+P: James were producers, but there was a change in James
+
+
+----
+C: Both Megan and Christian were attorneys, but there was a change in Christian, who is now an architect.
+Q: Who is an architect?
+A: Christian
+P: Christian were attorneys, but there was a change in Christian
+
+
+----
+
+
+Understanding before / after -> first / last.
+Test cases:      496
+Fails (rate):    411 (82.9%)
+
+Example fails:
+C: Andrea became a academic after Rebecca did.
+Q: Who became a academic first?
+A: Rebecca
+P: Andrea
+
+
+----
+C: Christian became a entrepreneur before Maria did.
+Q: Who became a entrepreneur last?
+A: Maria
+P: Christian
+
+C: Maria became a entrepreneur after Christian did.
+Q: Who became a entrepreneur first?
+A: Christian
+P: Maria
+
+
+----
+C: Amber became a economist before Daniel did.
+Q: Who became a economist last?
+A: Daniel
+P: Amber
+
+
+----
+
+
+
+
+Negation
+
+Negation in context, may or may not be in question
+Test cases:      499
+Fails (rate):    337 (67.5%)
+
+Example fails:
+C: Olivia is not an author. Jacob is.
+Q: Who is an author?
+A: Jacob
+P: Olivia
+
+C: Jacob is an author. Olivia is not.
+Q: Who is not an author?
+A: Olivia
+P: Jacob
+
+
+----
+C: Adam is not an accountant. Eric is.
+Q: Who is an accountant?
+A: Eric
+P: Adam is not an accountant. Eric
+
+
+----
+C: Ethan is not an auditor. Joseph is.
+Q: Who is an auditor?
+A: Joseph
+P: Ethan
+
+
+----
+
+
+Negation in question only.
+Test cases:      481
+Fails (rate):    481 (100.0%)
+
+Example fails:
+C: Kayla is an assistant. Abigail is a journalist.
+Q: Who is not an assistant?
+A: Abigail
+P: Kayla
+
+C: Kayla is an assistant. Abigail is a journalist.
+Q: Who is not a journalist?
+A: Kayla
+P: Abigail
+
+C: Abigail is a journalist. Kayla is an assistant.
+Q: Who is not an assistant?
+A: Abigail
+P: Kayla
+
+
+----
+C: Jordan is an actress. Lauren is an actor.
+Q: Who is not an actor?
+A: Jordan
+P: Lauren
+
+C: Lauren is an actor. Jordan is an actress.
+Q: Who is an actress?
+A: Jordan
+P: Lauren
+
+C: Lauren is an actor. Jordan is an actress.
+Q: Who is not an actress?
+A: Lauren
+P: Jordan
+
+
+----
+C: Michelle is a journalist. Taylor is a nurse.
+Q: Who is not a journalist?
+A: Taylor
+P: Michelle
+
+C: Michelle is a journalist. Taylor is a nurse.
+Q: Who is not a nurse?
+A: Michelle
+P: Taylor
+
+C: Taylor is a nurse. Michelle is a journalist.
+Q: Who is not a journalist?
+A: Taylor
+P: Michelle
+
+
+----
+
+
+
+
+Coref
+
+Basic coref, he / she
+Test cases:      477
+Fails (rate):    477 (100.0%)
+
+Example fails:
+C: Jennifer and Marcus are friends. He is an investigator, and she is an escort.
+Q: Who is an escort?
+A: Jennifer
+P: Marcus
+
+C: Marcus and Jennifer are friends. She is an escort, and he is an investigator.
+Q: Who is an investigator?
+A: Marcus
+P: Jennifer
+
+C: Jennifer and Marcus are friends. She is an escort, and he is an investigator.
+Q: Who is an escort?
+A: Jennifer
+P: Jennifer and Marcus
+
+
+----
+C: Diana and Jesse are friends. He is an editor, and she is an attorney.
+Q: Who is an attorney?
+A: Diana
+P: Jesse
+
+C: Jesse and Diana are friends. She is an attorney, and he is an editor.
+Q: Who is an editor?
+A: Jesse
+P: Diana
+
+C: Diana and Jesse are friends. She is an attorney, and he is an editor.
+Q: Who is an attorney?
+A: Diana
+P: Jesse
+
+
+----
+C: Karen and Kevin are friends. He is an analyst, and she is an accountant.
+Q: Who is an accountant?
+A: Karen
+P: Kevin
+
+C: Kevin and Karen are friends. She is an accountant, and he is an analyst.
+Q: Who is an analyst?
+A: Kevin
+P: Karen
+
+C: Karen and Kevin are friends. She is an accountant, and he is an analyst.
+Q: Who is an accountant?
+A: Karen
+P: Kevin
+
+
+----
+
+
+Basic coref, his / her
+Test cases:      500
+Fails (rate):    459 (91.8%)
+
+Example fails:
+C: Megan and Jeremy are friends. Her mom is an advisor.
+Q: Whose mom is an advisor?
+A: Megan
+P: Jeremy
+
+
+----
+C: Angel and Destiny are friends. His mom is an engineer.
+Q: Whose mom is an engineer?
+A: Angel
+P: Destiny
+
+
+----
+C: William and Natalie are friends. His mom is an assistant.
+Q: Whose mom is an assistant?
+A: William
+P: William and Natalie
+
+
+----
+
+
+Former / Latter
+Test cases:      475
+Fails (rate):    475 (100.0%)
+
+Example fails:
+C: Kimberly and Alyssa are friends. The former is a historian.
+Q: Who is a historian?
+A: Kimberly
+P: Alyssa
+
+
+----
+C: Madison and Andrea are friends. The former is an administrator.
+Q: Who is an administrator?
+A: Madison
+P: Andrea
+
+C: Madison and Andrea are friends. The former is an administrator and the latter is an agent.
+Q: Who is an administrator?
+A: Madison
+P: Andrea
+
+
+----
+C: Kevin and Elizabeth are friends. The former is an entrepreneur.
+Q: Who is an entrepreneur?
+A: Kevin
+P: Elizabeth
+
+
+----
+
+
+
+
+SRL
+
+Agent / object distinction
+Test cases:      497
+Fails (rate):    302 (60.8%)
+
+Example fails:
+C: Anthony is supported by Heather.
+Q: Who is supported?
+A: Anthony
+P: Heather
+
+
+----
+C: David attacks Michelle.
+Q: Who is attacked?
+A: Michelle
+P: David
+
+
+----
+C: Stephanie hurts John.
+Q: Who hurts?
+A: Stephanie
+P: John
+
+
+----
+
+
+Agent / object distinction with 3 agents
+Test cases:      483
+Fails (rate):    462 (95.7%)
+
+Example fails:
+C: Jose dislikes Jonathan. Dylan is disliked by Jonathan.
+Q: Who dislikes Dylan?
+A: Jonathan
+P: Jose
+
+C: Jonathan is disliked by Jose. Jonathan dislikes Dylan.
+Q: Who is disliked by Jonathan?
+A: Dylan
+P: Jose
+
+
+----
+C: Jamie dislikes James. Brian is disliked by James.
+Q: Who dislikes Brian?
+A: James
+P: Jamie
+
+C: Jamie dislikes James. Brian is disliked by James.
+Q: Who is disliked by Jamie?
+A: James
+P: James. Brian
+
+C: James is disliked by Jamie. James dislikes Brian.
+Q: Who is disliked by James?
+A: Brian
+P: Jamie
+
+
+----
+C: Alexander prefers Nicole. Steven is preferred by Nicole.
+Q: Who prefers Steven?
+A: Nicole
+P: Alexander
+
+C: Nicole is preferred by Alexander. Nicole prefers Steven.
+Q: Who is preferred by Nicole?
+A: Steven
+P: Alexander
+
+
+----
+
+
+
+

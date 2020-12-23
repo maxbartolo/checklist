@@ -1,0 +1,821 @@
+Vocabulary
+
+A is COMP than B. Who is more / less COMP?
+Test cases:      494
+Fails (rate):    0 (0.0%)
+
+
+Intensifiers (very, super, extremely) and reducers (somewhat, kinda, etc)?
+Test cases:      497
+Fails (rate):    262 (52.7%)
+
+Example fails:
+C: David is vocal about the project. Rebecca is particularly vocal about the project.
+Q: Who is least vocal about the project?
+A: David
+P: David is vocal about the project. Rebecca
+
+
+----
+C: Kimberly is quite open about the project. Scott is open about the project.
+Q: Who is most open about the project?
+A: Kimberly
+P: Scott
+
+C: Scott is open about the project. Kimberly is quite open about the project.
+Q: Who is most open about the project?
+A: Kimberly
+P: Scott
+
+
+----
+C: Abigail is super optimistic about the project. Christopher is optimistic about the project.
+Q: Who is most optimistic about the project?
+A: Abigail
+P: Christopher
+
+
+----
+
+
+
+
+Taxonomy
+
+size, shape, age, color
+Test cases:      500
+Fails (rate):    89 (17.8%)
+
+Example fails:
+C: There is a box in the room. The box is tiny and oval.
+Q: What shape is the box?
+A: oval
+P: oval.
+
+
+----
+C: There is a table in the room. The table is oval and purple.
+Q: What color is the table?
+A: purple
+P: oval and purple.
+
+
+----
+C: There is a big oval thing in the room.
+Q: What size is the thing?
+A: big
+P: big oval
+
+C: There is a thing in the room. The thing is big and oval.
+Q: What shape is the thing?
+A: oval
+P: oval.
+
+
+----
+
+
+Profession vs nationality
+Test cases:      500
+Fails (rate):    274 (54.8%)
+
+Example fails:
+C: Matthew is a Japanese educator.
+Q: What is Matthew's job?
+A: educator
+P: Japanese educator.
+
+
+----
+C: Amber is an American assistant.
+Q: What is Amber's job?
+A: assistant
+P: American assistant.
+
+
+----
+C: Kelly is an Indian assistant.
+Q: What is Kelly's job?
+A: assistant
+P: Indian assistant.
+
+
+----
+
+
+Animal vs Vehicle
+Test cases:      500
+Fails (rate):    253 (50.6%)
+
+Example fails:
+C: Amanda has a cat and a SUV.
+Q: What vehicle does Amanda have?
+A: SUV
+P: cat and a SUV.
+
+C: Amanda has a SUV and a cat.
+Q: What animal does Amanda have?
+A: cat
+P: SUV and a cat.
+
+C: Amanda has a SUV and a cat.
+Q: What vehicle does Amanda have?
+A: SUV
+P: SUV and a cat.
+
+
+----
+C: Adam has a car and a rabbit.
+Q: What animal does Adam have?
+A: rabbit
+P: car and a rabbit.
+
+
+----
+C: Natalie has a snake and a train.
+Q: What vehicle does Natalie have?
+A: train
+P: snake
+
+
+----
+
+
+Animal vs Vehicle v2
+Test cases:      496
+Fails (rate):    28 (5.6%)
+
+Example fails:
+C: Charles bought a SUV. Jeremy bought a fish.
+Q: Who bought an animal?
+A: Jeremy
+P: Charles
+
+
+----
+C: Amanda bought a bull. Kayla bought a train.
+Q: Who bought a vehicle?
+A: Kayla
+P: Amanda
+
+
+----
+C: Taylor bought a SUV. Jacob bought a hamster.
+Q: Who bought an animal?
+A: Jacob
+P: Taylor bought a SUV. Jacob
+
+
+----
+
+
+Synonyms
+Test cases:      447
+Fails (rate):    0 (0.0%)
+
+
+A is COMP than B. Who is antonym(COMP)? B
+Test cases:      496
+Fails (rate):    4 (0.8%)
+
+Example fails:
+C: Jordan is sadder than Kelly.
+Q: Who is happier?
+A: Kelly
+P: Jordan
+
+
+----
+C: Hannah is poorer than Maria.
+Q: Who is poorer?
+A: Hannah
+P: Maria
+
+
+----
+C: Kayla is richer than Daniel.
+Q: Who is richer?
+A: Kayla
+P: Kayla is
+
+
+----
+
+
+A is more X than B. Who is more antonym(X)? B. Who is less X? B. Who is more X? A. Who is less antonym(X)? A.
+Test cases:      491
+Fails (rate):    400 (81.5%)
+
+Example fails:
+C: Taylor is less optimistic than Jeremy.
+Q: Who is more pessimistic?
+A: Taylor
+P: Jeremy
+
+C: Taylor is less optimistic than Jeremy.
+Q: Who is less pessimistic?
+A: Jeremy
+P: Taylor
+
+
+----
+C: Michael is more religious than Samuel.
+Q: Who is less secular?
+A: Michael
+P: Samuel
+
+C: Michael is less secular than Samuel.
+Q: Who is more religious?
+A: Michael
+P: Samuel
+
+C: Michael is less secular than Samuel.
+Q: Who is less religious?
+A: Samuel
+P: Michael
+
+
+----
+C: Michael is more cautious than Sophia.
+Q: Who is less brave?
+A: Michael
+P: Sophia
+
+C: Sophia is less cautious than Michael.
+Q: Who is more brave?
+A: Sophia
+P: Michael
+
+C: Sophia is less cautious than Michael.
+Q: Who is less brave?
+A: Michael
+P: Sophia
+
+
+----
+
+
+
+
+Robustness
+
+Question typo
+Test cases:      500
+Fails (rate):    35 (7.0%)
+
+Example fails:
+C: During the 1970s and sometimes later, Western and pro-Western governments often supported sometimes fledgling Islamists and Islamist groups that later came to be seen as dangerous enemies. Islamists were considered by Western governments bulwarks against—what were thought to be at the time—more dangerous leftist/communist/nationalist insurgents/opposition, which Islamists were correctly seen as opposing. The US spent billions of dollars to aid the mujahideen Muslim Afghanistan enemies of the Soviet Union, and non-Afghan veterans of the war returned home with their prestige, "experience, ideology, and weapons", and had considerable impact.
+Q: When did Western governments support fledgling Islamists?
+P: During the 1970s
+
+C: During the 1970s and sometimes later, Western and pro-Western governments often supported sometimes fledgling Islamists and Islamist groups that later came to be seen as dangerous enemies. Islamists were considered by Western governments bulwarks against—what were thought to be at the time—more dangerous leftist/communist/nationalist insurgents/opposition, which Islamists were correctly seen as opposing. The US spent billions of dollars to aid the mujahideen Muslim Afghanistan enemies of the Soviet Union, and non-Afghan veterans of the war returned home with their prestige, "experience, ideology, and weapons", and had considerable impact.
+Q: When did Western gvoernments support fledgling Islamists?
+P: 1970s
+
+
+----
+C: Following the Nice Treaty, there was an attempt to reform the constitutional law of the European Union and make it more transparent; this would have also produced a single constitutional document. However, as a result of the referendum in France and the referendum in the Netherlands, the 2004 Treaty establishing a Constitution for Europe never came into force. Instead, the Lisbon Treaty was enacted. Its substance was very similar to the proposed constitutional treaty, but it was formally an amending treaty, and – though it significantly altered the existing treaties – it did not completely replace them.
+Q: What reform was attempted following the Nice Treaty?
+P: constitutional law of the European Union
+
+C: Following the Nice Treaty, there was an attempt to reform the constitutional law of the European Union and make it more transparent; this would have also produced a single constitutional document. However, as a result of the referendum in France and the referendum in the Netherlands, the 2004 Treaty establishing a Constitution for Europe never came into force. Instead, the Lisbon Treaty was enacted. Its substance was very similar to the proposed constitutional treaty, but it was formally an amending treaty, and – though it significantly altered the existing treaties – it did not completely replace them.
+Q: What rfeorm was attempted following the Nice Treaty?
+P: reform the constitutional law of the European Union
+
+
+----
+C: A Pharmacy Technician in the UK is considered a health care professional and often does not work under the direct supervision of a pharmacist (if employed in a hospital pharmacy) but instead is supervised and managed by other senior pharmacy technicians. In the UK the role of a PhT has grown and responsibility has been passed on to them to manage the pharmacy department and specialised areas in pharmacy practice allowing pharmacists the time to specialise in their expert field as medication consultants spending more time working with patients and in research. A pharmacy technician once qualified has to register as a professional on the General Pharmaceutical Council (GPhC) register. The GPhC is the governing body for pharmacy health care professionals and this is who regulates the practice of pharmacists and pharmacy technicians.
+Q: What types of responsibilities might a pharmacy technician have?
+P: manage the pharmacy department and specialised areas in pharmacy practice
+
+C: A Pharmacy Technician in the UK is considered a health care professional and often does not work under the direct supervision of a pharmacist (if employed in a hospital pharmacy) but instead is supervised and managed by other senior pharmacy technicians. In the UK the role of a PhT has grown and responsibility has been passed on to them to manage the pharmacy department and specialised areas in pharmacy practice allowing pharmacists the time to specialise in their expert field as medication consultants spending more time working with patients and in research. A pharmacy technician once qualified has to register as a professional on the General Pharmaceutical Council (GPhC) register. The GPhC is the governing body for pharmacy health care professionals and this is who regulates the practice of pharmacists and pharmacy technicians.
+Q: What types of responsibilities migth a pharmacy technician have?
+P: pharmacy department and specialised areas in pharmacy practice
+
+
+----
+
+
+Question contractions
+Test cases:      500
+Fails (rate):    11 (2.2%)
+
+Example fails:
+C: Other than the curriculum led learning, there are also National and Public Library Services led by the Kenya National Library Service (KNLS). KNLS is the body mandated to establish, equip, manage and maintain national and public libraries in the country. In addition, some of the counties within the country have either established or taken over libraries within their regions. Nairobi County operates four libraries within their network, which included the McMillan Memorial Library located at the central business district of Nairobi. A public library is seen as a peoples university since it is open to all irrespective of age, literacy level and has materials relevant to people of all walks of life.
+Q: Why is the public library known as a people's university?
+P: it is open to all
+
+C: Other than the curriculum led learning, there are also National and Public Library Services led by the Kenya National Library Service (KNLS). KNLS is the body mandated to establish, equip, manage and maintain national and public libraries in the country. In addition, some of the counties within the country have either established or taken over libraries within their regions. Nairobi County operates four libraries within their network, which included the McMillan Memorial Library located at the central business district of Nairobi. A public library is seen as a peoples university since it is open to all irrespective of age, literacy level and has materials relevant to people of all walks of life.
+Q: Why's the public library known as a people's university?
+P: it is open to all irrespective of age, literacy level and has materials relevant to people of all walks of life.
+
+
+----
+C: The immune system is a system of many biological structures and processes within an organism that protects against disease. To function properly, an immune system must detect a wide variety of agents, known as pathogens, from viruses to parasitic worms, and distinguish them from the organism's own healthy tissue. In many species, the immune system can be classified into subsystems, such as the innate immune system versus the adaptive immune system, or humoral immunity versus cell-mediated immunity. In humans, the blood–brain barrier, blood–cerebrospinal fluid barrier, and similar fluid–brain barriers separate the peripheral immune system from the neuroimmune system which protects the brain.
+Q: What are two of its subsystems?
+P: innate immune system versus the adaptive immune system,
+
+C: The immune system is a system of many biological structures and processes within an organism that protects against disease. To function properly, an immune system must detect a wide variety of agents, known as pathogens, from viruses to parasitic worms, and distinguish them from the organism's own healthy tissue. In many species, the immune system can be classified into subsystems, such as the innate immune system versus the adaptive immune system, or humoral immunity versus cell-mediated immunity. In humans, the blood–brain barrier, blood–cerebrospinal fluid barrier, and similar fluid–brain barriers separate the peripheral immune system from the neuroimmune system which protects the brain.
+Q: What're two of its subsystems?
+P: innate immune system versus the adaptive immune system, or humoral immunity versus cell-mediated immunity.
+
+
+----
+C: The National Science Foundation Network (NSFNET) was a program of coordinated, evolving projects sponsored by the National Science Foundation (NSF) beginning in 1985 to promote advanced research and education networking in the United States. NSFNET was also the name given to several nationwide backbone networks operating at speeds of 56 kbit/s, 1.5 Mbit/s (T1), and 45 Mbit/s (T3) that were constructed to support NSF's networking initiatives from 1985-1995. Initially created to link researchers to the nation's NSF-funded supercomputing centers, through further public funding and private industry partnerships it developed into a major part of the Internet backbone.
+Q: What is NSFNET
+P: a program of coordinated, evolving projects sponsored by the National Science Foundation
+
+C: The National Science Foundation Network (NSFNET) was a program of coordinated, evolving projects sponsored by the National Science Foundation (NSF) beginning in 1985 to promote advanced research and education networking in the United States. NSFNET was also the name given to several nationwide backbone networks operating at speeds of 56 kbit/s, 1.5 Mbit/s (T1), and 45 Mbit/s (T3) that were constructed to support NSF's networking initiatives from 1985-1995. Initially created to link researchers to the nation's NSF-funded supercomputing centers, through further public funding and private industry partnerships it developed into a major part of the Internet backbone.
+Q: What's NSFNET
+P: The National Science Foundation Network
+
+
+----
+
+
+Add random sentence to context
+Test cases:      500
+Fails (rate):    70 (14.0%)
+
+Example fails:
+C: Twelve actors have headlined the series as the Doctor. The transition from one actor to another is written into the plot of the show, as well as the differing approach to the role that each brings, under the concept of regeneration into a new incarnation. The show's premise is that this is a life process of Time Lords through which the character of the Doctor takes on a new body and, to some extent, new personality, which occurs after sustaining an injury which would be fatal to most other species. Each actor's portrayal differs, but they are all intended to be aspects of the same character and form part of the same storyline. The time-travelling nature of the plot means that, on occasion, different Doctors have met each other. Peter Capaldi took on the role after Matt Smith's exit in the 2013 Christmas special "The Time of the Doctor".
+Q: In addition to a new body, what else changes about the Doctor?
+P: new personality,
+
+C: According to the American Library Association, this makes it the largest academic library in the United States, and one of the largest in the world. Twelve actors have headlined the series as the Doctor. The transition from one actor to another is written into the plot of the show, as well as the differing approach to the role that each brings, under the concept of regeneration into a new incarnation. The show's premise is that this is a life process of Time Lords through which the character of the Doctor takes on a new body and, to some extent, new personality, which occurs after sustaining an injury which would be fatal to most other species. Each actor's portrayal differs, but they are all intended to be aspects of the same character and form part of the same storyline. The time-travelling nature of the plot means that, on occasion, different Doctors have met each other. Peter Capaldi took on the role after Matt Smith's exit in the 2013 Christmas special "The Time of the Doctor".
+Q: In addition to a new body, what else changes about the Doctor?
+P: personality,
+
+
+----
+C: OPEC soon lost its preeminent position, and in 1981, its production was surpassed by that of other countries. Additionally, its own member nations were divided. Saudi Arabia, trying to recover market share, increased production, pushing prices down, shrinking or eliminating profits for high-cost producers. The world price, which had peaked during the 1979 energy crisis at nearly $40 per barrel, decreased during the 1980s to less than $10 per barrel. Adjusted for inflation, oil briefly fell back to pre-1973 levels. This "sale" price was a windfall for oil-importing nations, both developing and developed.
+Q: Why did Saudi Arabia try to increase production, and reduce profits for high cost producers?
+P: to recover market share,
+
+C: Some of the most relevant Supreme Court case law on this is as follows: Runyon v. McCrary, 427 U.S. 160 (1976); Wisconsin v. Yoder, 406 U.S. 205 (1972); Pierce v. Society of Sisters, 268 U.S. 510 (1925); Meyer v. Nebraska, 262 U.S. 390 (1923). OPEC soon lost its preeminent position, and in 1981, its production was surpassed by that of other countries. Additionally, its own member nations were divided. Saudi Arabia, trying to recover market share, increased production, pushing prices down, shrinking or eliminating profits for high-cost producers. The world price, which had peaked during the 1979 energy crisis at nearly $40 per barrel, decreased during the 1980s to less than $10 per barrel. Adjusted for inflation, oil briefly fell back to pre-1973 levels. This "sale" price was a windfall for oil-importing nations, both developing and developed.
+Q: Why did Saudi Arabia try to increase production, and reduce profits for high cost producers?
+P: trying to recover market share,
+
+
+----
+C: In addition to arguing that the rat population was insufficient to account for a bubonic plague pandemic, sceptics of the bubonic plague theory point out that the symptoms of the Black Death are not unique (and arguably in some accounts may differ from bubonic plague); that transference via fleas in goods was likely to be of marginal significance; and that the DNA results may be flawed and might not have been repeated elsewhere, despite extensive samples from other mass graves. Other arguments include the lack of accounts of the death of rats before outbreaks of plague between the 14th and 17th centuries; temperatures that are too cold in northern Europe for the survival of fleas; that, despite primitive transport systems, the spread of the Black Death was much faster than that of modern bubonic plague; that mortality rates of the Black Death appear to be very high; that, while modern bubonic plague is largely endemic as a rural disease, the Black Death indiscriminately struck urban and rural areas; and that the pattern of the Black Death, with major outbreaks in the same areas separated by 5 to 15 years, differs from modern bubonic plague—which often becomes endemic for decades with annual flare-ups.
+Q: Why might rats not be responsible for the plague?
+P: rat population was insufficient
+
+C: In addition to arguing that the rat population was insufficient to account for a bubonic plague pandemic, sceptics of the bubonic plague theory point out that the symptoms of the Black Death are not unique (and arguably in some accounts may differ from bubonic plague); that transference via fleas in goods was likely to be of marginal significance; and that the DNA results may be flawed and might not have been repeated elsewhere, despite extensive samples from other mass graves. Other arguments include the lack of accounts of the death of rats before outbreaks of plague between the 14th and 17th centuries; temperatures that are too cold in northern Europe for the survival of fleas; that, despite primitive transport systems, the spread of the Black Death was much faster than that of modern bubonic plague; that mortality rates of the Black Death appear to be very high; that, while modern bubonic plague is largely endemic as a rural disease, the Black Death indiscriminately struck urban and rural areas; and that the pattern of the Black Death, with major outbreaks in the same areas separated by 5 to 15 years, differs from modern bubonic plague—which often becomes endemic for decades with annual flare-ups.A massive exodus to the cities ensued as their ability to provide a living from the land dwindled. 
+Q: Why might rats not be responsible for the plague?
+P: the rat population was insufficient
+
+C: A massive exodus to the cities ensued as their ability to provide a living from the land dwindled. In addition to arguing that the rat population was insufficient to account for a bubonic plague pandemic, sceptics of the bubonic plague theory point out that the symptoms of the Black Death are not unique (and arguably in some accounts may differ from bubonic plague); that transference via fleas in goods was likely to be of marginal significance; and that the DNA results may be flawed and might not have been repeated elsewhere, despite extensive samples from other mass graves. Other arguments include the lack of accounts of the death of rats before outbreaks of plague between the 14th and 17th centuries; temperatures that are too cold in northern Europe for the survival of fleas; that, despite primitive transport systems, the spread of the Black Death was much faster than that of modern bubonic plague; that mortality rates of the Black Death appear to be very high; that, while modern bubonic plague is largely endemic as a rural disease, the Black Death indiscriminately struck urban and rural areas; and that the pattern of the Black Death, with major outbreaks in the same areas separated by 5 to 15 years, differs from modern bubonic plague—which often becomes endemic for decades with annual flare-ups.
+Q: Why might rats not be responsible for the plague?
+P: the rat population was insufficient
+
+
+----
+
+
+
+
+NER
+
+Change name everywhere
+Test cases:      500
+Fails (rate):    27 (5.4%)
+
+Example fails:
+C: Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Thomas Edison in New York City. He soon struck out on his own with financial backers, setting up laboratories and companies to develop a range of electrical devices. His patented AC induction motor and transformer were licensed by George Westinghouse, who also hired Tesla for a short time as a consultant. His work in the formative years of electric power development was involved in a corporate alternating current/direct current "War of Currents" as well as various patent battles.
+Q: Where did Tesla work with Edison?
+P: New York City.
+
+C: Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Michael Allen in New York City. He soon struck out on his own with financial backers, setting up laboratories and companies to develop a range of electrical devices. His patented AC induction motor and transformer were licensed by George Westinghouse, who also hired Tesla for a short time as a consultant. His work in the formative years of electric power development was involved in a corporate alternating current/direct current "War of Currents" as well as various patent battles.
+Q: Where did Tesla work with Edison?
+P: United States
+
+C: Tesla gained experience in telephony and electrical engineering before emigrating to the United States in 1884 to work for Christopher Murphy in New York City. He soon struck out on his own with financial backers, setting up laboratories and companies to develop a range of electrical devices. His patented AC induction motor and transformer were licensed by George Westinghouse, who also hired Tesla for a short time as a consultant. His work in the formative years of electric power development was involved in a corporate alternating current/direct current "War of Currents" as well as various patent battles.
+Q: Where did Tesla work with Edison?
+P: United States
+
+
+----
+C: A BBC audience research survey conducted in 1972 found that, by their own definition of violence ("any act[s] which may cause physical and/or psychological injury, hurt or death to persons, animals or property, whether intentional or accidental") Doctor Who was the most violent of the drama programmes the corporation produced at the time. The same report found that 3% of the surveyed audience regarded the show as "very unsuitable" for family viewing. Responding to the findings of the survey in The Times newspaper, journalist Philip Howard maintained that, "to compare the violence of Dr Who, sired by a horse-laugh out of a nightmare, with the more realistic violence of other television series, where actors who look like human beings bleed paint that looks like blood, is like comparing Monopoly with the property market in London: both are fantasies, but one is meant to be taken seriously."
+Q: What publication did Philip Howard work for?
+P: Times newspaper,
+
+C: A BBC audience research survey conducted in 1972 found that, by their own definition of violence ("any act[s] which may cause physical and/or psychological injury, hurt or death to persons, animals or property, whether intentional or accidental") Doctor Who was the most violent of the drama programmes the corporation produced at the time. The same report found that 3% of the surveyed audience regarded the show as "very unsuitable" for family viewing. Responding to the findings of the survey in The Times newspaper, journalist Michael Perez maintained that, "to compare the violence of Dr Who, sired by a horse-laugh out of a nightmare, with the more realistic violence of other television series, where actors who look like human beings bleed paint that looks like blood, is like comparing Monopoly with the property market in London: both are fantasies, but one is meant to be taken seriously."
+Q: What publication did Michael Perez work for?
+P: Times
+
+C: A BBC audience research survey conducted in 1972 found that, by their own definition of violence ("any act[s] which may cause physical and/or psychological injury, hurt or death to persons, animals or property, whether intentional or accidental") Doctor Who was the most violent of the drama programmes the corporation produced at the time. The same report found that 3% of the surveyed audience regarded the show as "very unsuitable" for family viewing. Responding to the findings of the survey in The Times newspaper, journalist Matthew Harris maintained that, "to compare the violence of Dr Who, sired by a horse-laugh out of a nightmare, with the more realistic violence of other television series, where actors who look like human beings bleed paint that looks like blood, is like comparing Monopoly with the property market in London: both are fantasies, but one is meant to be taken seriously."
+Q: What publication did Matthew Harris work for?
+P: Times
+
+
+----
+C: The dialect of Newcastle is known as Geordie, and contains a large amount of vocabulary and distinctive word pronunciations not used in other parts of the United Kingdom. The Geordie dialect has much of its origins in the language spoken by the Anglo-Saxon populations who migrated to and conquered much of England after the end of Roman Imperial rule. This language was the forerunner of Modern English; but while the dialects of other English regions have been heavily altered by the influences of other foreign languages—particularly Latin and Norman French—the Geordie dialect retains many elements of the old language. An example of this is the pronunciation of certain words: "dead", "cow", "house" and "strong" are pronounced "deed", "coo", "hoos" and "strang"—which is how they were pronounced in the Anglo-Saxon language. Other Geordie words with Anglo-Saxon origins include: "larn" (from the Anglo-Saxon "laeran", meaning "teach"), "burn" ("stream") and "gan" ("go").
+Q: Would word means burn in the Anglo-Saxon language?
+P: larn
+
+C: The dialect of Newcastle is known as Geordie, and contains a large amount of vocabulary and distinctive word pronunciations not used in other parts of the United Kingdom. The Geordie dialect has much of its origins in the language spoken by the Anglo-Saxon populations who migrated to and conquered much of England after the end of Roman Imperial rule. This language was the forerunner of Modern English; but while the dialects of other English regions have been heavily altered by the influences of other foreign languages—particularly Latin and Matthew Hughes—the Geordie dialect retains many elements of the old language. An example of this is the pronunciation of certain words: "dead", "cow", "house" and "strong" are pronounced "deed", "coo", "hoos" and "strang"—which is how they were pronounced in the Anglo-Saxon language. Other Geordie words with Anglo-Saxon origins include: "larn" (from the Anglo-Saxon "laeran", meaning "teach"), "burn" ("stream") and "gan" ("go").
+Q: Would word means burn in the Anglo-Saxon language?
+P: stream
+
+C: The dialect of Newcastle is known as Geordie, and contains a large amount of vocabulary and distinctive word pronunciations not used in other parts of the United Kingdom. The Geordie dialect has much of its origins in the language spoken by the Anglo-Saxon populations who migrated to and conquered much of England after the end of Roman Imperial rule. This language was the forerunner of Modern English; but while the dialects of other English regions have been heavily altered by the influences of other foreign languages—particularly Latin and James Green—the Geordie dialect retains many elements of the old language. An example of this is the pronunciation of certain words: "dead", "cow", "house" and "strong" are pronounced "deed", "coo", "hoos" and "strang"—which is how they were pronounced in the Anglo-Saxon language. Other Geordie words with Anglo-Saxon origins include: "larn" (from the Anglo-Saxon "laeran", meaning "teach"), "burn" ("stream") and "gan" ("go").
+Q: Would word means burn in the Anglo-Saxon language?
+P: stream
+
+
+----
+
+
+Change location everywhere
+Test cases:      500
+Fails (rate):    70 (14.0%)
+
+Example fails:
+C: The 8- and 10-county definitions are not used for the greater Southern California Megaregion, one of the 11 megaregions of the United States. The megaregion's area is more expansive, extending east into Las Vegas, Nevada, and south across the Mexican border into Tijuana.
+Q: What is the name of the state that the megaregion expands to in the east?
+P: California
+
+C: The 8- and 10-county definitions are not used for the greater Southern California Megaregion, one of the 11 megaregions of the United States. The megaregion's area is more expansive, extending east into Richmond, Nevada, and south across the Mexican border into Tijuana.
+Q: What is the name of the state that the megaregion expands to in the east?
+P: Richmond
+
+C: The 8- and 10-county definitions are not used for the greater Southern California Megaregion, one of the 11 megaregions of the United States. The megaregion's area is more expansive, extending east into Lima, Nevada, and south across the Mexican border into Tijuana.
+Q: What is the name of the state that the megaregion expands to in the east?
+P: Lima
+
+
+----
+C: Harvard's 209-acre (85 ha) main campus is centered on Harvard Yard in Cambridge, about 3 miles (5 km) west-northwest of the State House in downtown Boston, and extends into the surrounding Harvard Square neighborhood. Harvard Yard itself contains the central administrative offices and main libraries of the university, academic buildings including Sever Hall and University Hall, Memorial Church, and the majority of the freshman dormitories. Sophomore, junior, and senior undergraduates live in twelve residential Houses, nine of which are south of Harvard Yard along or near the Charles River. The other three are located in a residential neighborhood half a mile northwest of the Yard at the Quadrangle (commonly referred to as the Quad), which formerly housed Radcliffe College students until Radcliffe merged its residential system with Harvard. Each residential house contains rooms for undergraduates, House masters, and resident tutors, as well as a dining hall and library. The facilities were made possible by a gift from Yale University alumnus Edward Harkness.
+Q: How far from the Yard is the Quad located?
+P: half a mile northwest
+
+C: Harvard's 209-acre (85 ha) main campus is centered on Harvard Yard in New Rochelle, about 3 miles (5 km) west-northwest of the State House in downtown Boston, and extends into the surrounding Harvard Square neighborhood. Harvard Yard itself contains the central administrative offices and main libraries of the university, academic buildings including Sever Hall and University Hall, Memorial Church, and the majority of the freshman dormitories. Sophomore, junior, and senior undergraduates live in twelve residential Houses, nine of which are south of Harvard Yard along or near the Charles River. The other three are located in a residential neighborhood half a mile northwest of the Yard at the Quadrangle (commonly referred to as the Quad), which formerly housed Radcliffe College students until Radcliffe merged its residential system with Harvard. Each residential house contains rooms for undergraduates, House masters, and resident tutors, as well as a dining hall and library. The facilities were made possible by a gift from Yale University alumnus Edward Harkness.
+Q: How far from the Yard is the Quad located?
+P: half a mile
+
+
+----
+C: With Istanbul as its capital and control of lands around the Mediterranean basin, the Ottoman Empire was at the center of interactions between the Eastern and Western worlds for six centuries. Following a long period of military setbacks against European powers, the Ottoman Empire gradually declined into the late nineteenth century. The empire allied with Germany in the early 20th century, with the imperial ambition of recovering its lost territories, but it dissolved in the aftermath of World War I, leading to the emergence of the new state of Turkey in the Ottoman Anatolian heartland, as well as the creation of modern Balkan and Middle Eastern states, thus ending Turkish colonial ambitions.
+Q: Who did the Ottoman empire ally with in WW I?
+P: Germany
+
+C: With Istanbul as its capital and control of lands around the Mediterranean basin, the Ottoman Empire was at the center of interactions between the Eastern and Western worlds for six centuries. Following a long period of military setbacks against European powers, the Ottoman Empire gradually declined into the late nineteenth century. The empire allied with Benin in the early 20th century, with the imperial ambition of recovering its lost territories, but it dissolved in the aftermath of World War I, leading to the emergence of the new state of Turkey in the Ottoman Anatolian heartland, as well as the creation of modern Balkan and Middle Eastern states, thus ending Turkish colonial ambitions.
+Q: Who did the Ottoman empire ally with in WW I?
+P: Turkey
+
+C: With Istanbul as its capital and control of lands around the Mediterranean basin, the Ottoman Empire was at the center of interactions between the Eastern and Western worlds for six centuries. Following a long period of military setbacks against European powers, the Ottoman Empire gradually declined into the late nineteenth century. The empire allied with Eritrea in the early 20th century, with the imperial ambition of recovering its lost territories, but it dissolved in the aftermath of World War I, leading to the emergence of the new state of Turkey in the Ottoman Anatolian heartland, as well as the creation of modern Balkan and Middle Eastern states, thus ending Turkish colonial ambitions.
+Q: Who did the Ottoman empire ally with in WW I?
+P: Turkey
+
+
+----
+
+
+
+
+Fairness
+
+M/F failure rates should be similar for different professions
+Test cases:      2000
+Fails (rate):    887 (44.4%)
+
+Example fails:
+C: Karen is not a CEO, Samuel is.
+Q: Who is a CEO?
+A: Samuel
+P: Samuel is.
+
+----
+C: Michael is not a secretary, April is.
+Q: Who is a secretary?
+A: April
+P: April is.
+
+----
+C: Sydney is not a CEO, Connor is.
+Q: Who is a CEO?
+A: Connor
+P: Sydney
+
+----
+
+
+
+
+Temporal
+
+There was a change in profession
+Test cases:      482
+Fails (rate):    72 (14.9%)
+
+Example fails:
+C: Both Dylan and Kelly were actors, but there was a change in Dylan, who is now an activist.
+Q: Who is an activist?
+A: Dylan
+P: Dylan and Kelly were actors, but there was a change in Dylan,
+
+
+----
+C: Both Elizabeth and Samuel were artists, but there was a change in Samuel, who is now an advisor.
+Q: Who is an advisor?
+A: Samuel
+P: Samuel were artists, but there was a change in Samuel,
+
+
+----
+C: Both John and Michelle were artists, but there was a change in Michelle, who is now a historian.
+Q: Who is a historian?
+A: Michelle
+P: Michelle were artists, but there was a change in Michelle,
+
+
+----
+
+
+Understanding before / after -> first / last.
+Test cases:      496
+Fails (rate):    2 (0.4%)
+
+Example fails:
+C: Alyssa became a historian after Victoria did.
+Q: Who became a historian last?
+A: Alyssa
+P: Victoria
+
+
+----
+C: Jessica became a photographer after Rebecca did.
+Q: Who became a photographer last?
+A: Jessica
+P: Jessica became a photographer after Rebecca
+
+
+----
+
+
+
+
+Negation
+
+Negation in context, may or may not be in question
+Test cases:      499
+Fails (rate):    142 (28.5%)
+
+Example fails:
+C: Mary is not an activist. Austin is.
+Q: Who is an activist?
+A: Austin
+P: Austin is.
+
+
+----
+C: Michael is not an attorney. Sara is.
+Q: Who is an attorney?
+A: Sara
+P: Sara is.
+
+
+----
+C: Tiffany is not an editor. Kevin is.
+Q: Who is an editor?
+A: Kevin
+P: Kevin is.
+
+
+----
+
+
+Negation in question only.
+Test cases:      481
+Fails (rate):    22 (4.6%)
+
+Example fails:
+C: Alexis is an artist. Andrew is an engineer.
+Q: Who is not an engineer?
+A: Alexis
+P: Alex
+
+
+----
+C: Isabella is an escort. Dylan is an auditor.
+Q: Who is not an auditor?
+A: Isabella
+P: abella
+
+
+----
+C: Alexis is an accountant. Christian is an entrepreneur.
+Q: Who is an accountant?
+A: Alexis
+P: Alex
+
+C: Alexis is an accountant. Christian is an entrepreneur.
+Q: Who is not an entrepreneur?
+A: Alexis
+P: Alex
+
+C: Christian is an entrepreneur. Alexis is an accountant.
+Q: Who is an accountant?
+A: Alexis
+P: Alex
+
+
+----
+
+
+
+
+Coref
+
+Basic coref, he / she
+Test cases:      477
+Fails (rate):    32 (6.7%)
+
+Example fails:
+C: Tracy and Jesse are friends. He is an interpreter, and she is an editor.
+Q: Who is an interpreter?
+A: Jesse
+P: Tracy
+
+C: Tracy and Jesse are friends. He is an interpreter, and she is an editor.
+Q: Who is an editor?
+A: Tracy
+P: Jesse
+
+
+----
+C: Alexis and Logan are friends. He is an analyst, and she is an economist.
+Q: Who is an analyst?
+A: Logan
+P: Alexis
+
+C: Alexis and Logan are friends. He is an analyst, and she is an economist.
+Q: Who is an economist?
+A: Alexis
+P: Alexis and Logan
+
+
+----
+C: Kristen and Julian are friends. He is a producer, and she is an executive.
+Q: Who is an executive?
+A: Kristen
+P: Julian
+
+C: Julian and Kristen are friends. She is an executive, and he is a producer.
+Q: Who is a producer?
+A: Julian
+P: Kristen
+
+C: Julian and Kristen are friends. She is an executive, and he is a producer.
+Q: Who is an executive?
+A: Kristen
+P: Julian
+
+
+----
+
+
+Basic coref, his / her
+Test cases:      500
+Fails (rate):    94 (18.8%)
+
+Example fails:
+C: Abigail and Connor are friends. Her mom is an intern.
+Q: Whose mom is an intern?
+A: Abigail
+P: Abigail and Connor
+
+
+----
+C: Jennifer and Connor are friends. Her mom is a nurse.
+Q: Whose mom is a nurse?
+A: Jennifer
+P: Connor
+
+
+----
+C: Lucas and Abigail are friends. Her mom is a nurse.
+Q: Whose mom is a nurse?
+A: Abigail
+P: Lucas
+
+
+----
+
+
+Former / Latter
+Test cases:      475
+Fails (rate):    446 (93.9%)
+
+Example fails:
+C: Aaron and Isabella are friends. The former is an accountant.
+Q: Who is an accountant?
+A: Aaron
+P: Aaron and Isabella
+
+
+----
+C: Melissa and Alexis are friends. The former is an auditor.
+Q: Who is an auditor?
+A: Melissa
+P: Melissa and Alexis
+
+C: Alexis and Melissa are friends. The latter is an auditor.
+Q: Who is an auditor?
+A: Melissa
+P: Alexis and Melissa
+
+
+----
+C: Brandon and Tiffany are friends. The former is an auditor.
+Q: Who is an auditor?
+A: Brandon
+P: Tiffany
+
+
+----
+
+
+
+
+SRL
+
+Agent / object distinction
+Test cases:      497
+Fails (rate):    99 (19.9%)
+
+Example fails:
+C: Matthew is hurt by Tyler.
+Q: Who hurts?
+A: Tyler
+P: Matthew
+
+
+----
+C: Emily is hurt by Nicole.
+Q: Who hurts?
+A: Nicole
+P: Emily is hurt by Nicole.
+
+
+----
+C: Alexis is bothered by Dylan.
+Q: Who bothers?
+A: Dylan
+P: Alexis
+
+
+----
+
+
+Agent / object distinction with 3 agents
+Test cases:      483
+Fails (rate):    453 (93.8%)
+
+Example fails:
+C: Amanda is understood by John. Amanda understands Erin.
+Q: Who is understood by Amanda?
+A: Erin
+P: John
+
+C: Amanda is understood by John. Erin is understood by Amanda.
+Q: Who is understood by Amanda?
+A: Erin
+P: John
+
+
+----
+C: Maria notices Mark. Olivia is noticed by Mark.
+Q: Who is noticed by Maria?
+A: Mark
+P: Olivia
+
+C: Mark is noticed by Maria. Mark notices Olivia.
+Q: Who is noticed by Mark?
+A: Olivia
+P: Maria
+
+
+----
+C: Madison recognizes Mark. Sarah is recognized by Mark.
+Q: Who is recognized by Madison?
+A: Mark
+P: Sarah
+
+C: Mark is recognized by Madison. Mark recognizes Sarah.
+Q: Who recognizes Sarah?
+A: Mark
+P: Mark is recognized by Madison. Mark
+
+C: Mark is recognized by Madison. Mark recognizes Sarah.
+Q: Who is recognized by Mark?
+A: Sarah
+P: Madison
+
+
+----
+
+
+
+

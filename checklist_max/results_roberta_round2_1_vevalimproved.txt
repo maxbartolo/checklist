@@ -1,0 +1,812 @@
+Vocabulary
+
+A is COMP than B. Who is more / less COMP?
+Test cases:      494
+Fails (rate):    0 (0.0%)
+
+
+Intensifiers (very, super, extremely) and reducers (somewhat, kinda, etc)?
+Test cases:      497
+Fails (rate):    262 (52.7%)
+
+Example fails:
+C: Andrea is upbeat about the project. Adam is extremely upbeat about the project.
+Q: Who is least upbeat about the project?
+A: Andrea
+P: Adam
+
+
+----
+C: Mark is enthusiastic about the project. Sara is very enthusiastic about the project.
+Q: Who is least enthusiastic about the project?
+A: Mark
+P: Sara
+
+
+----
+C: Jose is passionate about the project. Amy is extremely passionate about the project.
+Q: Who is least passionate about the project?
+A: Jose
+P: Jose is passionate about the project. Amy
+
+
+----
+
+
+
+
+Taxonomy
+
+size, shape, age, color
+Test cases:      500
+Fails (rate):    70 (14.0%)
+
+Example fails:
+C: There is a tiny square sculpture in the room.
+Q: What size is the sculpture?
+A: tiny
+P: square
+
+C: There is a sculpture in the room. The sculpture is tiny and square.
+Q: What size is the sculpture?
+A: tiny
+P: tiny and square.
+
+
+----
+C: There is an object in the room. The object is round and white.
+Q: What color is the object?
+A: white
+P: round and white.
+
+
+----
+C: There is a box in the room. The box is oval and brown.
+Q: What color is the box?
+A: brown
+P: oval and brown.
+
+
+----
+
+
+Profession vs nationality
+Test cases:      500
+Fails (rate):    274 (54.8%)
+
+Example fails:
+C: Tiffany is a Russian journalist.
+Q: What is Tiffany's job?
+A: journalist
+P: Russian journalist.
+
+
+----
+C: Rachel is a Chinese editor.
+Q: What is Rachel's job?
+A: editor
+P: Chinese editor.
+
+
+----
+C: Andrea is an American interpreter.
+Q: What is Andrea's job?
+A: interpreter
+P: American interpreter.
+
+
+----
+
+
+Animal vs Vehicle
+Test cases:      500
+Fails (rate):    253 (50.6%)
+
+Example fails:
+C: Jose has a serpent and a car.
+Q: What vehicle does Jose have?
+A: car
+P: serpent
+
+C: Jose has a car and a serpent.
+Q: What animal does Jose have?
+A: serpent
+P: car and a serpent.
+
+
+----
+C: Lauren has a SUV and a fish.
+Q: What animal does Lauren have?
+A: fish
+P: SUV and a fish.
+
+C: Lauren has a SUV and a fish.
+Q: What vehicle does Lauren have?
+A: SUV
+P: SUV and a fish.
+
+
+----
+C: Erin has a serpent and a train.
+Q: What vehicle does Erin have?
+A: train
+P: serpent
+
+C: Erin has a train and a serpent.
+Q: What vehicle does Erin have?
+A: train
+P: a train and a serpent.
+
+
+----
+
+
+Animal vs Vehicle v2
+Test cases:      496
+Fails (rate):    28 (5.6%)
+
+Example fails:
+C: Sara bought a SUV. Jessica bought a fish.
+Q: Who bought an animal?
+A: Jessica
+P: Sara
+
+
+----
+C: Sarah bought a hamster. Austin bought a train.
+Q: Who bought a vehicle?
+A: Austin
+P: Sarah
+
+
+----
+C: Jason bought a van. Nathan bought a bull.
+Q: Who bought an animal?
+A: Nathan
+P: Jason bought a van. Nathan
+
+
+----
+
+
+Synonyms
+Test cases:      447
+Fails (rate):    0 (0.0%)
+
+
+A is COMP than B. Who is antonym(COMP)? B
+Test cases:      496
+Fails (rate):    4 (0.8%)
+
+Example fails:
+C: John is sadder than Erin.
+Q: Who is happier?
+A: Erin
+P: John
+
+
+----
+C: Jordan is sadder than Kelly.
+Q: Who is happier?
+A: Kelly
+P: Jordan
+
+
+----
+C: Kayla is richer than Daniel.
+Q: Who is richer?
+A: Kayla
+P: Kayla is
+
+
+----
+
+
+A is more X than B. Who is more antonym(X)? B. Who is less X? B. Who is more X? A. Who is less antonym(X)? A.
+Test cases:      491
+Fails (rate):    400 (81.5%)
+
+Example fails:
+C: Heather is less happy than Rachel.
+Q: Who is more unhappy?
+A: Heather
+P: Rachel
+
+C: Rachel is less unhappy than Heather.
+Q: Who is less happy?
+A: Heather
+P: Rachel
+
+
+----
+C: Kimberly is more irresponsible than Aaron.
+Q: Who is less responsible?
+A: Kimberly
+P: Aaron
+
+C: Aaron is more responsible than Kimberly.
+Q: Who is more irresponsible?
+A: Kimberly
+P: Aaron
+
+C: Aaron is more responsible than Kimberly.
+Q: Who is less irresponsible?
+A: Aaron
+P: Kimberly
+
+
+----
+C: Shannon is more fearful than Thomas.
+Q: Who is less courageous?
+A: Shannon
+P: Thomas
+
+C: Thomas is less fearful than Shannon.
+Q: Who is more courageous?
+A: Thomas
+P: Shannon
+
+C: Thomas is less fearful than Shannon.
+Q: Who is less courageous?
+A: Shannon
+P: Thomas
+
+
+----
+
+
+
+
+Robustness
+
+Question typo
+Test cases:      500
+Fails (rate):    35 (7.0%)
+
+Example fails:
+C: AppleTalk was a proprietary suite of networking protocols developed by Apple Inc. in 1985 for Apple Macintosh computers. It was the primary protocol used by Apple devices through the 1980s and 90s. AppleTalk included features that allowed local area networks to be established ad hoc without the requirement for a centralized router or server. The AppleTalk system automatically assigned addresses, updated the distributed namespace, and configured any required inter-network routing. It was a plug-n-play system.
+Q: What was Apple Talk 
+P: a proprietary suite of networking protocols
+
+C: AppleTalk was a proprietary suite of networking protocols developed by Apple Inc. in 1985 for Apple Macintosh computers. It was the primary protocol used by Apple devices through the 1980s and 90s. AppleTalk included features that allowed local area networks to be established ad hoc without the requirement for a centralized router or server. The AppleTalk system automatically assigned addresses, updated the distributed namespace, and configured any required inter-network routing. It was a plug-n-play system.
+Q: What aws Apple Talk 
+P: It was the primary protocol used by Apple devices
+
+
+----
+C: One of the things Tesla developed at that laboratory in 1887 was an induction motor that ran on alternating current, a power system format that was starting to be built in Europe and the United States because of its advantages in long-distance, high-voltage transmission. The motor used polyphase current which generated a rotating magnetic field to turn the motor (a principle Tesla claimed to have conceived in 1882). This innovative electric motor, patented in May 1888, was a simple self-starting design that did not need a commutator, thus avoiding sparking and the high maintenance of constantly servicing and replacing mechanical brushes.
+Q: Why was AC electricity gaining popularity?
+P: its advantages in long-distance, high-voltage transmission.
+
+C: One of the things Tesla developed at that laboratory in 1887 was an induction motor that ran on alternating current, a power system format that was starting to be built in Europe and the United States because of its advantages in long-distance, high-voltage transmission. The motor used polyphase current which generated a rotating magnetic field to turn the motor (a principle Tesla claimed to have conceived in 1882). This innovative electric motor, patented in May 1888, was a simple self-starting design that did not need a commutator, thus avoiding sparking and the high maintenance of constantly servicing and replacing mechanical brushes.
+Q: Why was AC eelctricity gaining popularity?
+P: because of its advantages in long-distance, high-voltage transmission.
+
+
+----
+C: During the 1970s and sometimes later, Western and pro-Western governments often supported sometimes fledgling Islamists and Islamist groups that later came to be seen as dangerous enemies. Islamists were considered by Western governments bulwarks against—what were thought to be at the time—more dangerous leftist/communist/nationalist insurgents/opposition, which Islamists were correctly seen as opposing. The US spent billions of dollars to aid the mujahideen Muslim Afghanistan enemies of the Soviet Union, and non-Afghan veterans of the war returned home with their prestige, "experience, ideology, and weapons", and had considerable impact.
+Q: When did Western governments support fledgling Islamists?
+P: During the 1970s
+
+C: During the 1970s and sometimes later, Western and pro-Western governments often supported sometimes fledgling Islamists and Islamist groups that later came to be seen as dangerous enemies. Islamists were considered by Western governments bulwarks against—what were thought to be at the time—more dangerous leftist/communist/nationalist insurgents/opposition, which Islamists were correctly seen as opposing. The US spent billions of dollars to aid the mujahideen Muslim Afghanistan enemies of the Soviet Union, and non-Afghan veterans of the war returned home with their prestige, "experience, ideology, and weapons", and had considerable impact.
+Q: When did Western gvoernments support fledgling Islamists?
+P: 1970s
+
+
+----
+
+
+Question contractions
+Test cases:      500
+Fails (rate):    11 (2.2%)
+
+Example fails:
+C: The National Science Foundation Network (NSFNET) was a program of coordinated, evolving projects sponsored by the National Science Foundation (NSF) beginning in 1985 to promote advanced research and education networking in the United States. NSFNET was also the name given to several nationwide backbone networks operating at speeds of 56 kbit/s, 1.5 Mbit/s (T1), and 45 Mbit/s (T3) that were constructed to support NSF's networking initiatives from 1985-1995. Initially created to link researchers to the nation's NSF-funded supercomputing centers, through further public funding and private industry partnerships it developed into a major part of the Internet backbone.
+Q: What is NSFNET
+P: a program of coordinated, evolving projects sponsored by the National Science Foundation
+
+C: The National Science Foundation Network (NSFNET) was a program of coordinated, evolving projects sponsored by the National Science Foundation (NSF) beginning in 1985 to promote advanced research and education networking in the United States. NSFNET was also the name given to several nationwide backbone networks operating at speeds of 56 kbit/s, 1.5 Mbit/s (T1), and 45 Mbit/s (T3) that were constructed to support NSF's networking initiatives from 1985-1995. Initially created to link researchers to the nation's NSF-funded supercomputing centers, through further public funding and private industry partnerships it developed into a major part of the Internet backbone.
+Q: What's NSFNET
+P: The National Science Foundation Network
+
+
+----
+C: Crime rate has also been shown to be correlated with inequality in society. Most studies looking into the relationship have concentrated on homicides – since homicides are almost identically defined across all nations and jurisdictions. There have been over fifty studies showing tendencies for violence to be more common in societies where income differences are larger. Research has been conducted comparing developed countries with undeveloped countries, as well as studying areas within countries. Daly et al. 2001 found that among U.S States and Canadian Provinces there is a tenfold difference in homicide rates related to inequality. They estimated that about half of all variation in homicide rates can be accounted for by differences in the amount of inequality in each province or state. Fajnzylber et al. (2002) found a similar relationship worldwide. Among comments in academic literature on the relationship between homicides and inequality are:
+Q: What is it estimated that about half of all variation in homicide rates can be accounted for by?
+P: differences in the amount of inequality in each province or state.
+
+C: Crime rate has also been shown to be correlated with inequality in society. Most studies looking into the relationship have concentrated on homicides – since homicides are almost identically defined across all nations and jurisdictions. There have been over fifty studies showing tendencies for violence to be more common in societies where income differences are larger. Research has been conducted comparing developed countries with undeveloped countries, as well as studying areas within countries. Daly et al. 2001 found that among U.S States and Canadian Provinces there is a tenfold difference in homicide rates related to inequality. They estimated that about half of all variation in homicide rates can be accounted for by differences in the amount of inequality in each province or state. Fajnzylber et al. (2002) found a similar relationship worldwide. Among comments in academic literature on the relationship between homicides and inequality are:
+Q: What's it estimated that about half of all variation in homicide rates can be accounted for by?
+P: differences in the amount of inequality
+
+
+----
+C: Luther's 1541 hymn "Christ unser Herr zum Jordan kam" ("To Jordan came the Christ our Lord") reflects the structure and substance of his questions and answers concerning baptism in the Small Catechism. Luther adopted a preexisting Johann Walter tune associated with a hymnic setting of Psalm 67's prayer for grace; Wolf Heintz's four-part setting of the hymn was used to introduce the Lutheran Reformation in Halle in 1541. Preachers and composers of the 18th century, including J. S. Bach, used this rich hymn as a subject for their own work, although its objective baptismal theology was displaced by more subjective hymns under the influence of late-19th-century Lutheran pietism.
+Q: What is Psalm 67 about?
+P: grace
+
+C: Luther's 1541 hymn "Christ unser Herr zum Jordan kam" ("To Jordan came the Christ our Lord") reflects the structure and substance of his questions and answers concerning baptism in the Small Catechism. Luther adopted a preexisting Johann Walter tune associated with a hymnic setting of Psalm 67's prayer for grace; Wolf Heintz's four-part setting of the hymn was used to introduce the Lutheran Reformation in Halle in 1541. Preachers and composers of the 18th century, including J. S. Bach, used this rich hymn as a subject for their own work, although its objective baptismal theology was displaced by more subjective hymns under the influence of late-19th-century Lutheran pietism.
+Q: What's Psalm 67 about?
+P: prayer for grace;
+
+
+----
+
+
+Add random sentence to context
+Test cases:      500
+Fails (rate):    70 (14.0%)
+
+Example fails:
+C: The plain moraine plateau has only a few natural and artificial ponds and also groups of clay pits. The pattern of the Vistula terraces is asymmetrical. The left side consist mainly of two levels: the highest one contains former flooded terraces and the lowest one the flood plain terrace. The contemporary flooded terrace still has visible valleys and ground depressions with water systems coming from the Vistula old – riverbed. They consist of still quite natural streams and lakes as well as the pattern of drainage ditches. The right side of Warsaw has a different pattern of geomorphological forms. There are several levels of the plain Vistula terraces (flooded as well as former flooded once) and only small part and not so visible moraine escarpment. Aeolian sand with a number of dunes parted by peat swamps or small ponds cover the highest terrace. These are mainly forested areas (pine forest).
+Q: What type of forested areas can be found on the highest terrace?
+P: (pine forest).
+
+C: The plain moraine plateau has only a few natural and artificial ponds and also groups of clay pits. The pattern of the Vistula terraces is asymmetrical. The left side consist mainly of two levels: the highest one contains former flooded terraces and the lowest one the flood plain terrace. The contemporary flooded terrace still has visible valleys and ground depressions with water systems coming from the Vistula old – riverbed. They consist of still quite natural streams and lakes as well as the pattern of drainage ditches. The right side of Warsaw has a different pattern of geomorphological forms. There are several levels of the plain Vistula terraces (flooded as well as former flooded once) and only small part and not so visible moraine escarpment. Aeolian sand with a number of dunes parted by peat swamps or small ponds cover the highest terrace. These are mainly forested areas (pine forest).Similarly, Roland Bainton, noted church historian and Luther biographer, wrote "One could wish that Luther had died before ever [On the Jews and Their Lies] was written. 
+Q: What type of forested areas can be found on the highest terrace?
+P: (pine forest).Similarly,
+
+
+----
+C: Börte had three more sons, Chagatai (1187—1241), Ögedei (1189—1241), and Tolui (1190–1232). Genghis Khan also had many other children with his other wives, but they were excluded from the succession. While the names of sons were documented, daughters were not. The names of at least six daughters are known, and while they played significant roles behind the scenes during his lifetime, no documents have survived that definitively provide the number or names of daughters born to the consorts of Genghis Khan.
+Q: What year did two of Ghengis Khan and Börte's sons die?
+P: 1232
+
+C: Who – The Ultimate Adventure. Börte had three more sons, Chagatai (1187—1241), Ögedei (1189—1241), and Tolui (1190–1232). Genghis Khan also had many other children with his other wives, but they were excluded from the succession. While the names of sons were documented, daughters were not. The names of at least six daughters are known, and while they played significant roles behind the scenes during his lifetime, no documents have survived that definitively provide the number or names of daughters born to the consorts of Genghis Khan.
+Q: What year did two of Ghengis Khan and Börte's sons die?
+P: (1190–1232).
+
+
+----
+C: Not all cells in a multicellular plant contain chloroplasts. All green parts of a plant contain chloroplasts—the chloroplasts, or more specifically, the chlorophyll in them are what make the photosynthetic parts of a plant green. The plant cells which contain chloroplasts are usually parenchyma cells, though chloroplasts can also be found in collenchyma tissue. A plant cell which contains chloroplasts is known as a chlorenchyma cell. A typical chlorenchyma cell of a land plant contains about 10 to 100 chloroplasts.
+Q: What is a chlorenchyma cell?
+P: plant cell which contains chloroplasts
+
+C: Not all cells in a multicellular plant contain chloroplasts. All green parts of a plant contain chloroplasts—the chloroplasts, or more specifically, the chlorophyll in them are what make the photosynthetic parts of a plant green. The plant cells which contain chloroplasts are usually parenchyma cells, though chloroplasts can also be found in collenchyma tissue. A plant cell which contains chloroplasts is known as a chlorenchyma cell. A typical chlorenchyma cell of a land plant contains about 10 to 100 chloroplasts.Some of the finest tapestries are examples from the Gobelins workshop, including a set of 'Jason and the Argonauts' dating from the 1750s. 
+Q: What is a chlorenchyma cell?
+P: A plant cell which contains chloroplasts
+
+C: Some of the finest tapestries are examples from the Gobelins workshop, including a set of 'Jason and the Argonauts' dating from the 1750s. Not all cells in a multicellular plant contain chloroplasts. All green parts of a plant contain chloroplasts—the chloroplasts, or more specifically, the chlorophyll in them are what make the photosynthetic parts of a plant green. The plant cells which contain chloroplasts are usually parenchyma cells, though chloroplasts can also be found in collenchyma tissue. A plant cell which contains chloroplasts is known as a chlorenchyma cell. A typical chlorenchyma cell of a land plant contains about 10 to 100 chloroplasts.
+Q: What is a chlorenchyma cell?
+P: A plant cell which contains chloroplasts
+
+
+----
+
+
+
+
+NER
+
+Change name everywhere
+Test cases:      500
+Fails (rate):    27 (5.4%)
+
+Example fails:
+C: In 1875, Tesla enrolled at Austrian Polytechnic in Graz, Austria, on a Military Frontier scholarship. During his first year, Tesla never missed a lecture, earned the highest grades possible, passed nine exams (nearly twice as many required), started a Serbian culture club, and even received a letter of commendation from the dean of the technical faculty to his father, which stated, "Your son is a star of first rank." Tesla claimed that he worked from 3 a.m. to 11 p.m., no Sundays or holidays excepted. He was "mortified when [his] father made light of [those] hard won honors." After his father's death in 1879, Tesla found a package of letters from his professors to his father, warning that unless he were removed from the school, Tesla would be killed through overwork. During his second year, Tesla came into conflict with Professor Poeschl over the Gramme dynamo, when Tesla suggested that commutators weren't necessary. At the end of his second year, Tesla lost his scholarship and became addicted to gambling. During his third year, Tesla gambled away his allowance and his tuition money, later gambling back his initial losses and returning the balance to his family. Tesla said that he "conquered [his] passion then and there," but later he was known to play billiards in the US. When exam time came, Tesla was unprepared and asked for an extension to study, but was denied. He never graduated from the university and did not receive grades for the last semester.
+Q: How did Tesla lose his tuition money?
+P: gambled
+
+C: In 1875, Mia enrolled at Austrian Polytechnic in Graz, Austria, on a Military Frontier scholarship. During his first year, Mia never missed a lecture, earned the highest grades possible, passed nine exams (nearly twice as many required), started a Serbian culture club, and even received a letter of commendation from the dean of the technical faculty to his father, which stated, "Your son is a star of first rank." Mia claimed that he worked from 3 a.m. to 11 p.m., no Sundays or holidays excepted. He was "mortified when [his] father made light of [those] hard won honors." After his father's death in 1879, Mia found a package of letters from his professors to his father, warning that unless he were removed from the school, Mia would be killed through overwork. During his second year, Mia came into conflict with Professor Poeschl over the Gramme dynamo, when Mia suggested that commutators weren't necessary. At the end of his second year, Mia lost his scholarship and became addicted to gambling. During his third year, Mia gambled away his allowance and his tuition money, later gambling back his initial losses and returning the balance to his family. Mia said that he "conquered [his] passion then and there," but later he was known to play billiards in the US. When exam time came, Mia was unprepared and asked for an extension to study, but was denied. He never graduated from the university and did not receive grades for the last semester.
+Q: How did Mia lose his tuition money?
+P: gambled away
+
+
+----
+C: Notable faculty in physics have included the speed of light calculator A. A. Michelson, elementary charge calculator Robert A. Millikan, discoverer of the Compton Effect Arthur H. Compton, the creator of the first nuclear reactor Enrico Fermi, "the father of the hydrogen bomb" Edward Teller, "one of the most brilliant and productive experimental physicists of the twentieth century" Luis Walter Alvarez, Murray Gell-Mann who introduced the quark, second female Nobel laureate Maria Goeppert-Mayer, the youngest American winner of the Nobel Prize Tsung-Dao Lee, and astrophysicist Subrahmanyan Chandrasekhar.
+Q: Who is also known at the father of the hydrogen bomb?
+P: Enrico Fermi,
+
+C: Notable faculty in physics have included the speed of light calculator A. A. Michelson, elementary charge calculator Robert A. Millikan, discoverer of the Compton Effect James Jenkins, the creator of the first nuclear reactor Enrico Fermi, "the father of the hydrogen bomb" Edward Teller, "one of the most brilliant and productive experimental physicists of the twentieth century" Luis Walter Alvarez, Murray Gell-Mann who introduced the quark, second female Nobel laureate Maria Goeppert-Mayer, the youngest American winner of the Nobel Prize Tsung-Dao Lee, and astrophysicist Subrahmanyan Chandrasekhar.
+Q: Who is also known at the father of the hydrogen bomb?
+P: Edward Teller,
+
+C: Notable faculty in physics have included the speed of light calculator A. A. Michelson, elementary charge calculator Robert A. Millikan, discoverer of the Compton Effect Daniel Hall, the creator of the first nuclear reactor Enrico Fermi, "the father of the hydrogen bomb" Edward Teller, "one of the most brilliant and productive experimental physicists of the twentieth century" Luis Walter Alvarez, Murray Gell-Mann who introduced the quark, second female Nobel laureate Maria Goeppert-Mayer, the youngest American winner of the Nobel Prize Tsung-Dao Lee, and astrophysicist Subrahmanyan Chandrasekhar.
+Q: Who is also known at the father of the hydrogen bomb?
+P: Edward Teller,
+
+
+----
+C: Despite the high position given to Muslims, some policies of the Yuan Emperors severely discriminated against them, restricting Halal slaughter and other Islamic practices like circumcision, as well as Kosher butchering for Jews, forcing them to eat food the Mongol way. Toward the end, corruption and the persecution became so severe that Muslim generals joined Han Chinese in rebelling against the Mongols. The Ming founder Zhu Yuanzhang had Muslim generals like Lan Yu who rebelled against the Mongols and defeated them in combat. Some Muslim communities had a Chinese surname which meant "barracks" and could also mean "thanks". Many Hui Muslims claim this is because that they played an important role in overthrowing the Mongols and it was given in thanks by the Han Chinese for assisting them. During the war fighting the Mongols, among the Ming Emperor Zhu Yuanzhang's armies was the Hui Muslim Feng Sheng. The Muslims in the semu class also revolted against the Yuan dynasty in the Ispah Rebellion but the rebellion was crushed and the Muslims were massacred by the Yuan loyalist commander Chen Youding.
+Q: Who revolted in the Ispah Rebellion?
+P: Muslims in the semu class
+
+C: Despite the high position given to Muslims, some policies of the Yuan Emperors severely discriminated against them, restricting Halal slaughter and other Islamic practices like circumcision, as well as Kosher butchering for Jews, forcing them to eat food the Mongol way. Toward the end, corruption and the persecution became so severe that Muslim generals joined Han Chinese in rebelling against the Mongols. The Ming founder Zhu Yuanzhang had Muslim generals like Jennifer Ortiz who rebelled against the Mongols and defeated them in combat. Some Muslim communities had a Chinese surname which meant "barracks" and could also mean "thanks". Many Hui Muslims claim this is because that they played an important role in overthrowing the Mongols and it was given in thanks by the Han Chinese for assisting them. During the war fighting the Mongols, among the Ming Emperor Zhu Yuanzhang's armies was the Hui Muslim Feng Sheng. The Muslims in the semu class also revolted against the Yuan dynasty in the Ispah Rebellion but the rebellion was crushed and the Muslims were massacred by the Yuan loyalist commander Chen Youding.
+Q: Who revolted in the Ispah Rebellion?
+P: The Muslims in the semu class
+
+C: Despite the high position given to Muslims, some policies of the Yuan Emperors severely discriminated against them, restricting Halal slaughter and other Islamic practices like circumcision, as well as Kosher butchering for Jews, forcing them to eat food the Mongol way. Toward the end, corruption and the persecution became so severe that Muslim generals joined Han Chinese in rebelling against the Mongols. The Ming founder Zhu Yuanzhang had Muslim generals like Jessica Stewart who rebelled against the Mongols and defeated them in combat. Some Muslim communities had a Chinese surname which meant "barracks" and could also mean "thanks". Many Hui Muslims claim this is because that they played an important role in overthrowing the Mongols and it was given in thanks by the Han Chinese for assisting them. During the war fighting the Mongols, among the Ming Emperor Zhu Yuanzhang's armies was the Hui Muslim Feng Sheng. The Muslims in the semu class also revolted against the Yuan dynasty in the Ispah Rebellion but the rebellion was crushed and the Muslims were massacred by the Yuan loyalist commander Chen Youding.
+Q: Who revolted in the Ispah Rebellion?
+P: The Muslims in the semu class
+
+
+----
+
+
+Change location everywhere
+Test cases:      500
+Fails (rate):    70 (14.0%)
+
+Example fails:
+C: Though there is no official definition for the northern boundary of southern California, such a division has existed from the time when Mexico ruled California, and political disputes raged between the Californios of Monterey in the upper part and Los Angeles in the lower part of Alta California. Following the acquisition of California by the United States, the division continued as part of the attempt by several pro-slavery politicians to arrange the division of Alta California at 36 degrees, 30 minutes, the line of the Missouri Compromise. Instead, the passing of the Compromise of 1850 enabled California to be admitted to the Union as a free state, preventing southern California from becoming its own separate slave state.
+Q: Which country used to rule California?
+P: Mexico
+
+C: Though there is no official definition for the northern boundary of southern California, such a division has existed from the time when Macao SAR ruled California, and political disputes raged between the Californios of Monterey in the upper part and Los Angeles in the lower part of Alta California. Following the acquisition of California by the United States, the division continued as part of the attempt by several pro-slavery politicians to arrange the division of Alta California at 36 degrees, 30 minutes, the line of the Missouri Compromise. Instead, the passing of the Compromise of 1850 enabled California to be admitted to the Union as a free state, preventing southern California from becoming its own separate slave state.
+Q: Which country used to rule California?
+P: Macao
+
+
+----
+C: The Broncos took an early lead in Super Bowl 50 and never trailed. Newton was limited by Denver's defense, which sacked him seven times and forced him into three turnovers, including a fumble which they recovered for a touchdown. Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles.
+Q: Which Newton turnover resulted in seven points for Denver?
+P: a fumble
+
+C: The Broncos took an early lead in Super Bowl 50 and never trailed. Newton was limited by Glenview's defense, which sacked him seven times and forced him into three turnovers, including a fumble which they recovered for a touchdown. Glenview linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles.
+Q: Which Newton turnover resulted in seven points for Glenview?
+P: fumble
+
+C: The Broncos took an early lead in Super Bowl 50 and never trailed. Newton was limited by Muskegon's defense, which sacked him seven times and forced him into three turnovers, including a fumble which they recovered for a touchdown. Muskegon linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles.
+Q: Which Newton turnover resulted in seven points for Muskegon?
+P: fumble
+
+
+----
+C: The Panthers used the San Jose State practice facility and stayed at the San Jose Marriott. The Broncos practiced at Stanford University and stayed at the Santa Clara Marriott.
+Q: Where did the Panthers practice at for Super Bowl 50?
+P: San Jose State
+
+C: The Panthers used the Mount Vernon State practice facility and stayed at the Mount Vernon Marriott. The Broncos practiced at Stanford University and stayed at the Santa Clara Marriott.
+Q: Where did the Panthers practice at for Super Bowl 50?
+P: Mount Vernon State practice facility
+
+C: The Panthers used the Chapel Hill State practice facility and stayed at the Chapel Hill Marriott. The Broncos practiced at Stanford University and stayed at the Santa Clara Marriott.
+Q: Where did the Panthers practice at for Super Bowl 50?
+P: Chapel Hill State practice facility
+
+
+----
+
+
+
+
+Fairness
+
+M/F failure rates should be similar for different professions
+Test cases:      2000
+Fails (rate):    887 (44.4%)
+
+Example fails:
+C: Hunter is not a CEO, Monica is.
+Q: Who is a CEO?
+A: Monica
+P: Hunter
+
+----
+C: Brooke is not a CEO, Chad is.
+Q: Who is a CEO?
+A: Chad
+P: Brooke
+
+----
+C: Melissa is not a CEO, Richard is.
+Q: Who is a CEO?
+A: Richard
+P: Melissa
+
+----
+
+
+
+
+Temporal
+
+There was a change in profession
+Test cases:      482
+Fails (rate):    72 (14.9%)
+
+Example fails:
+C: Both Maria and Kevin were executives, but there was a change in Kevin, who is now an advisor.
+Q: Who is an advisor?
+A: Kevin
+P: Kevin were executives, but there was a change in Kevin,
+
+
+----
+C: Both Andrea and Thomas were auditors, but there was a change in Thomas, who is now an advisor.
+Q: Who is an advisor?
+A: Thomas
+P: Thomas were auditors, but there was a change in Thomas,
+
+
+----
+C: Both Dylan and Kelly were actors, but there was a change in Dylan, who is now an activist.
+Q: Who is an activist?
+A: Dylan
+P: Dylan and Kelly were actors, but there was a change in Dylan,
+
+
+----
+
+
+Understanding before / after -> first / last.
+Test cases:      496
+Fails (rate):    2 (0.4%)
+
+Example fails:
+C: Alyssa became a historian after Victoria did.
+Q: Who became a historian last?
+A: Alyssa
+P: Victoria
+
+
+----
+C: Jessica became a photographer after Rebecca did.
+Q: Who became a photographer last?
+A: Jessica
+P: Jessica became a photographer after Rebecca
+
+
+----
+
+
+
+
+Negation
+
+Negation in context, may or may not be in question
+Test cases:      499
+Fails (rate):    142 (28.5%)
+
+Example fails:
+C: Thomas is not a photographer. Sara is.
+Q: Who is a photographer?
+A: Sara
+P: Sara is.
+
+
+----
+C: Megan is not an entrepreneur. Erin is.
+Q: Who is an entrepreneur?
+A: Erin
+P: Erin is.
+
+
+----
+C: Jacob is not an actor. Angela is.
+Q: Who is an actor?
+A: Angela
+P: Jacob
+
+
+----
+
+
+Negation in question only.
+Test cases:      481
+Fails (rate):    22 (4.6%)
+
+Example fails:
+C: Isabella is an activist. Alexander is a journalist.
+Q: Who is an activist?
+A: Isabella
+P: abella
+
+C: Isabella is an activist. Alexander is a journalist.
+Q: Who is not a journalist?
+A: Isabella
+P: abella
+
+
+----
+C: Alexis is an entrepreneur. Benjamin is an agent.
+Q: Who is not an agent?
+A: Alexis
+P: Alex
+
+
+----
+C: Isabella is an escort. Dylan is an auditor.
+Q: Who is not an auditor?
+A: Isabella
+P: abella
+
+
+----
+
+
+
+
+Coref
+
+Basic coref, he / she
+Test cases:      477
+Fails (rate):    32 (6.7%)
+
+Example fails:
+C: Andrea and Alex are friends. He is an organizer, and she is a historian.
+Q: Who is an organizer?
+A: Alex
+P: Andrea and Alex
+
+C: Alex and Andrea are friends. She is a historian, and he is an organizer.
+Q: Who is a historian?
+A: Andrea
+P: Alex and Andrea
+
+
+----
+C: Alexis and Aiden are friends. He is an auditor, and she is a producer.
+Q: Who is an auditor?
+A: Aiden
+P: Alexis
+
+C: Alexis and Aiden are friends. He is an auditor, and she is a producer.
+Q: Who is a producer?
+A: Alexis
+P: Aiden
+
+C: Aiden and Alexis are friends. She is a producer, and he is an auditor.
+Q: Who is an auditor?
+A: Aiden
+P: Alexis
+
+
+----
+C: Amy and Ryan are friends. He is an organizer, and she is an entrepreneur.
+Q: Who is an organizer?
+A: Ryan
+P: Amy and Ryan
+
+
+----
+
+
+Basic coref, his / her
+Test cases:      500
+Fails (rate):    94 (18.8%)
+
+Example fails:
+C: Karen and Angel are friends. Her mom is an administrator.
+Q: Whose mom is an administrator?
+A: Karen
+P: Angel
+
+
+----
+C: Brittany and Ethan are friends. Her mom is a nurse.
+Q: Whose mom is a nurse?
+A: Brittany
+P: Brittany and Ethan
+
+
+----
+C: Jonathan and Ella are friends. Her mom is an author.
+Q: Whose mom is an author?
+A: Ella
+P: Jonathan and Ella
+
+
+----
+
+
+Former / Latter
+Test cases:      475
+Fails (rate):    446 (93.9%)
+
+Example fails:
+C: Sean and Lauren are friends. The former is a photographer.
+Q: Who is a photographer?
+A: Sean
+P: Lauren
+
+
+----
+C: Jamie and Maria are friends. The former is an escort.
+Q: Who is an escort?
+A: Jamie
+P: Maria
+
+C: Maria and Jamie are friends. The latter is an escort.
+Q: Who is an escort?
+A: Jamie
+P: Maria and Jamie
+
+C: Jamie and Maria are friends. The former is an escort and the latter is an interpreter.
+Q: Who is an escort?
+A: Jamie
+P: Jamie and Maria
+
+
+----
+C: Noah and Shannon are friends. The former is an accountant.
+Q: Who is an accountant?
+A: Noah
+P: Shannon
+
+C: Shannon and Noah are friends. The latter is an accountant.
+Q: Who is an accountant?
+A: Noah
+P: Shannon and Noah
+
+
+----
+
+
+
+
+SRL
+
+Agent / object distinction
+Test cases:      497
+Fails (rate):    99 (19.9%)
+
+Example fails:
+C: Timothy is bothered by Ethan.
+Q: Who bothers?
+A: Ethan
+P: Timothy
+
+
+----
+C: Charles deserves Tiffany.
+Q: Who is deserved?
+A: Tiffany
+P: Charles
+
+
+----
+C: Christian is bothered by Danielle.
+Q: Who bothers?
+A: Danielle
+P: Christian
+
+
+----
+
+
+Agent / object distinction with 3 agents
+Test cases:      483
+Fails (rate):    453 (93.8%)
+
+Example fails:
+C: Anthony is supported by Andrea. Anthony supports Taylor.
+Q: Who supports Taylor?
+A: Anthony
+P: Andrea
+
+C: Anthony is supported by Andrea. Anthony supports Taylor.
+Q: Who is supported by Anthony?
+A: Taylor
+P: Andrea
+
+C: Anthony is supported by Andrea. Taylor is supported by Anthony.
+Q: Who supports Taylor?
+A: Anthony
+P: Andrea
+
+
+----
+C: Timothy is supported by Emily. Timothy supports Zachary.
+Q: Who is supported by Timothy?
+A: Zachary
+P: Emily
+
+
+----
+C: Joshua is followed by John. Joshua follows Rachel.
+Q: Who is followed by Joshua?
+A: Rachel
+P: John
+
+C: Joshua is followed by John. Rachel is followed by Joshua.
+Q: Who is followed by Joshua?
+A: Rachel
+P: John
+
+
+----
+
+
+
+
