@@ -104,7 +104,7 @@ class AbstractTest(ABC):
     def print(self, xs, preds, confs, expect_results, labels=None, meta=None, format_example_fn=None, nsamples=3):
         result = self._extract_examples_per_testcase(
             xs, preds, confs, expect_results, labels, meta, nsamples, only_include_fail=True)
-        if not result:
+        if not result or nsamples <= 0:
             return
         idxs, iters, _ = result
         for x, pred, conf, label, meta in iters:
@@ -459,7 +459,7 @@ class AbstractTest(ABC):
         if format_example_fn is None:
             format_example_fn = default_format_example
         fails = self.fail_idxs()
-        if fails.shape[0] == 0:
+        if fails.shape[0] == 0 or n_per_testcase <= 0:
             return
         print()
         print('Example fails:')

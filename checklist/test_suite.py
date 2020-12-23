@@ -4,6 +4,7 @@ import dill
 import json
 from .abstract_test import load_test, read_pred_file
 from .test_types import MFT, INV, DIR
+from .expect import Expect
 
 from .viewer.suite_summarizer import SuiteSummarizer
 
@@ -219,6 +220,11 @@ class TestSuite:
         for n, t in self.tests.items():
             p = preds[slice(*self.test_ranges[n])]
             c = confs[slice(*self.test_ranges[n])]
+            if type(t).__name__ == 'MFT':
+                t.set_expect(Expect.eq())
+            # elif type(t).__name__ == 'INV':
+            #     t.set_expect(Expect.inv(tolerance=0.1))  # We do not know what the original test suite tolerance was, so leave original (comparing to model's own preds anyway)
+
             t.run_from_preds_confs(p, c, overwrite=overwrite)
 
     def run_from_file(self, path, file_format=None, format_fn=None, ignore_header=False, overwrite=False):

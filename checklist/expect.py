@@ -1,5 +1,8 @@
-import numpy as np
 import itertools
+import numpy as np
+import re
+import string
+
 
 def iter_with_optional(data, preds, confs, labels, meta, idxs=None):
     # If this is a single example
@@ -21,6 +24,32 @@ def iter_with_optional(data, preds, confs, labels, meta, idxs=None):
         ret = [ret[i] for i in idxs]
     return ret
 
+# Add SQuAD normalisation for eval
+
+def normalize_answer(s):
+    """Lower text and remove punctuation, articles and extra whitespace."""
+
+    def remove_articles(text):
+        regex = re.compile(r"\b(a|an|the)\b", re.UNICODE)
+        return re.sub(regex, " ", text)
+
+    def white_space_fix(text):
+        return " ".join(text.split())
+
+    def remove_punc(text):
+        exclude = set(string.punctuation)
+        return "".join(ch for ch in text if ch not in exclude)
+
+    def lower(text):
+        return text.lower()
+
+    if not s:
+        s = ''
+
+    return white_space_fix(remove_articles(remove_punc(lower(s))))
+
+def is_exact_match(a_gold, a_pred):
+    return normalize_answer(a_gold) == normalize_answer(a_pred)
 
 
 class Expect:
@@ -388,6 +417,10 @@ class Expect:
     # SAMPLE EXPECTATION FUNCTION
 
     @staticmethod
+    def squad_safe_eq(pred, gt, eval_like_squad=True):
+        return pred == gt or (eval_like_squad and is_exact_match(pred, gt))
+
+    @staticmethod
     def eq(val=None):
         """Expect predictions to be equal to a value.
         See documentation for Expect.single
@@ -408,7 +441,7 @@ class Expect:
             softmax = type(conf) in [np.array, np.ndarray]
             conf = conf[gt] if softmax else -conf
             conf_viol = -(1 - conf)
-            if pred == gt:
+            if Expect.squad_safe_eq(pred, gt):
                 return True
             else:
                 return conf_viol
@@ -434,10 +467,10 @@ class Expect:
         def expect(orig_pred, pred, orig_conf, conf, labels=None, meta=None):
             softmax = type(orig_conf) in [np.array, np.ndarray]
             try:
-                if pred == orig_pred:
+                if Expect.squad_safe_eq(pred, orig_pred):
                     return True
             except ValueError: # np.array output
-                if (pred == orig_pred).all():
+                if (Expect.squad_safe_eq(pred, orig_pred)).all():
                     return True
             if softmax:
                 orig_conf = orig_conf[orig_pred]
@@ -488,7 +521,7 @@ class Expect:
                 conf = conf[label]
                 conf_diff = conf - orig_conf
             else:
-                if pred == orig_pred:
+                if Expect.squad_safe_eq(pred, orig_pred):
                     conf_diff = conf - orig_conf
                 else:
                     conf_diff = -(orig_conf + conf)
