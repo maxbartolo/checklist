@@ -2,7 +2,7 @@ import os
 import json
 
 
-data_dir = "/private/home/maxbartolo/_code/checklist/release_data/squad/"
+data_dir = "/Users/stevengeorge/Documents/Github/checklist/release_data/squad"
 data_file = "squad.json"
 
 with open(os.path.join(data_dir, data_file), "r") as f:
@@ -12,7 +12,7 @@ with open(os.path.join(data_dir, data_file), "r") as f:
 for dp in squad_data['data']:
     for para in dp['paragraphs']:
         for qa in para['qas']:
-            qa['answers'] = []
+            qa['answers'] = [{"answer_start": 0, "text": ""}]  # Need to add dummy answer for data loading script
 
 # Save
 with open(os.path.join(data_dir, "squad_ans.json"), "w") as f:
